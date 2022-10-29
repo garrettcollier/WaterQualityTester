@@ -4,6 +4,11 @@
         android:label="water_quality_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <!-- Google Maps API key -->
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyB3Z0znl6BHklEmmr9gR6Nz7addXInVzwY"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
