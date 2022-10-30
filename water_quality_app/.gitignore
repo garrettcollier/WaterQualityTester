@@ -44,4 +44,6 @@ app.*.map.json
 /android/app/release
 
 # ignore changes made where API key is displayed
-web\index.html
+/web/index.html
+/ios/Runner/AppDelegate.swift
+/android/app/src/main/AndroidManifest.xml
