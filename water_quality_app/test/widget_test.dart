@@ -6,8 +6,7 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:water_quality_app/main.dart';
+import 'package:water_quality_app/home.dart';
 
 void main() {
   testWidgets(

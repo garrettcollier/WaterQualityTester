@@ -1,45 +1,40 @@
 import 'package:flutter/material.dart';
-import 'package:water_quality_app/camera.dart';
 import 'package:water_quality_app/home.dart';
-import 'package:water_quality_app/map.dart';
 
 void main() {
-  runApp(const Home());
+  runApp(const SelectTesterPage());
 }
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+// dropdown list for types of water testers
+const List<String> list = <String>['Type1', 'Type2'];
+
+class SelectTesterPage extends StatelessWidget {
+  const SelectTesterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // home navigator for all pages
     return const MaterialApp(
-      home: Navigate(),
+      home: TesterDropdown(),
     );
   }
 }
 
-class Navigate extends StatefulWidget {
-  const Navigate({super.key});
+class TesterDropdown extends StatefulWidget {
+  const TesterDropdown({super.key});
 
   @override
-  State<Navigate> createState() => _NavigateState();
+  State<TesterDropdown> createState() => _TesterDropdownState();
 }
 
-class _NavigateState extends State<Navigate> {
-  int _selectedIndex = 1;
-  static final List<Widget> _widgetOptions = <Widget>[
-    const CameraPage(),
-    const HomePage(),
-    MapPage()
-  ];
+class _TesterDropdownState extends State<TesterDropdown> {
+  // set initial value to first in list
+  String dropdownValue = list.first;
 
-  // update the index selected
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  // style the elevated button and dropdown
+  final ButtonStyle styleButton = ElevatedButton.styleFrom(
+      textStyle: const TextStyle(fontSize: 20), backgroundColor: Colors.green);
+  final TextStyle styleDropdown =
+      const TextStyle(fontSize: 20, color: Colors.blue);
 
   @override
   Widget build(BuildContext context) {
@@ -47,31 +42,53 @@ class _NavigateState extends State<Navigate> {
       appBar: AppBar(
         title: const Text('Varify Water Tester'),
       ),
-      body: Center(
-        // display widget from _widgetoptions list
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            // Camera Page
-            icon: Icon(Icons.camera),
-            label: 'Camera',
-          ),
-          BottomNavigationBarItem(
-            // Home Page
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            // Map Page
-            icon: Icon(Icons.map),
-            label: 'Map',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
+      body: Padding(
+        padding: const EdgeInsets.all(40.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            DropdownButton<String>(
+              value: dropdownValue,
+              icon: const Icon(Icons.arrow_downward),
+              elevation: 16,
+              alignment: Alignment.center,
+              style: styleDropdown,
+              isExpanded: true,
+              underline: Container(
+                height: 10,
+              ),
+              onChanged: (String? value) {
+                // called when the user selects an item
+                setState(() {
+                  dropdownValue = value!;
+                });
+              },
+              items: list.map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+            const SizedBox(
+              height: 50,
+              width: 50,
+            ),
+            ElevatedButton(
+              style: styleButton,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Home(),
+                  ),
+                );
+              },
+              child: const Text('Choose this Test Type'),
+            )
+          ],
+        ),
       ),
     );
   }
