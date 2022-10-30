@@ -11,3 +11,6 @@ GeneratedPluginRegistrant.java
 key.properties
 **/*.keystore
 **/*.jks
+
+# ignore changes made where API key is displayed
+/app/src/main/AndroidManifest.xml
