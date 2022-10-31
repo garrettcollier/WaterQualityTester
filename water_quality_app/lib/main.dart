@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water_quality_app/home.dart';
+import 'package:water_quality_app/map.dart';
 
 Future<void> main() async {
   runApp(const SelectTesterPage());
@@ -7,8 +8,8 @@ Future<void> main() async {
 
 // dropdown list for types of water testers
 const List<String> list = <String>[
-  'Water Hardness Test Kit',
   'Complete 16 Parameter Test Kit'
+      'Water Hardness Test Kit',
 ];
 
 class SelectTesterPage extends StatelessWidget {
@@ -33,8 +34,10 @@ class _TesterDropdownState extends State<TesterDropdown> {
   // set initial value to first in list
   String dropdownValue = list.first;
 
-  // style the elevated button and dropdown
-  final ButtonStyle styleButton = ElevatedButton.styleFrom(
+  // style the elevated buttons and dropdown
+  final ButtonStyle styleButton1 = ElevatedButton.styleFrom(
+      textStyle: const TextStyle(fontSize: 20), backgroundColor: Colors.blue);
+  final ButtonStyle styleButton2 = ElevatedButton.styleFrom(
       textStyle: const TextStyle(fontSize: 20), backgroundColor: Colors.green);
   final TextStyle styleDropdown =
       const TextStyle(fontSize: 20, color: Colors.blue);
@@ -42,10 +45,9 @@ class _TesterDropdownState extends State<TesterDropdown> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Varify Water Tester')
-          // add varify logo at some point potentially
-          // SizedBox(child: Image.asset('assets/varify_logo.jpg', fit: BoxFit.contain)),
-          ),
+      appBar: AppBar(
+        title: const Text('Water Tester'),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(40.0),
         child: Column(
@@ -80,7 +82,7 @@ class _TesterDropdownState extends State<TesterDropdown> {
               width: 50,
             ),
             ElevatedButton(
-              style: styleButton,
+              style: styleButton1,
               onPressed: () {
                 Navigator.push(
                   context,
@@ -89,7 +91,19 @@ class _TesterDropdownState extends State<TesterDropdown> {
                   ),
                 );
               },
-              child: const Text('Choose this Test Type'),
+              child: const Text('Run a Test Using This Type'),
+            ),
+            ElevatedButton(
+              style: styleButton2,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MapPage(),
+                  ),
+                );
+              },
+              child: const Text("Don't Have a Test? View the Map"),
             )
           ],
         ),
