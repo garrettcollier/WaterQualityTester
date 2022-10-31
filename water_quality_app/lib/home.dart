@@ -40,9 +40,10 @@ class _NavigateState extends State<Navigate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Varify Water Tester'),
-      ),
+      appBar: AppBar(title: const Text('Varify Water Tester')
+          // add varify logo at some point potentially
+          // SizedBox(child: Image.asset('assets/varify_logo.jpg', fit: BoxFit.contain)),
+          ),
       body: Center(
         // display widget from _widgetoptions list
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -56,8 +57,8 @@ class _NavigateState extends State<Navigate> {
           ),
           BottomNavigationBarItem(
             // Home Page
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(Icons.integration_instructions),
+            label: 'Instructions',
           ),
           BottomNavigationBarItem(
             // Map Page

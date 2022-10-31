@@ -42,9 +42,10 @@ class _TesterDropdownState extends State<TesterDropdown> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Varify Water Tester'),
-      ),
+      appBar: AppBar(title: const Text('Varify Water Tester')
+          // add varify logo at some point potentially
+          // SizedBox(child: Image.asset('assets/varify_logo.jpg', fit: BoxFit.contain)),
+          ),
       body: Padding(
         padding: const EdgeInsets.all(40.0),
         child: Column(
