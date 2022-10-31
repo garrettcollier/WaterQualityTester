@@ -29,22 +29,36 @@ class CameraPageState extends State<CameraPage> {
         child: Column(
           children: [
             ElevatedButton(
-                onPressed: () async {
-                  image = await picker.pickImage(source: ImageSource.camera);
-                  setState(() {
+              onPressed: () async {
+                image = await picker.pickImage(source: ImageSource.camera);
+                setState(
+                  () {
                     //update UI
-                  });
-                },
-                child: const Text("Take Picture")),
+                  },
+                );
+              },
+              child: const Text("Take Picture"),
+            ),
             image == null
                 ? Expanded(
-                    child: Container(),
+                    child: Container(
+                      color: Colors.grey,
+                      child: const Center(
+                        child: Expanded(
+                          child: Text(
+                            'Waiting for you to take a picture...',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 40),
+                          ),
+                        ),
+                      ),
+                    ),
                   )
                 : Expanded(
                     child: Image.file(
                       File(image!.path),
                     ),
-                  )
+                  ),
           ],
         ),
       ),

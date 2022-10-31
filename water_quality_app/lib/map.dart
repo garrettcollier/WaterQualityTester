@@ -17,7 +17,24 @@ class MapPage extends StatefulWidget {
 class _MapPageState extends State<MapPage> {
   late GoogleMapController mapController;
 
-  // Conway, AR - longitude and latitude
+  // List of Markers Added on Google Map
+  // List<Marker> _marker = [];
+  final Set<Marker> _markerList = {
+    // List of Markers Added on Google Map
+    const Marker(
+        markerId: MarkerId('1'),
+        position: LatLng(34.42796133580664, -92.285749655962),
+        infoWindow: InfoWindow(
+            title: 'Location 1', snippet: 'Information on water here')),
+
+    const Marker(
+        markerId: MarkerId('2'),
+        position: LatLng(34.42796133580664, -92.885749655962),
+        infoWindow: InfoWindow(
+            title: 'Location 2', snippet: 'Information on water here')),
+  };
+
+  // Little Rock, AR - longitude and latitude - starting location
   final LatLng _center = const LatLng(34.74410314194924, -92.2840319378177);
 
   void _onMapCreated(GoogleMapController controller) {
@@ -32,8 +49,11 @@ class _MapPageState extends State<MapPage> {
           onMapCreated: _onMapCreated,
           initialCameraPosition: CameraPosition(
             target: _center,
-            zoom: 11.0,
+            zoom: 10.0,
           ),
+          markers: _markerList,
+          myLocationEnabled: true,
+          compassEnabled: true,
         ),
       ),
     );
