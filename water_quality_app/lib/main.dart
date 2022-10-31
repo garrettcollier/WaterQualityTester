@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water_quality_app/home.dart';
 
-void main() {
+Future<void> main() async {
   runApp(const SelectTesterPage());
 }
 
