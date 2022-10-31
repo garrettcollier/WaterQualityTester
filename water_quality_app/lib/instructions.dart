@@ -8,7 +8,7 @@ class InstructionPage extends StatelessWidget {
     return Scaffold(
       body: Align(
         alignment: Alignment.center,
-        child: Image.asset('assets/instructions.jpg', fit: BoxFit.cover),
+        child: Image.asset('assets/Instructions.jpg', fit: BoxFit.cover),
       ),
     );
   }
