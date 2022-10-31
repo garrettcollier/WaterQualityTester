@@ -5,8 +5,11 @@ class InstructionPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text('InstructionPage'),
+    return Scaffold(
+      body: Align(
+        alignment: Alignment.center,
+        child: Image.asset('assets/instructions.jpg', fit: BoxFit.cover),
+      ),
     );
   }
 }
