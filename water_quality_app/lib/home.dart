@@ -26,7 +26,7 @@ class _NavigateState extends State<Navigate> {
   int _selectedIndex = 1;
   static final List<Widget> _widgetOptions = <Widget>[
     const CameraPage(),
-    const InstructionPage(),
+    InstructionPage(),
     const MapPage()
   ];
 

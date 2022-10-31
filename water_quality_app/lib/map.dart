@@ -18,15 +18,12 @@ class _MapPageState extends State<MapPage> {
   late GoogleMapController mapController;
 
   // List of Markers Added on Google Map
-  // List<Marker> _marker = [];
   final Set<Marker> _markerList = {
-    // List of Markers Added on Google Map
     const Marker(
         markerId: MarkerId('1'),
         position: LatLng(34.42796133580664, -92.285749655962),
         infoWindow: InfoWindow(
             title: 'Location 1', snippet: 'Information on water here')),
-
     const Marker(
         markerId: MarkerId('2'),
         position: LatLng(34.42796133580664, -92.885749655962),
