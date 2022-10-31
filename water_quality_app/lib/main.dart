@@ -6,7 +6,10 @@ Future<void> main() async {
 }
 
 // dropdown list for types of water testers
-const List<String> list = <String>['Type1', 'Type2'];
+const List<String> list = <String>[
+  'Water Hardness Test Kit',
+  'Complete 16 Parameter Test Kit'
+];
 
 class SelectTesterPage extends StatelessWidget {
   const SelectTesterPage({super.key});
