@@ -10,28 +10,42 @@ class InstructionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: ElevatedButton(
-              style: styleButton,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SelectTesterPage(),
-                  ),
-                );
-              },
-              child: const Text('Choose the Wrong Test Type? Click Me!'),
+      // to scroll through page
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: ElevatedButton(
+                style: styleButton,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SelectTesterPage(),
+                    ),
+                  );
+                },
+                child: const Text('Choose the Wrong Test Type? Click Me!'),
+              ),
             ),
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: Image.asset('assets/Instructions.jpg', fit: BoxFit.cover),
-          ),
-        ],
+            // image one
+            Card(
+              elevation: 10,
+              child: Image.asset("assets/easy_to_follow.jpg"),
+            ),
+            // image two
+            Card(
+              elevation: 10,
+              child: Image.asset("assets/important_parameters.jpg"),
+            ),
+            // image three
+            Card(
+              elevation: 10,
+              child: Image.asset("assets/why_choose.jpg"),
+            ),
+          ],
+        ),
       ),
     );
   }
