@@ -1,66 +1,121 @@
-import 'package:flutter/material.dart';
 import 'dart:io';
 
-import 'package:image_picker/image_picker.dart';
+import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
+import 'package:water_quality_app/main.dart';
+import 'package:water_quality_app/results.dart';
 
 class CameraPage extends StatefulWidget {
-  const CameraPage({super.key});
+  const CameraPage({Key? key}) : super(key: key);
 
   @override
-  CameraPageState createState() => CameraPageState();
+  _CameraPageState createState() => _CameraPageState();
 }
 
-class CameraPageState extends State<CameraPage> {
-  // pick image and store image file
-  ImagePicker picker = ImagePicker();
-  XFile? image;
+class _CameraPageState extends State<CameraPage> {
+  CameraController? controller;
+  bool _isCameraInitialized = false;
 
-  // button style
-  final styleButton =
-      ElevatedButton.styleFrom(backgroundColor: Colors.lightGreenAccent);
+  void onNewCameraSelected(CameraDescription cameraDescription) async {
+    final previousCameraController = controller;
+    // Instantiating the camera controller
+    final CameraController cameraController = CameraController(
+      cameraDescription,
+      ResolutionPreset.high,
+      imageFormatGroup: ImageFormatGroup.jpeg,
+    );
+
+    // Dispose the previous controller
+    await previousCameraController?.dispose();
+
+    // Replace with the new controller
+    if (mounted) {
+      setState(() {
+        controller = cameraController;
+      });
+    }
+
+    // Update UI if controller updated
+    cameraController.addListener(() {
+      if (mounted) setState(() {});
+    });
+
+    // Initialize controller
+    try {
+      await cameraController.initialize();
+    } on CameraException catch (e) {
+      print('Error initializing camera: $e');
+    }
+
+    // Update the Boolean
+    if (mounted) {
+      setState(() {
+        _isCameraInitialized = controller!.value.isInitialized;
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    onNewCameraSelected(cameras[0]);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    controller?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding:
-            const EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 20),
-        alignment: Alignment.topCenter,
-        child: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () async {
-                image = await picker.pickImage(source: ImageSource.camera);
-                setState(
-                  () {
-                    //update UI
-                  },
-                );
-              },
-              child: const Text("Take Picture"),
+      body: Stack(
+        alignment: FractionalOffset.center,
+        children: <Widget>[
+          Positioned.fill(
+            // if camera is initialized then give preview
+            child: _isCameraInitialized
+                ? AspectRatio(
+                    aspectRatio: controller!.value.aspectRatio,
+                    child: CameraPreview(controller!))
+                : Container(),
+          ),
+          Positioned.fill(
+            child: Opacity(
+              opacity: 0.3,
+              // overlay border image
+              child: Image.asset('assets/camera/cameraborder.jpg'),
             ),
-            image == null
-                ? Expanded(
-                    child: Container(
-                      color: Colors.grey,
-                      child: const Center(
-                        child: Expanded(
-                          child: Text(
-                            'Waiting for you to take a picture...',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 40),
-                          ),
-                        ),
-                      ),
-                    ),
-                  )
-                : Expanded(
-                    child: Image.file(
-                      File(image!.path),
-                    ),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          // take the picture in a try / catch block
+          try {
+            if (_isCameraInitialized) {
+              // Attempt to take a picture and get the file `image`
+              XFile image = await controller!.takePicture();
+              File imageFile = File(image.path);
+
+              if (!mounted) return;
+
+              // If the picture was taken, display with results
+              await Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ResultsPage(
+                    image: imageFile,
                   ),
-          ],
-        ),
+                ),
+              );
+            }
+          } catch (e) {
+            // log the error to the console, if error occurs
+            print(e);
+          }
+        },
+        child: const Icon(Icons.camera_alt),
       ),
     );
   }
