@@ -19,6 +19,8 @@ class CameraPageState extends State<CameraPage> {
   final styleButton =
       ElevatedButton.styleFrom(backgroundColor: Colors.lightGreenAccent);
 
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,3 +67,5 @@ class CameraPageState extends State<CameraPage> {
     );
   }
 }
+
+//How to dientify each square from water tester in image.
