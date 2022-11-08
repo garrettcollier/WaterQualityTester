@@ -95,7 +95,7 @@ class _CameraPageState extends State<CameraPage> {
           // take the picture in a try / catch block
           try {
             if (_isCameraInitialized) {
-              // Attempt to take a picture and get the file `image`
+              // take a picture and get the file `image`
               XFile image = await controller!.takePicture();
               File imageFile = File(image.path);
 
