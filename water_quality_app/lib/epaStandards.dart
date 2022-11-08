@@ -1,7 +1,14 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
 
 class EPAStandards extends StatelessWidget {
   EPAStandards({super.key});
+
+  final standards = <String, String>{
+    "pH":
+        "U.S. EPA water quality criteria for pH in freshwater suggest a range of 6.5 to 9."
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +17,19 @@ class EPAStandards extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            TextButton(onPressed: () {}, child: Text("pH")),
+            TextButton(
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return const AlertDialog(
+                          title: Text("pH"), //https://www.epa.gov/caddis-vol2/ph#:~:text=U.S.%20EPA%20water%20quality%20criteria,range%20of%206.5%20to%209.
+                          content: Text(
+                              "U.S. EPA water quality criteria for pH in freshwater suggest a range of 6.5 to 9."),
+                        );
+                      });
+                },
+                child: Text("pH")),
             TextButton(onPressed: () {}, child: Text("Hydrogen Sulfide")),
             TextButton(onPressed: () {}, child: Text("Iron")),
             TextButton(onPressed: () {}, child: Text("Copper")),
