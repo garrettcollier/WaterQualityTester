@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water_quality_app/camera.dart';
+import 'package:water_quality_app/epaStandards.dart';
 import 'package:water_quality_app/instructions.dart';
 import 'package:water_quality_app/map.dart';
 
@@ -23,9 +24,10 @@ class Navigate extends StatefulWidget {
 }
 
 class _NavigateState extends State<Navigate> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 2;
   static final List<Widget> _widgetOptions = <Widget>[
     const CameraPage(),
+    EPAStandards(),
     InstructionPage(),
     const MapPage()
   ];
@@ -54,6 +56,9 @@ class _NavigateState extends State<Navigate> {
             icon: Icon(Icons.camera),
             label: 'Camera',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.water),
+            label: 'EPAStandards'),
           BottomNavigationBarItem(
             // Home Page
             icon: Icon(Icons.integration_instructions),
