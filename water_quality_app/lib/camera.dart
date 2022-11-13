@@ -17,8 +17,10 @@ class _CameraPageState extends State<CameraPage> {
   bool _isCameraInitialized = false;
 
   void onNewCameraSelected(CameraDescription cameraDescription) async {
+    // previous camera controller
     final previousCameraController = controller;
-    // Instantiating the camera controller
+
+    // instantiating the camera controller
     final CameraController cameraController = CameraController(
       cameraDescription,
       ResolutionPreset.high,
@@ -105,7 +107,7 @@ class _CameraPageState extends State<CameraPage> {
               await Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => ResultsPage(
-                    image: imageFile,
+                    imageFile: imageFile,
                   ),
                 ),
               );

@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:water_quality_app/image_with_rgb.dart';
 
 class ResultsPage extends StatelessWidget {
-  final File image;
+  const ResultsPage({super.key, required this.imageFile});
 
-  const ResultsPage({super.key, required this.image});
+  final File imageFile;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class ResultsPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Results'),
       ),
-      body: RGB(image: image),
+      body: RGB(image: imageFile),
     );
   }
 }

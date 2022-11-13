@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water_quality_app/camera.dart';
-import 'package:water_quality_app/epaStandards.dart';
+import 'package:water_quality_app/epa_standards.dart';
 import 'package:water_quality_app/instructions.dart';
 import 'package:water_quality_app/map.dart';
 
@@ -10,24 +10,26 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // home navigator for all pages
-    return const MaterialApp(
+    return MaterialApp(
       home: Navigate(),
     );
   }
 }
 
 class Navigate extends StatefulWidget {
-  const Navigate({super.key});
+  Navigate({super.key});
 
   @override
   State<Navigate> createState() => _NavigateState();
 }
 
+// all pages for navigation
 class _NavigateState extends State<Navigate> {
   int _selectedIndex = 2;
+  // options for page widgets
   static final List<Widget> _widgetOptions = <Widget>[
     const CameraPage(),
-    EPAStandards(),
+    const EPAStandards(),
     InstructionPage(),
     const MapPage()
   ];
@@ -50,15 +52,18 @@ class _NavigateState extends State<Navigate> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             // Camera Page
             icon: Icon(Icons.camera),
             label: 'Camera',
           ),
+          // EPA Standards Page
           BottomNavigationBarItem(
             icon: Icon(Icons.water),
-            label: 'EPAStandards'),
+            label: 'EPA Standards',
+          ),
           BottomNavigationBarItem(
             // Home Page
             icon: Icon(Icons.integration_instructions),
@@ -71,7 +76,8 @@ class _NavigateState extends State<Navigate> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.green,
         onTap: _onItemTapped,
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water_quality_app/main.dart';
+import 'package:water_quality_app/select_tester_type.dart';
 
 class InstructionPage extends StatelessWidget {
   InstructionPage({super.key});

@@ -52,9 +52,9 @@ class _RGBState extends State<RGB> {
                   end: Alignment.topCenter,
                   stops: const [0.01, 0.6, 1],
                   colors: [
-                    palette.first.withOpacity(0.3),
+                    palette.first,
                     palette[palette.length ~/ 2],
-                    palette.last.withOpacity(0.9),
+                    palette.last,
                   ],
                 ),
         ),
