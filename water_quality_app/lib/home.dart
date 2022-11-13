@@ -31,7 +31,7 @@ class _NavigateState extends State<Navigate> {
     const CameraPage(),
     const EPAStandards(),
     InstructionPage(),
-    const MapPage()
+    MapPage(fromNavHome: true)
   ];
 
   // update the index selected

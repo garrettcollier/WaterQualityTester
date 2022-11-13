@@ -8,7 +8,11 @@ import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 
 class MapPage extends StatefulWidget {
-  const MapPage({super.key});
+  MapPage({super.key, required this.fromNavHome});
+
+  // check if user comes from the
+  // bottom nav or from homepage button
+  bool fromNavHome;
 
   @override
   _MapPageState createState() => _MapPageState();
@@ -40,18 +44,17 @@ class _MapPageState extends State<MapPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: GoogleMap(
-          onMapCreated: _onMapCreated,
-          initialCameraPosition: CameraPosition(
-            target: _center,
-            zoom: 10.0,
-          ),
-          markers: _markerList,
-          myLocationEnabled: true,
-          compassEnabled: true,
+    return Scaffold(
+      appBar: widget.fromNavHome == false ? AppBar() : null,
+      body: GoogleMap(
+        onMapCreated: _onMapCreated,
+        initialCameraPosition: CameraPosition(
+          target: _center,
+          zoom: 10.0,
         ),
+        markers: _markerList,
+        myLocationEnabled: true,
+        compassEnabled: true,
       ),
     );
   }

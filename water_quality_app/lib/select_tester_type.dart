@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water_quality_app/home.dart';
+import 'package:water_quality_app/map.dart';
 
 // dropdown list for types of water testers
 const List<String> list = <String>[
@@ -97,7 +98,7 @@ class _TesterDropdownState extends State<TesterDropdown> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Navigate(),
+                    builder: (context) => MapPage(fromNavHome: false),
                   ),
                 );
               },
