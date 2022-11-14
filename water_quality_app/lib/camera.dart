@@ -69,6 +69,8 @@ class _CameraPageState extends State<CameraPage> {
     super.dispose();
   }
 
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,3 +124,5 @@ class _CameraPageState extends State<CameraPage> {
     );
   }
 }
+
+//How to dientify each square from water tester in image.
