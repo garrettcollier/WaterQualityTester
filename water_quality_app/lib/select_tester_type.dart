@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water_quality_app/authentication.dart';
 import 'package:water_quality_app/home.dart';
 import 'package:water_quality_app/map.dart';
 
