@@ -94,3 +94,7 @@ List<Color> extractPixelsColors(Uint8List? bytes) {
   // return all the colors from image
   return colors;
 }
+
+//square am i on
+//row in square
+// column in square
