@@ -5,8 +5,9 @@ class InstructionPage extends StatelessWidget {
   InstructionPage({super.key});
   // style elevated button
   final ButtonStyle styleButton = ElevatedButton.styleFrom(
-      textStyle: const TextStyle(fontSize: 20), backgroundColor: Colors.green);
-
+      textStyle: const TextStyle(fontSize: 20), 
+      backgroundColor: Colors.teal
+      );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +27,7 @@ class InstructionPage extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text('Choose the Wrong Test Type? Click Me!'),
+                child: const Text('Select Another Test'),
               ),
             ),
             // image one

@@ -62,7 +62,7 @@ class _CameraPageState extends State<CameraPage> {
 
   @override
   void initState() {
-    onNewCameraSelected(cameras[0]);
+    onNewCameraSelected(cameras[1]);
     super.initState();
   }
 
