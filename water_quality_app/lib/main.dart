@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:water_quality_app/begin.dart';
@@ -10,12 +11,22 @@ Future<void> main() async {
     WidgetsFlutterBinding.ensureInitialized();
     cameras = await availableCameras();
     await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-);
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    //anonymous sign-in
+    final userCredential = await FirebaseAuth.instance.signInAnonymously();
   } on CameraException catch (e) {
     print('Error in fetching the cameras: $e');
+  } on FirebaseAuthException catch (e) {
+    switch (e.code) {
+    case "operation-not-allowed":
+      print("Anonymous auth hasn't been enabled for this project.");
+      break;
+    default:
+      print("Unknown error.");
+  }
   }
   runApp(
     FrontPage(),
-    );
+  );
 }
