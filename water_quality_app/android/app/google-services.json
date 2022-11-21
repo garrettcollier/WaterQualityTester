@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "172517360734",
+    "project_id": "fir-flutter-codelab-5824f",
+    "storage_bucket": "fir-flutter-codelab-5824f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172517360734:android:82e739bc9295553a5720cf",
+        "android_client_info": {
+          "package_name": "com.example.gtk_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "172517360734-4290pcbpfg3ae2cn3d525emupoet13f1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADoZenk5L3BygfkJKmgoaSG-rDH4fJi0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "172517360734-4290pcbpfg3ae2cn3d525emupoet13f1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "172517360734-8laiprbk5cdb406tr98mihse1n23fg4o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "waterQualityApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172517360734:android:e0350744631916445720cf",
+        "android_client_info": {
+          "package_name": "com.example.water_quality_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "172517360734-4290pcbpfg3ae2cn3d525emupoet13f1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADoZenk5L3BygfkJKmgoaSG-rDH4fJi0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "172517360734-4290pcbpfg3ae2cn3d525emupoet13f1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "172517360734-8laiprbk5cdb406tr98mihse1n23fg4o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "waterQualityApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
