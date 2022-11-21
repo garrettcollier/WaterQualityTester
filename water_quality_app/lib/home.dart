@@ -11,6 +11,9 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     // home navigator for all pages
     return MaterialApp(
+      theme: ThemeData(
+         primarySwatch: Colors.cyan
+      ),
       home: Navigate(),
     );
   }
@@ -45,7 +48,7 @@ class _NavigateState extends State<Navigate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Water Tester'),
+        title: const Text('Water Quality Tester'),
       ),
       body: Center(
         // display widget from _widgetoptions list
@@ -76,8 +79,8 @@ class _NavigateState extends State<Navigate> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.green,
+        selectedItemColor: Colors.cyan,
+        unselectedItemColor: Color.fromARGB(255, 75, 128, 116),
         onTap: _onItemTapped,
       ),
     );

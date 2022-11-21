@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:water_quality_app/home.dart';
+import 'package:water_quality_app/select_tester_type.dart';
 
 class FrontPage extends StatelessWidget {
-  FrontPage({super.key});
+  const FrontPage({super.key});
         @override
         Widget build(BuildContext context) {
           return MaterialApp(
+            theme: ThemeData(
+              primarySwatch: Colors.cyan
+            ),
             home: Front(),
         );
         }
@@ -48,7 +51,7 @@ class _FrontState extends State<Front> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const Home(),
+                      builder: (context) => const SelectTesterPage(),
                     ),
                   );
               },

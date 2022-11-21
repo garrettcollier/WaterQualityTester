@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:water_quality_app/begin.dart';
 import 'package:water_quality_app/home.dart';
 import 'package:water_quality_app/map.dart';
 
@@ -14,7 +13,10 @@ class SelectTesterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(
+         primarySwatch: Colors.cyan
+      ),
       home: TesterDropdown(),
     );
   }
@@ -33,17 +35,17 @@ class _TesterDropdownState extends State<TesterDropdown> {
 
   // style the elevated buttons and dropdown
   final ButtonStyle styleButton1 = ElevatedButton.styleFrom(
-      textStyle: const TextStyle(fontSize: 20), backgroundColor: Colors.blue);
+      textStyle: const TextStyle(fontSize: 20), backgroundColor: Colors.teal);
   final ButtonStyle styleButton2 = ElevatedButton.styleFrom(
-      textStyle: const TextStyle(fontSize: 20), backgroundColor: Colors.green);
+      textStyle: const TextStyle(fontSize: 20), backgroundColor: Colors.teal);
   final TextStyle styleDropdown =
-      const TextStyle(fontSize: 20, color: Colors.blue);
+      const TextStyle(fontSize: 20, color: Colors.black);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Water Tester'),
+        title: const Text('Water Quality Tester'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(40.0),
@@ -89,7 +91,7 @@ class _TesterDropdownState extends State<TesterDropdown> {
                 );
               },
               child: const Text(
-                'Run a Test Using This Type',
+                'Test Water',
                 textAlign: TextAlign.center,
               ),
             ),
@@ -103,7 +105,7 @@ class _TesterDropdownState extends State<TesterDropdown> {
                   ),
                 );
               },
-              child: const Text("Don't Have a Test? View the Map",
+              child: const Text("View Map",
                   textAlign: TextAlign.center),
             )
           ],
