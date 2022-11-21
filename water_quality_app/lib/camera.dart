@@ -2,8 +2,11 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+
 import 'package:water_quality_app/main.dart';
 import 'package:water_quality_app/results.dart';
+
+import 'package:flutter_native_image/flutter_native_image.dart';
 
 class CameraPage extends StatefulWidget {
   const CameraPage({Key? key}) : super(key: key);
@@ -69,8 +72,6 @@ class _CameraPageState extends State<CameraPage> {
     super.dispose();
   }
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,9 +100,16 @@ class _CameraPageState extends State<CameraPage> {
           // take the picture in a try / catch block
           try {
             if (_isCameraInitialized) {
-              // take a picture and get the file `image`
-              XFile image = await controller!.takePicture();
-              File imageFile = File(image.path);
+              // turn off flash (affects light vs dark colors)
+              controller!.setFlashMode(FlashMode.off);
+              // take a picture and get the XFile as File
+              XFile imageXFile = await controller!.takePicture();
+              File imageFile = File(imageXFile.path);
+
+              // crop image - file path, originX, originY, width, height
+              // LOOKS RIGHT ON ANDROID OUTPUT BUT MAY NOT ON OTHER PHONES
+              File croppedImage = await FlutterNativeImage.cropImage(
+                  imageFile.path, 90, 70, 1100, 650);
 
               if (!mounted) return;
 
@@ -109,7 +117,7 @@ class _CameraPageState extends State<CameraPage> {
               await Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => ResultsPage(
-                    image: imageFile,
+                    image: croppedImage,
                   ),
                 ),
               );
@@ -124,5 +132,3 @@ class _CameraPageState extends State<CameraPage> {
     );
   }
 }
-
-//How to dientify each square from water tester in image.
