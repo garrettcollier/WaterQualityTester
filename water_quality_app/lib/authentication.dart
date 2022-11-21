@@ -1,3 +1,5 @@
+//from flutterfire tutorial
+
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -29,16 +31,6 @@ class AuthFunc extends StatelessWidget { //for signing into the database
               },
               child: !loggedIn ? const Text('Access Database') : const Text('Logout')),
         ),
-        Visibility(
-            visible: loggedIn,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 24, bottom: 8),
-              child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed('/profile');
-                  },
-                  child: const Text('Profile')),
-            ))
       ],
     );
   }
