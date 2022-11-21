@@ -8,9 +8,9 @@ const String keyPalette = 'palette';
 const String keyNoOfItems = 'noIfItems';
 
 // number of pixels for grid row
-int noOfPixelsPerAxis = 12;
+int noOfPixelsPerAxis = 16;
 
-// get the average color for RGB
+// get the average color for Color list
 Color getAverageColor(List<Color> colors) {
   int r = 0, g = 0, b = 0;
 
@@ -25,6 +25,34 @@ Color getAverageColor(List<Color> colors) {
   b = b ~/ colors.length;
 
   return Color.fromRGBO(r, g, b, 1);
+}
+
+// get lighest color index for Color list
+int getLighestColorIndex(List<Color> colors) {
+  // check the first 20 colors for the lightest color
+  for (int i = 0; i < 20; i++) {
+    if ((colors[i].red >= 100) ||
+        (colors[i].green >= 100) ||
+        (colors[i].blue >= 100)) {
+      return i;
+    }
+  }
+  // should add a check to rerun the test by reseting camera potentially
+  print("No light color found!");
+  return 0;
+}
+
+// pick single column from Color list
+List<Color> getSingleColumnFromListIndex(List<Color> colors, int index) {
+  // new return list
+  List<Color> newList = [];
+  // get every nth element in the list (represents the column)
+  for (int i = index; i < colors.length; i += index) {
+    newList.add(colors[i]);
+    print(colors[i]);
+  }
+  print(newList);
+  return newList;
 }
 
 // translate RGB to actual color
