@@ -1,8 +1,12 @@
+
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:water_quality_app/camera.dart';
 import 'package:water_quality_app/epa_standards.dart';
 import 'package:water_quality_app/instructions.dart';
 import 'package:water_quality_app/map.dart';
+import 'package:water_quality_app/results.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -34,7 +38,9 @@ class _NavigateState extends State<Navigate> {
     const CameraPage(),
     const EPAStandards(),
     InstructionPage(),
-    MapPage(fromNavHome: true)
+    MapPage(fromNavHome: true) //,
+    //ResultsPage(image: File('/Users/alexandriacade/WaterQualityTester/water_quality_app/assets/Varify Color Samples/Copper_Colors/Copper_0.1.jpg'))
+    //Results page file input needs adjustment
   ];
 
   // update the index selected
@@ -77,6 +83,7 @@ class _NavigateState extends State<Navigate> {
             icon: Icon(Icons.map),
             label: 'Map',
           ),
+          BottomNavigationBarItem(icon: Icon(Icons.question_mark), label: 'Results')
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.cyan,

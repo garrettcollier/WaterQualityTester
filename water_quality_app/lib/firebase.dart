@@ -19,4 +19,4 @@ final LeadCollection = FirebaseFirestore.instance.collection('Lead');
 final HydrogenSulfideCollection = FirebaseFirestore.instance.collection('HydrogenSulfide');
 final FreeChlorineCollection = FirebaseFirestore.instance.collection('FreeChlorine');
 final FlourideCollection = FirebaseFirestore.instance.collection('Flouride');
-final CopperCollecction = FirebaseFirestore.instance.collection('Copper');
+final CopperCollection = FirebaseFirestore.instance.collection('Copper');
