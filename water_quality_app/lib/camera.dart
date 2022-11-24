@@ -108,8 +108,8 @@ class _CameraPageState extends State<CameraPage> {
 
               // crop image - file path, originX, originY, width, height
               // LOOKS RIGHT ON ANDROID OUTPUT BUT MAY NOT ON OTHER PHONES
-              File croppedImage = await FlutterNativeImage.cropImage(
-                  imageFile.path, 90, 70, 1100, 650);
+          //    File croppedImage = await FlutterNativeImage.cropImage(
+           //       imageFile.path, 90, 70, 1100, 650);
 
               if (!mounted) return;
 
@@ -117,7 +117,7 @@ class _CameraPageState extends State<CameraPage> {
               await Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => ResultsPage(
-                    image: croppedImage,
+                   image: imageFile,
                   ),
                 ),
               );
