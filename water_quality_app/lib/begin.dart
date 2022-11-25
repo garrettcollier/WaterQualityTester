@@ -65,6 +65,7 @@ class _FrontState extends State<Front> {
                 style: const TextStyle(fontSize: 20),
               ),
             ),
+            
   
           ],
       ),

@@ -83,7 +83,7 @@ class _NavigateState extends State<Navigate> {
             icon: Icon(Icons.map),
             label: 'Map',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.question_mark), label: 'Results')
+          // for results pageBottomNavigationBarItem(icon: Icon(Icons.question_mark), label: 'Results')
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.cyan,

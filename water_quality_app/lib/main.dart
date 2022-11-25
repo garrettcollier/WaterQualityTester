@@ -11,20 +11,28 @@ Future<void> main() async {
     WidgetsFlutterBinding.ensureInitialized();
     cameras = await availableCameras();
     await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
+        options: DefaultFirebaseOptions.currentPlatform);
+    final FirebaseAuth auth = FirebaseAuth.instance;
     //anonymous sign-in
+    // UserCredential userCredential =
+    //     await auth.signInAnonymously();
+    // var currentUser = userCredential.user;
+    // if (currentUser != null) {
+    //   print(currentUser.uid);
+    // }
     final userCredential = await FirebaseAuth.instance.signInAnonymously();
+    print("Signed in with temp account");
   } on CameraException catch (e) {
     print('Error in fetching the cameras: $e');
   } on FirebaseAuthException catch (e) {
     switch (e.code) {
-    case "operation-not-allowed":
-      print("Anonymous auth hasn't been enabled for this project.");
-      break;
-    default:
-      print("Unknown error.");
-  }
+      case "operation-not-allowed":
+        print("Anonymous auth hasn't been enabled for this project.");
+        break;
+      default:
+        print("Unknown error.");
+        print(e.code);
+    }
   }
   runApp(
     FrontPage(),
