@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water_quality_app/camera.dart';
+import 'package:water_quality_app/camera_instructions.dart';
 import 'package:water_quality_app/epa_standards.dart';
 import 'package:water_quality_app/instructions.dart';
 import 'package:water_quality_app/map.dart';
@@ -11,9 +11,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     // home navigator for all pages
     return MaterialApp(
-      theme: ThemeData(
-         primarySwatch: Colors.cyan
-      ),
+      theme: ThemeData(primarySwatch: Colors.cyan),
       home: Navigate(),
     );
   }
@@ -31,7 +29,7 @@ class _NavigateState extends State<Navigate> {
   int _selectedIndex = 2;
   // options for page widgets
   static final List<Widget> _widgetOptions = <Widget>[
-    const CameraPage(),
+    CameraInstructionPage(),
     const EPAStandards(),
     InstructionPage(),
     MapPage(fromNavHome: true)
@@ -80,7 +78,7 @@ class _NavigateState extends State<Navigate> {
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.cyan,
-        unselectedItemColor: Color.fromARGB(255, 75, 128, 116),
+        unselectedItemColor: const Color.fromARGB(255, 75, 128, 116),
         onTap: _onItemTapped,
       ),
     );
