@@ -6,8 +6,6 @@ import 'package:camera/camera.dart';
 import 'package:water_quality_app/main.dart';
 import 'package:water_quality_app/results.dart';
 
-import 'package:flutter_native_image/flutter_native_image.dart';
-
 class CameraPage extends StatefulWidget {
   const CameraPage({Key? key}) : super(key: key);
 
@@ -62,7 +60,7 @@ class _CameraPageState extends State<CameraPage> {
 
   @override
   void initState() {
-    onNewCameraSelected(cameras[1]);
+    onNewCameraSelected(cameras[0]);
     super.initState();
   }
 
@@ -75,6 +73,7 @@ class _CameraPageState extends State<CameraPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Stack(
         alignment: FractionalOffset.center,
         children: <Widget>[
@@ -106,18 +105,13 @@ class _CameraPageState extends State<CameraPage> {
               XFile imageXFile = await controller!.takePicture();
               File imageFile = File(imageXFile.path);
 
-              // crop image - file path, originX, originY, width, height
-              // LOOKS RIGHT ON ANDROID OUTPUT BUT MAY NOT ON OTHER PHONES
-              File croppedImage = await FlutterNativeImage.cropImage(
-                  imageFile.path, 90, 70, 1100, 650);
-
               if (!mounted) return;
 
               // If the picture was taken, display with results
               await Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => ResultsPage(
-                    image: croppedImage,
+                    image: imageFile,
                   ),
                 ),
               );
