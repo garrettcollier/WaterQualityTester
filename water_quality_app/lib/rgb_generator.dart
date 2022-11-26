@@ -31,9 +31,9 @@ Color getAverageColor(List<Color> colors) {
 int getLighestColorIndex(List<Color> colors) {
   // check the first 20 colors for the lightest color
   for (int i = 0; i < 20; i++) {
-    if ((colors[i].red >= 100) ||
-        (colors[i].green >= 100) ||
-        (colors[i].blue >= 100)) {
+    if ((colors[i].red >= 150) ||
+        (colors[i].green >= 150) ||
+        (colors[i].blue >= 150)) {
       return i;
     }
   }
