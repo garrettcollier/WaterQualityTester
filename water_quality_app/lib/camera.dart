@@ -111,7 +111,7 @@ class _CameraPageState extends State<CameraPage> {
               await Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => ResultsPage(
-                   image: imageFile,
+                    image: imageFile,
                   ),
                 ),
               );
