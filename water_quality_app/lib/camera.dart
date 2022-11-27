@@ -106,11 +106,6 @@ class _CameraPageState extends State<CameraPage> {
               XFile imageXFile = await controller!.takePicture();
               File imageFile = File(imageXFile.path);
 
-              // crop image - file path, originX, originY, width, height
-              // LOOKS RIGHT ON ANDROID OUTPUT BUT MAY NOT ON OTHER PHONES
-          //    File croppedImage = await FlutterNativeImage.cropImage(
-           //       imageFile.path, 90, 70, 1100, 650);
-
               if (!mounted) return;
 
               // If the picture was taken, display with results
