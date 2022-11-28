@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:water_quality_app/image_with_rgb.dart';
+import 'package:water_quality_app/firebase.dart' as firebase;
 
 class ResultsPage extends StatelessWidget {
   final File image;
