@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
-import 'package:water_quality_app/front_page.dart';
+import 'package:water_quality_app/begin.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
