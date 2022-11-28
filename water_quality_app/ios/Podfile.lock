@@ -617,7 +617,7 @@ PODS:
   - Firebase/Firestore (10.2.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 10.2.0)
-  - firebase_auth (4.1.3):
+  - firebase_auth (4.1.4):
     - Firebase/Auth (= 10.2.0)
     - firebase_core
     - Flutter
@@ -815,7 +815,7 @@ SPEC CHECKSUMS:
   camera_avfoundation: 07c77549ea54ad95d8581be86617c094a46280d9
   cloud_firestore: 14451f06cca99dbd56b069624621063150fef3e5
   Firebase: a3ea7eba4382afd83808376edb99acdaff078dcf
-  firebase_auth: dc7124acfe6adb5823dcc4f3063c6b5ab6f92428
+  firebase_auth: 2e7181850b75b99cdf7eccffa35def8f7704b905
   firebase_core: db1432de826785171029b7c1a26e5b22ce1dd477
   FirebaseAuth: 08e7739244eeae5216d0a3f8d9f16a76be9c252e
   FirebaseCore: 813838072b797b64f529f3c2ee35e696e5641dd1

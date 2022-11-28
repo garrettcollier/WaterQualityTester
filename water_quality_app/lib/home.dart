@@ -1,4 +1,3 @@
-
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -7,6 +6,7 @@ import 'package:water_quality_app/epa_standards.dart';
 import 'package:water_quality_app/instructions.dart';
 import 'package:water_quality_app/map.dart';
 import 'package:water_quality_app/results.dart';
+import 'package:water_quality_app/firebase.dart' as firebase;
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -15,9 +15,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     // home navigator for all pages
     return MaterialApp(
-      theme: ThemeData(
-         primarySwatch: Colors.cyan
-      ),
+      theme: ThemeData(primarySwatch: Colors.cyan),
       home: Navigate(),
     );
   }
