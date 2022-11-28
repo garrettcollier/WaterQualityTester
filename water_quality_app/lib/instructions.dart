@@ -5,9 +5,8 @@ class InstructionPage extends StatelessWidget {
   InstructionPage({super.key});
   // style elevated button
   final ButtonStyle styleButton = ElevatedButton.styleFrom(
-      textStyle: const TextStyle(fontSize: 20), 
-      backgroundColor: Colors.teal
-      );
+      textStyle: const TextStyle(fontSize: 20), backgroundColor: Colors.teal);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
