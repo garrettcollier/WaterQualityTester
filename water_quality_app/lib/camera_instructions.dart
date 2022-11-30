@@ -47,7 +47,13 @@ class CameraInstructionPage extends StatelessWidget {
               Card(
                 margin: margin,
                 child: Text(
-                    "3. Make sure to use a DARK background (preferably black)",
+                    "3. IMPORTANT!!! Put the white part of the test strip at the very top of the image preview",
+                    style: textstyle),
+              ),
+              Card(
+                margin: margin,
+                child: Text(
+                    "4. Make sure to use a DARK background (preferably black)",
                     style: textstyle),
               ),
             ],
