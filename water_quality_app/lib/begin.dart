@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water_quality_app/select_tester_type.dart';
+import 'package:water_quality_app/firebase.dart' as firebase;
 
 class FrontPage extends StatelessWidget {
   const FrontPage({super.key});
@@ -62,6 +63,11 @@ class _FrontState extends State<Front> {
                 style: const TextStyle(fontSize: 20),
               ),
             ),
+            TextButton(
+                onPressed: () {
+                  firebase.Firestore.addMeasurement("pH", {"pH": 8});
+                },
+                child: Text("Test button"))
           ],
         ),
       ),

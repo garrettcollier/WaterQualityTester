@@ -11,15 +11,26 @@ final db = FirebaseFirestore.instance;
 //init database collections
 final pHCollection = db.collection('pH');
 final ZincCollection = FirebaseFirestore.instance.collection('Zinc');
-final TotalChlorineCollection =FirebaseFirestore.instance.collection('TotalChlorine');
-final TotalAlkalineCollection =FirebaseFirestore.instance.collection('TotalAlkaline');
+final TotalChlorineCollection =
+    FirebaseFirestore.instance.collection('TotalChlorine');
+final TotalAlkalineCollection =
+    FirebaseFirestore.instance.collection('TotalAlkaline');
 final SulfateCollection = FirebaseFirestore.instance.collection('Sulfate');
-final SodiumChlorideCollection =FirebaseFirestore.instance.collection('SodiumChloride');
+final SodiumChlorideCollection =
+    FirebaseFirestore.instance.collection('SodiumChloride');
 final NitriteCollection = FirebaseFirestore.instance.collection('Nitrite');
 final NitrateCollection = FirebaseFirestore.instance.collection('Nitrate');
 final ManganeseCollection = FirebaseFirestore.instance.collection('Manganese');
 final LeadCollection = FirebaseFirestore.instance.collection('Lead');
-final HydrogenSulfideCollection =FirebaseFirestore.instance.collection('HydrogenSulfide');
-final FreeChlorineCollection =FirebaseFirestore.instance.collection('FreeChlorine');
+final HydrogenSulfideCollection =
+    FirebaseFirestore.instance.collection('HydrogenSulfide');
+final FreeChlorineCollection =
+    FirebaseFirestore.instance.collection('FreeChlorine');
 final FlourideCollection = FirebaseFirestore.instance.collection('Flouride');
 final CopperCollection = FirebaseFirestore.instance.collection('Copper');
+
+class Firestore {
+  static Future addMeasurement(String collection, Map<String, int> data) async {
+    await FirebaseFirestore.instance.collection(collection).add(data);
+  }
+}
