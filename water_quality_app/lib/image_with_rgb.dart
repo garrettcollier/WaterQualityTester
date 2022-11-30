@@ -4,7 +4,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:water_quality_app/begin.dart';
+import 'package:water_quality_app/home.dart';
+import 'package:water_quality_app/map.dart';
 import 'package:water_quality_app/rgb_generator.dart';
+
+// geolocation to get current location
+import 'package:geolocator/geolocator.dart';
 
 // RGB class storing all RGB information from image file
 class RGB extends StatefulWidget {
@@ -216,25 +223,25 @@ class _RGBState extends State<RGB> {
 // }
 
 // GETS PALETTE OF COLORS FROM IMAGE
-  // widget to get the palette
-  // Widget _getPalette() {
-  //   return SizedBox(
-  //     height: 50,
-  //     child: palette.isEmpty
-  //         ? Container(
-  //             alignment: Alignment.center,
-  //             height: 100,
-  //             child: const CircularProgressIndicator(),
-  //           )
-  //         : ListView.builder(
-  //             shrinkWrap: true,
-  //             scrollDirection: Axis.horizontal,
-  //             itemCount: palette.length,
-  //             itemBuilder: (BuildContext context, int index) => Container(
-  //               color: palette[index],
-  //               height: 50,
-  //               width: 50,
-  //             ),
-  //           ),
-  //   );
-  // }
+// widget to get the palette
+// Widget _getPalette() {
+//   return SizedBox(
+//     height: 50,
+//     child: palette.isEmpty
+//         ? Container(
+//             alignment: Alignment.center,
+//             height: 100,
+//             child: const CircularProgressIndicator(),
+//           )
+//         : ListView.builder(
+//             shrinkWrap: true,
+//             scrollDirection: Axis.horizontal,
+//             itemCount: palette.length,
+//             itemBuilder: (BuildContext context, int index) => Container(
+//               color: palette[index],
+//               height: 50,
+//               width: 50,
+//             ),
+//           ),
+//   );
+// }
