@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water_quality_app/select_tester_type.dart';
+import 'package:water_quality_app/firebase.dart' as firebase;
 
 class FrontPage extends StatelessWidget {
   const FrontPage({super.key});

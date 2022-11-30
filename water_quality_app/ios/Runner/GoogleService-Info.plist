@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>172517360734-8laiprbk5cdb406tr98mihse1n23fg4o.apps.googleusercontent.com</string>
+	<string>1059046013178-5o2phou8988bo9a9k023q68krimj80v7.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.172517360734-8laiprbk5cdb406tr98mihse1n23fg4o</string>
+	<string>com.googleusercontent.apps.1059046013178-5o2phou8988bo9a9k023q68krimj80v7</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAzSllYEhrNZGBMFZiw0-XKTLh3HwzbOAY</string>
+	<string>AIzaSyBTrEOSJyXF4neTlfLQJguMKhI9EUqWvZ0</string>
 	<key>GCM_SENDER_ID</key>
-	<string>172517360734</string>
+	<string>1059046013178</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>waterQualityApp</string>
 	<key>PROJECT_ID</key>
-	<string>fir-flutter-codelab-5824f</string>
+	<string>waterqualityapp-ef1f6</string>
 	<key>STORAGE_BUCKET</key>
-	<string>fir-flutter-codelab-5824f.appspot.com</string>
+	<string>waterqualityapp-ef1f6.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:172517360734:ios:a3a970294fd6175b5720cf</string>
+	<string>1:1059046013178:ios:8896e003c2fc90d4cef143</string>
 </dict>
 </plist>
