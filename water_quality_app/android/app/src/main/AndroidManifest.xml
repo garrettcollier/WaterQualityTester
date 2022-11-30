@@ -3,6 +3,9 @@
    
    <!-- Permission for accessing `camera` -->
    <uses-permission android:name="android.permission.CAMERA"/>
+   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+   <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
 
    <application
         android:label="water_quality_app"
