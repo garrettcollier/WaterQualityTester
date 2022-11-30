@@ -92,7 +92,7 @@ class EPAStandards extends StatelessWidget {
                             title: Text("Manganese"),
                             content: Text(
                                 "EPA Standard Recommended Limit: 0.05 mg/L. \nCauses black/brown color, bitter metallic taste",
-                                style: textstyle2 ),
+                                style: textstyle2, ),
                           );
                         });
                   },
@@ -106,7 +106,7 @@ class EPAStandards extends StatelessWidget {
                             title: Text("Total Chlorine"),
                             content: Text(
                                 "EPA Standard Recommended Limit: 4 mg/L. \nCauses skin irritation and stomach discomfort",
-                                style: textstyle2),
+                                style: textstyle2, ),
                           );
                         });
                   },
@@ -119,7 +119,8 @@ class EPAStandards extends StatelessWidget {
                           return const AlertDialog(
                             title: Text("Free Chlorine"),
                             content: Text(
-                                "EPA Standard Recommended Limit: . \nCauses "),
+                                "EPA Standard Recommended Limit: . \nCauses ",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -132,7 +133,8 @@ class EPAStandards extends StatelessWidget {
                           return const AlertDialog(
                             title: Text("Nitrate"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 10 mg/L. \nCauses Blue Baby syndrome in infants under 6 months, shortness of breath, nausea, and dizziness"),
+                                "EPA Standard Recommended Limit: 10 mg/L. \nCauses Blue Baby syndrome in infants under 6 months, shortness of breath, nausea, and dizziness",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -145,7 +147,8 @@ class EPAStandards extends StatelessWidget {
                           return const AlertDialog(
                             title: Text("Nitrite"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 1 mg/L. \nCauses Blue Baby Syndrome in infants under 6 months, shortness of breath, nausea, and dizziness"),
+                                "EPA Standard Recommended Limit: 1 mg/L. \nCauses Blue Baby Syndrome in infants under 6 months, shortness of breath, nausea, and dizziness",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -158,7 +161,8 @@ class EPAStandards extends StatelessWidget {
                           return const AlertDialog(
                             title: Text("Sulfate"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 250 mg/L. \nCauses salty taste"),
+                                "EPA Standard Recommended Limit: 250 mg/L. \nCauses salty taste",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -171,7 +175,8 @@ class EPAStandards extends StatelessWidget {
                           return const AlertDialog(
                             title: Text("Zinc"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 5 mg/L. \nCauses metallic taste"),
+                                "EPA Standard Recommended Limit: 5 mg/L. \nCauses metallic taste",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -184,7 +189,8 @@ class EPAStandards extends StatelessWidget {
                           return const AlertDialog(
                             title: Text("Flouride"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 4 mg/L. \nCauses bone disease and mottied teeth"),
+                                "EPA Standard Recommended Limit: 4 mg/L. \nCauses bone disease and mottied teeth",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -197,7 +203,8 @@ class EPAStandards extends StatelessWidget {
                           return const AlertDialog(
                             title: Text("Sodium Chloride"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 250 mg/L. \nCauses bloating, swollen hands and feet"),
+                                "EPA Standard Recommended Limit: 250 mg/L. \nCauses bloating, swollen hands and feet",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -210,7 +217,8 @@ class EPAStandards extends StatelessWidget {
                           return const AlertDialog(
                             title: Text("Total Alkalinity"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 75-150 mg/L. \nLow alkalinity associated with acidic pH and corrosion"),
+                                "EPA Standard Recommended Limit: 75-150 mg/L. \nLow alkalinity associated with acidic pH and corrosion",
+                                style: textstyle2),
                           );
                         });
                   },
