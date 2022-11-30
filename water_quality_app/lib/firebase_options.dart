@@ -44,39 +44,39 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDS1MGmnQpfP7nDFr3bGl2ARbEQXHKhjC0',
-    appId: '1:1059046013178:web:4b7142a00ecc085bcef143',
-    messagingSenderId: '1059046013178',
-    projectId: 'waterqualityapp-ef1f6',
-    authDomain: 'waterqualityapp-ef1f6.firebaseapp.com',
-    storageBucket: 'waterqualityapp-ef1f6.appspot.com',
+    apiKey: 'AIzaSyDWED9G7OquZcAlxAjMEG_R8-VVgv0kYOw',
+    appId: '1:172517360734:web:b65c426bb23b36585720cf',
+    messagingSenderId: '172517360734',
+    projectId: 'fir-flutter-codelab-5824f',
+    authDomain: 'fir-flutter-codelab-5824f.firebaseapp.com',
+    storageBucket: 'fir-flutter-codelab-5824f.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAzChqJZccqRvzipChe8pqsgG6WP38g9to',
-    appId: '1:1059046013178:android:2821c66b9b930a83cef143',
-    messagingSenderId: '1059046013178',
-    projectId: 'waterqualityapp-ef1f6',
-    storageBucket: 'waterqualityapp-ef1f6.appspot.com',
+    apiKey: 'AIzaSyADoZenk5L3BygfkJKmgoaSG-rDH4fJi0g',
+    appId: '1:172517360734:android:e0350744631916445720cf',
+    messagingSenderId: '172517360734',
+    projectId: 'fir-flutter-codelab-5824f',
+    storageBucket: 'fir-flutter-codelab-5824f.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBTrEOSJyXF4neTlfLQJguMKhI9EUqWvZ0',
-    appId: '1:1059046013178:ios:544678dc2cfa44b5cef143',
-    messagingSenderId: '1059046013178',
-    projectId: 'waterqualityapp-ef1f6',
-    storageBucket: 'waterqualityapp-ef1f6.appspot.com',
-    iosClientId: '1059046013178-527aerigv0fs66eeukkgdm4b938ake68.apps.googleusercontent.com',
-    iosBundleId: 'waterQualitytestApp',
+    apiKey: 'AIzaSyAzSllYEhrNZGBMFZiw0-XKTLh3HwzbOAY',
+    appId: '1:172517360734:ios:a3a970294fd6175b5720cf',
+    messagingSenderId: '172517360734',
+    projectId: 'fir-flutter-codelab-5824f',
+    storageBucket: 'fir-flutter-codelab-5824f.appspot.com',
+    iosClientId: '172517360734-8laiprbk5cdb406tr98mihse1n23fg4o.apps.googleusercontent.com',
+    iosBundleId: 'waterQualityApp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBTrEOSJyXF4neTlfLQJguMKhI9EUqWvZ0',
-    appId: '1:1059046013178:ios:fe7d30ba0f1342cccef143',
-    messagingSenderId: '1059046013178',
-    projectId: 'waterqualityapp-ef1f6',
-    storageBucket: 'waterqualityapp-ef1f6.appspot.com',
-    iosClientId: '1059046013178-j0md5mj2eet31s95b80dr3rv1831a825.apps.googleusercontent.com',
+    apiKey: 'AIzaSyAzSllYEhrNZGBMFZiw0-XKTLh3HwzbOAY',
+    appId: '1:172517360734:ios:d206eb533ce4baf55720cf',
+    messagingSenderId: '172517360734',
+    projectId: 'fir-flutter-codelab-5824f',
+    storageBucket: 'fir-flutter-codelab-5824f.appspot.com',
+    iosClientId: '172517360734-l2oq3jnkae8ecnl692loafn1n26d6216.apps.googleusercontent.com',
     iosBundleId: 'com.example.waterQualityApp',
   );
 }

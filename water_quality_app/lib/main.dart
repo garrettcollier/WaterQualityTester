@@ -9,16 +9,20 @@ import 'package:water_quality_app/firebase.dart' as firebase;
 
 List<CameraDescription> cameras = [];
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  await FirebaseAuth.instance.signInAnonymously();
-  //final db = FirebaseFirestore.instance; //in firebase.dart file
-  //firebase.startInitializeDatabase();
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+    final db = FirebaseFirestore.instance;
   try {
     cameras = await availableCameras();
+    //anonymous sign-in
+    // UserCredential userCredential =
+    //     await auth.signInAnonymously();
+    // var currentUser = userCredential.user;
+    // if (currentUser != null) {
+    //   print(currentUser.uid);
+    // }
     final userCredential = await FirebaseAuth.instance.signInAnonymously();
     print("Signed in with temp account");
-    print(userCredential.user!.uid); //user id for anonymous account
   } on CameraException catch (e) {
     print('Error in fetching the cameras: $e');
   } on FirebaseAuthException catch (e) {
