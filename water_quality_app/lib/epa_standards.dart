@@ -49,7 +49,8 @@ class EPAStandards extends StatelessWidget {
                           return const AlertDialog(
                             title: Text("Iron"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 0.3 mg/L \nCauses rusty color and staining, metallic taste"),
+                                "EPA Standard Recommended Limit: 0.3 mg/L \nCauses rusty color and staining, metallic taste",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -62,7 +63,8 @@ class EPAStandards extends StatelessWidget {
                           return const AlertDialog(
                             title: Text("Copper"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 1.3 mg/L. \nCauses liver and kidney damage"),
+                                "EPA Standard Recommended Limit: 1.3 mg/L. \nCauses liver and kidney damage",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -75,7 +77,8 @@ class EPAStandards extends StatelessWidget {
                           return const AlertDialog(
                             title: Text("Lead"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 0.015 mg/L. \nCauses deficit in learning ability for children, kidney problems, and high blood pressure in adults."),
+                                "EPA Standard Recommended Limit: 0.015 mg/L. \nCauses deficit in learning ability for children, kidney problems, and high blood pressure in adults.",
+                                style: textstyle2,),
                           );
                         });
                   },
@@ -88,7 +91,8 @@ class EPAStandards extends StatelessWidget {
                           return const AlertDialog(
                             title: Text("Manganese"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 0.05 mg/L. \nCauses black/brown color, bitter metallic taste"),
+                                "EPA Standard Recommended Limit: 0.05 mg/L. \nCauses black/brown color, bitter metallic taste",
+                                style: textstyle2 ),
                           );
                         });
                   },
@@ -101,7 +105,8 @@ class EPAStandards extends StatelessWidget {
                           return const AlertDialog(
                             title: Text("Total Chlorine"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 4 mg/L. \nCauses skin irritation and stomach discomfort"),
+                                "EPA Standard Recommended Limit: 4 mg/L. \nCauses skin irritation and stomach discomfort",
+                                style: textstyle2),
                           );
                         });
                   },
