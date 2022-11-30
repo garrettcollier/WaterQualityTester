@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:water_quality_app/begin.dart';
@@ -29,8 +30,8 @@ final FreeChlorineCollection =
 final FlourideCollection = FirebaseFirestore.instance.collection('Flouride');
 final CopperCollection = FirebaseFirestore.instance.collection('Copper');
 
-class Firestore {
+class Firestore { //a class for firestore functions 
   static Future addMeasurement(String collection, Map<String, int> data) async {
     await FirebaseFirestore.instance.collection(collection).add(data);
-  }
+  } //need to add uid as field, adds a document to collection
 }
