@@ -4,7 +4,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:water_quality_app/begin.dart';
+import 'package:water_quality_app/home.dart';
+import 'package:water_quality_app/map.dart';
 import 'package:water_quality_app/rgb_generator.dart';
+
+// geolocation to get current location
+import 'package:geolocator/geolocator.dart';
 
 // RGB class storing all RGB information from image file
 class RGB extends StatefulWidget {
@@ -33,60 +40,110 @@ class _RGBState extends State<RGB> {
   // image bytes
   Uint8List? imageBytes;
 
+  // style the elevated buttons
+  final ButtonStyle styleButton = ElevatedButton.styleFrom(
+      textStyle: const TextStyle(fontSize: 20), backgroundColor: Colors.teal);
+
   @override
   void initState() {
     super.initState();
     extractColors();
   }
 
+  // created method for getting user current location
+  Future<Position> getUserCurrentLocation() async {
+    await Geolocator.requestPermission()
+        .then((value) {})
+        .onError((error, stackTrace) async {
+      await Geolocator.requestPermission();
+      print("ERROR $error");
+    });
+    return await Geolocator.getCurrentPosition();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: background,
-      body: Container(
-        decoration: BoxDecoration(
-          // setup initial gradient
-          gradient: palette.isEmpty
-              ? null
-              : LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                  stops: const [0.01, 0.6, 1],
-                  colors: [
-                    palette.first,
-                    palette[palette.length ~/ 2],
-                    palette.last,
-                  ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 20,
+            ),
+
+            // // display image
+            // Align(
+            //   alignment: Alignment.center,
+            //   child: SizedBox(
+            //     height: (MediaQuery.of(context).size.height),
+            //     width: MediaQuery.of(context).size.width / 2,
+            //     child: imageBytes != null && imageBytes!.isNotEmpty
+            //         ? Image.memory(
+            //             imageBytes!,
+            //             fit: BoxFit.fill,
+            //           )
+            //         : const Center(child: CircularProgressIndicator()),
+            //   ),
+            // ),
+            // const SizedBox(
+            //   height: 10,
+            // ),
+
+            // get image color pixels and just the lightest color column
+            _getColorGrid(true),
+            _getColorGrid(false),
+
+            // buttons for adding your location to
+            // the map and returning to home page
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  style: styleButton,
+                  child: const Text("Plot your Location"),
+                  onPressed: () async {
+                    getUserCurrentLocation().then(
+                      (value) async {
+                        print("${value.latitude} ${value.longitude}");
+
+                        // marker added for current users location
+                        // MARKER LIST CURRENTLY RESETS WHEN APP IS CLOSED
+                        markerList.add(
+                          Marker(
+                            markerId:
+                                MarkerId((markerList.length + 1).toString()),
+                            position: LatLng(value.latitude, value.longitude),
+                            infoWindow: const InfoWindow(
+                              title: 'My Current Location',
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                    // go to home page after plot
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Home(),
+                      ),
+                    );
+                  },
                 ),
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 20,
-              ),
-              // display image
-              Align(
-                alignment: Alignment.center,
-                child: SizedBox(
-                  height: (MediaQuery.of(context).size.height),
-                  width: MediaQuery.of(context).size.width / 2,
-                  child: imageBytes != null && imageBytes!.isNotEmpty
-                      ? Image.memory(
-                          imageBytes!,
-                          fit: BoxFit.fill,
-                        )
-                      : const Center(child: CircularProgressIndicator()),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              // get image color pixels and just the lightest color column
-              _getColorGrid(true),
-              _getColorGrid(false)
-            ],
-          ),
+                ElevatedButton(
+                    style: styleButton,
+                    child: const Text("Return to Home Page"),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Front(),
+                        ),
+                      );
+                    }),
+              ],
+            ),
+          ],
         ),
       ),
     );
@@ -216,25 +273,25 @@ class _RGBState extends State<RGB> {
 // }
 
 // GETS PALETTE OF COLORS FROM IMAGE
-  // widget to get the palette
-  // Widget _getPalette() {
-  //   return SizedBox(
-  //     height: 50,
-  //     child: palette.isEmpty
-  //         ? Container(
-  //             alignment: Alignment.center,
-  //             height: 100,
-  //             child: const CircularProgressIndicator(),
-  //           )
-  //         : ListView.builder(
-  //             shrinkWrap: true,
-  //             scrollDirection: Axis.horizontal,
-  //             itemCount: palette.length,
-  //             itemBuilder: (BuildContext context, int index) => Container(
-  //               color: palette[index],
-  //               height: 50,
-  //               width: 50,
-  //             ),
-  //           ),
-  //   );
-  // }
+// widget to get the palette
+// Widget _getPalette() {
+//   return SizedBox(
+//     height: 50,
+//     child: palette.isEmpty
+//         ? Container(
+//             alignment: Alignment.center,
+//             height: 100,
+//             child: const CircularProgressIndicator(),
+//           )
+//         : ListView.builder(
+//             shrinkWrap: true,
+//             scrollDirection: Axis.horizontal,
+//             itemCount: palette.length,
+//             itemBuilder: (BuildContext context, int index) => Container(
+//               color: palette[index],
+//               height: 50,
+//               width: 50,
+//             ),
+//           ),
+//   );
+// }
