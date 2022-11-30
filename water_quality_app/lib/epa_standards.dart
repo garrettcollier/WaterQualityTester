@@ -4,6 +4,7 @@ class EPAStandards extends StatelessWidget {
   const EPAStandards({super.key});
 
   final standard = "";
+  final TextStyle textstyle2 = const TextStyle(fontSize: 15, fontStyle: FontStyle.italic);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,8 @@ class EPAStandards extends StatelessWidget {
                           return const AlertDialog(
                             title: Text("pH"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 6.5 - 8.5. \nLow pH causes bitter metalic taste. \nHigh pH causes slippery feel."),
+                                "EPA Standard Recommended Limit: 6.5 - 8.5. \nLow pH causes bitter metalic taste. \nHigh pH causes slippery feel.",
+                                style: textstyle2 ),
                           );
                         });
                   },
@@ -33,7 +35,8 @@ class EPAStandards extends StatelessWidget {
                           return const AlertDialog(
                             title: Text("Hydrogen Sulfide"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 0 mg/L. \nCauses rotten egg odor and foul taste"),
+                                "EPA Standard Recommended Limit: 0 mg/L. \nCauses rotten egg odor and foul taste",
+                                style: textstyle2),
                           );
                         });
                   },
