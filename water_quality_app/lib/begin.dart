@@ -41,7 +41,7 @@ class _FrontState extends State<Front> {
                     color: Colors.cyan,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.normal,
-                    fontFamily: 'Open Sans',
+                    fontFamily: 'Righteous',
                     fontSize: 30
                   ),
                   ),

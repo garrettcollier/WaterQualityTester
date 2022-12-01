@@ -67,6 +67,18 @@ flutter:
     - assets/camera/
     - assets/Varify Color Samples/
 
+  fonts:
+    - family: Klee One
+      fonts:
+        - asset: fonts/Klee One-Regular.ttf
+        - asset: fonts/Klee One-Italic.ttf
+          style: italic
+    - family: Righteous
+      fonts:
+        - asset: fonts/Righteous-Regular.ttf
+        - asset: fonts/Righteous-Bold.ttf
+          weight: 400
+
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

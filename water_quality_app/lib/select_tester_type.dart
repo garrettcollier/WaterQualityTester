@@ -35,9 +35,9 @@ class _TesterDropdownState extends State<TesterDropdown> {
 
   // style the elevated buttons and dropdown
   final ButtonStyle styleButton1 = ElevatedButton.styleFrom(
-      textStyle: const TextStyle(fontSize: 20), backgroundColor: Colors.teal);
+      textStyle: const TextStyle(fontSize: 20), backgroundColor: Colors.cyan);
   final ButtonStyle styleButton2 = ElevatedButton.styleFrom(
-      textStyle: const TextStyle(fontSize: 20), backgroundColor: Colors.teal);
+      textStyle: const TextStyle(fontSize: 20), backgroundColor: Colors.cyan);
   final TextStyle styleDropdown =
       const TextStyle(fontSize: 20, color: Colors.black);
 
