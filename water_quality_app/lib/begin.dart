@@ -41,9 +41,10 @@ class _FrontState extends State<Front> {
                     color: Colors.cyan,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.normal,
-                    fontFamily: 'Open Sans',
-                    fontSize: 30),
-              ),
+                    fontFamily: 'Righteous',
+                    fontSize: 30
+                  ),
+                  ),
             ),
             TextButton(
               onPressed: () {
