@@ -5,13 +5,14 @@ class EPAStandards extends StatelessWidget {
   EPAStandards({super.key});
 
   final standard = "";
-  final Text textstyle2 = Text(style: GoogleFonts.lato(
-    textStyle: Theme.of(context).textTheme.headline4,
-    fontSize: 48,
-    fontWeight: FontWeight.w700,
-    fontStyle: FontStyle.italic,
-  ),
-),
+  final TextStyle textstyle1 = GoogleFonts.oswald(
+    fontSize: 15,
+    textStyle: TextStyle(color: Colors.black, letterSpacing: .5),
+  );
+  final TextStyle textstyle2 = GoogleFonts.lato(
+    fontSize: 12,
+    textStyle: TextStyle(color: Colors.black, letterSpacing: .5),
+  );
 
   @override
   Widget build(BuildContext context) {
