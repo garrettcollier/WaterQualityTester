@@ -94,7 +94,6 @@ List<Color> generatePalette(Map<String, dynamic> params) {
   return palette;
 }
 
-// Show Dr. Ferrer
 // get all the colors from the pixels of the image
 List<Color> extractPixelsColors(Uint8List? bytes) {
   // list of colors and pixels
@@ -122,7 +121,3 @@ List<Color> extractPixelsColors(Uint8List? bytes) {
   // return all the colors from image
   return colors;
 }
-
-//square am i on
-//row in square
-// column in square
