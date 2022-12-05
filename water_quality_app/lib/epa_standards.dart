@@ -23,6 +23,10 @@ class EPAStandards extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: 300,
+                height: 30,
+                ),
+              Container(
+                width: 300,
                 height: 20,
                 decoration: BoxDecoration(
                     color: Colors.cyan,
@@ -392,6 +396,9 @@ class EPAStandards extends StatelessWidget {
                     },
                     child: Text("Total Alkalinity", style: textstyle1,)),
               ),
+              Container(
+                width: 300,
+                height: 30,),
             ],
           ),
         ),
