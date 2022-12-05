@@ -24,8 +24,8 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 20,
-                color: Colors.cyan,
                 decoration: BoxDecoration(
+                    color: Colors.cyan,
                     borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
@@ -49,8 +49,8 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
-                color: Colors.cyan,
                 decoration: BoxDecoration(
+                    color: Colors.cyan,
                     borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
@@ -74,8 +74,8 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
-                color: Colors.cyan,
                 decoration: BoxDecoration(
+                  color: Colors.cyan,
                     borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
@@ -99,8 +99,8 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
-                color: Colors.cyan,
                 decoration: BoxDecoration(
+                    color: Colors.cyan,
                     borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
@@ -124,8 +124,8 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
-                color: Colors.cyan,
                 decoration: BoxDecoration(
+                    color: Colors.cyan,
                     borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
@@ -149,8 +149,8 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
-                color: Colors.cyan,
                 decoration: BoxDecoration(
+                    color: Colors.cyan,
                     borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
@@ -174,8 +174,8 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
-                color: Colors.cyan,
                 decoration: BoxDecoration(
+                    color: Colors.cyan,
                     borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
@@ -199,8 +199,8 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
-                color: Colors.cyan,
                 decoration: BoxDecoration(
+                    color: Colors.cyan,
                     borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
@@ -224,8 +224,8 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
-                color: Colors.cyan,
                 decoration: BoxDecoration(
+                    color: Colors.cyan,
                     borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
@@ -249,8 +249,8 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
-                color: Colors.cyan,
                 decoration: BoxDecoration(
+                    color: Colors.cyan,
                     borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
@@ -274,8 +274,8 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
-                color: Colors.cyan,
                 decoration: BoxDecoration(
+                    color: Colors.cyan,
                     borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
@@ -299,8 +299,8 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
-                color: Colors.cyan,
                 decoration: BoxDecoration(
+                    color: Colors.cyan,
                     borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
@@ -324,8 +324,8 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
-                color: Colors.cyan,
                 decoration: BoxDecoration(
+                    color: Colors.cyan,
                     borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
@@ -349,8 +349,8 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
-                color: Colors.cyan,
                 decoration: BoxDecoration(
+                    color: Colors.cyan,
                     borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
@@ -374,8 +374,8 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
-                color: Colors.cyan,
                 decoration: BoxDecoration(
+                    color: Colors.cyan,
                     borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
