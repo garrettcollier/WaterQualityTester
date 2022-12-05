@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class EPAStandards extends StatelessWidget {
-  const EPAStandards({super.key});
+  EPAStandards({super.key});
 
   final standard = "";
+  final TextStyle textstyle1 = GoogleFonts.oswald(
+    fontSize: 15,
+    textStyle: TextStyle(color: Colors.black, letterSpacing: .5),
+  );
+  final TextStyle textstyle2 = GoogleFonts.lato(
+    fontSize: 12,
+    textStyle: TextStyle(color: Colors.black, letterSpacing: .5),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +26,11 @@ class EPAStandards extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return const AlertDialog(
+                          return AlertDialog(
                             title: Text("pH"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 6.5 - 8.5. \nLow pH causes bitter metalic taste. \nHigh pH causes slippery feel."),
+                                "EPA Standard Recommended Limit: 6.5 - 8.5. \nLow pH causes bitter metalic taste. \nHigh pH causes slippery feel.",
+                                style: textstyle2 ),
                           );
                         });
                   },
@@ -30,10 +40,11 @@ class EPAStandards extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return const AlertDialog(
+                          return AlertDialog(
                             title: Text("Hydrogen Sulfide"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 0 mg/L. \nCauses rotten egg odor and foul taste"),
+                                "EPA Standard Recommended Limit: 0 mg/L. \nCauses rotten egg odor and foul taste",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -43,10 +54,11 @@ class EPAStandards extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return const AlertDialog(
+                          return AlertDialog(
                             title: Text("Iron"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 0.3 mg/L \nCauses rusty color and staining, metallic taste"),
+                                "EPA Standard Recommended Limit: 0.3 mg/L \nCauses rusty color and staining, metallic taste",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -56,10 +68,11 @@ class EPAStandards extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return const AlertDialog(
+                          return AlertDialog(
                             title: Text("Copper"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 1.3 mg/L. \nCauses liver and kidney damage"),
+                                "EPA Standard Recommended Limit: 1.3 mg/L. \nCauses liver and kidney damage",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -69,10 +82,11 @@ class EPAStandards extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return const AlertDialog(
+                          return AlertDialog(
                             title: Text("Lead"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 0.015 mg/L. \nCauses deficit in learning ability for children, kidney problems, and high blood pressure in adults."),
+                                "EPA Standard Recommended Limit: 0.015 mg/L. \nCauses deficit in learning ability for children, kidney problems, and high blood pressure in adults.",
+                                style: textstyle2,),
                           );
                         });
                   },
@@ -82,10 +96,11 @@ class EPAStandards extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return const AlertDialog(
+                          return AlertDialog(
                             title: Text("Manganese"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 0.05 mg/L. \nCauses black/brown color, bitter metallic taste"),
+                                "EPA Standard Recommended Limit: 0.05 mg/L. \nCauses black/brown color, bitter metallic taste",
+                                style: textstyle2, ),
                           );
                         });
                   },
@@ -95,10 +110,11 @@ class EPAStandards extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return const AlertDialog(
+                          return AlertDialog(
                             title: Text("Total Chlorine"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 4 mg/L. \nCauses skin irritation and stomach discomfort"),
+                                "EPA Standard Recommended Limit: 4 mg/L. \nCauses skin irritation and stomach discomfort",
+                                style: textstyle2, ),
                           );
                         });
                   },
@@ -108,10 +124,11 @@ class EPAStandards extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return const AlertDialog(
+                          return AlertDialog(
                             title: Text("Free Chlorine"),
                             content: Text(
-                                "EPA Standard Recommended Limit: . \nCauses "),
+                                "EPA Standard Recommended Limit: . \nCauses ",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -121,10 +138,11 @@ class EPAStandards extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return const AlertDialog(
+                          return AlertDialog(
                             title: Text("Nitrate"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 10 mg/L. \nCauses Blue Baby syndrome in infants under 6 months, shortness of breath, nausea, and dizziness"),
+                                "EPA Standard Recommended Limit: 10 mg/L. \nCauses Blue Baby syndrome in infants under 6 months, shortness of breath, nausea, and dizziness",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -134,10 +152,11 @@ class EPAStandards extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return const AlertDialog(
+                          return AlertDialog(
                             title: Text("Nitrite"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 1 mg/L. \nCauses Blue Baby Syndrome in infants under 6 months, shortness of breath, nausea, and dizziness"),
+                                "EPA Standard Recommended Limit: 1 mg/L. \nCauses Blue Baby Syndrome in infants under 6 months, shortness of breath, nausea, and dizziness",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -147,10 +166,11 @@ class EPAStandards extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return const AlertDialog(
+                          return AlertDialog(
                             title: Text("Sulfate"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 250 mg/L. \nCauses salty taste"),
+                                "EPA Standard Recommended Limit: 250 mg/L. \nCauses salty taste",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -160,10 +180,11 @@ class EPAStandards extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return const AlertDialog(
+                          return AlertDialog(
                             title: Text("Zinc"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 5 mg/L. \nCauses metallic taste"),
+                                "EPA Standard Recommended Limit: 5 mg/L. \nCauses metallic taste",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -173,10 +194,11 @@ class EPAStandards extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return const AlertDialog(
+                          return AlertDialog(
                             title: Text("Flouride"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 4 mg/L. \nCauses bone disease and mottied teeth"),
+                                "EPA Standard Recommended Limit: 4 mg/L. \nCauses bone disease and mottied teeth",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -186,10 +208,11 @@ class EPAStandards extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return const AlertDialog(
+                          return AlertDialog(
                             title: Text("Sodium Chloride"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 250 mg/L. \nCauses bloating, swollen hands and feet"),
+                                "EPA Standard Recommended Limit: 250 mg/L. \nCauses bloating, swollen hands and feet",
+                                style: textstyle2),
                           );
                         });
                   },
@@ -199,10 +222,11 @@ class EPAStandards extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) {
-                          return const AlertDialog(
+                          return AlertDialog(
                             title: Text("Total Alkalinity"),
                             content: Text(
-                                "EPA Standard Recommended Limit: 75-150 mg/L. \nLow alkalinity associated with acidic pH and corrosion"),
+                                "EPA Standard Recommended Limit: 75-150 mg/L. \nLow alkalinity associated with acidic pH and corrosion",
+                                style: textstyle2),
                           );
                         });
                   },

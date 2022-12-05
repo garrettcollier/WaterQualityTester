@@ -10,7 +10,9 @@ class CameraInstructionPage extends StatelessWidget {
 
   // style cards for listview
   final EdgeInsets margin = const EdgeInsets.symmetric(vertical: 10);
-  final TextStyle textstyle = const TextStyle(fontSize: 20);
+  final TextStyle textstyle = const TextStyle(fontSize: 20, fontStyle: FontStyle.italic)
+  
+  ;
 
   @override
   Widget build(BuildContext context) {
@@ -69,8 +71,8 @@ class CameraInstructionPage extends StatelessWidget {
                 ),
               );
             },
-            child: const Text('Open Camera'),
-          ),
+            child: const Text("Open Camera",
+            style: TextStyle(fontSize: 15, fontStyle: FontStyle.italic)))
         ],
       ),
     );
