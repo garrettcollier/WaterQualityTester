@@ -6,8 +6,9 @@ import 'package:water_quality_app/firebase.dart' as firebase;
 
 class ResultsPage extends StatelessWidget {
   final File image;
+  List<String> namesList = ["Total Alkalinity", "Sodium Chloride", "Fluoride", "Zinc", "Sulfate", "Nitrite", "Nitrate", "Mercury", "Total Chlorine", "Manganese", "Lead", "Copper", "Iron", "Hydrogen Sulfide", "Hardness", "pH"]; 
 
-  const ResultsPage({super.key, required this.image});
+  ResultsPage({super.key, required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class ResultsPage extends StatelessWidget {
       body: GridView.count(
   crossAxisCount: 4,
   // Generate 100 widgets that display their index in the List.
-  children: List.generate(100, (index) {
+  children: List.generate(64, (index) {
     return Center(
       child: Text(
         'Item $index',
