@@ -25,6 +25,8 @@ class EPAStandards extends StatelessWidget {
                 width: 300,
                 height: 20,
                 color: Colors.cyan,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
                       showDialog(
@@ -48,6 +50,8 @@ class EPAStandards extends StatelessWidget {
                 width: 300,
                 height: 30,
                 color: Colors.cyan,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
                       showDialog(
@@ -71,6 +75,8 @@ class EPAStandards extends StatelessWidget {
                 width: 300,
                 height: 30,
                 color: Colors.cyan,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
                       showDialog(
@@ -94,6 +100,8 @@ class EPAStandards extends StatelessWidget {
                 width: 300,
                 height: 30,
                 color: Colors.cyan,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
                       showDialog(
@@ -117,6 +125,8 @@ class EPAStandards extends StatelessWidget {
                 width: 300,
                 height: 30,
                 color: Colors.cyan,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
                       showDialog(
@@ -140,6 +150,8 @@ class EPAStandards extends StatelessWidget {
                 width: 300,
                 height: 30,
                 color: Colors.cyan,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
                       showDialog(
@@ -163,6 +175,8 @@ class EPAStandards extends StatelessWidget {
                 width: 300,
                 height: 30,
                 color: Colors.cyan,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
                       showDialog(
@@ -186,6 +200,8 @@ class EPAStandards extends StatelessWidget {
                 width: 300,
                 height: 30,
                 color: Colors.cyan,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
                       showDialog(
@@ -209,6 +225,8 @@ class EPAStandards extends StatelessWidget {
                 width: 300,
                 height: 30,
                 color: Colors.cyan,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
                       showDialog(
@@ -232,6 +250,8 @@ class EPAStandards extends StatelessWidget {
                 width: 300,
                 height: 30,
                 color: Colors.cyan,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
                       showDialog(
@@ -255,6 +275,8 @@ class EPAStandards extends StatelessWidget {
                 width: 300,
                 height: 30,
                 color: Colors.cyan,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
                       showDialog(
@@ -278,6 +300,8 @@ class EPAStandards extends StatelessWidget {
                 width: 300,
                 height: 30,
                 color: Colors.cyan,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
                       showDialog(
@@ -301,6 +325,8 @@ class EPAStandards extends StatelessWidget {
                 width: 300,
                 height: 30,
                 color: Colors.cyan,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
                       showDialog(
@@ -324,6 +350,8 @@ class EPAStandards extends StatelessWidget {
                 width: 300,
                 height: 30,
                 color: Colors.cyan,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
                       showDialog(
@@ -347,6 +375,8 @@ class EPAStandards extends StatelessWidget {
                 width: 300,
                 height: 30,
                 color: Colors.cyan,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),),
                 child: TextButton(
                     onPressed: () {
                       showDialog(
