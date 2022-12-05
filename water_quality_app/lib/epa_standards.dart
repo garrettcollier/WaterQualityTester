@@ -43,6 +43,10 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
+                ),
+              Container(
+                width: 300,
+                height: 30,
                 color: Colors.cyan,
                 child: TextButton(
                     onPressed: () {
@@ -59,6 +63,10 @@ class EPAStandards extends StatelessWidget {
                     },
                     child: Text("Hydrogen Sulfide", style: textstyle1,)),
               ),
+              Container(
+                width: 300,
+                height: 30,
+                ),
               Container(
                 width: 300,
                 height: 30,
@@ -81,6 +89,10 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
+                ),
+              Container(
+                width: 300,
+                height: 30,
                 color: Colors.cyan,
                 child: TextButton(
                     onPressed: () {
@@ -97,6 +109,10 @@ class EPAStandards extends StatelessWidget {
                     },
                     child: Text("Copper", style: textstyle1,)),
               ),
+              Container(
+                width: 300,
+                height: 30,
+                ),
               Container(
                 width: 300,
                 height: 30,
@@ -119,6 +135,10 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
+                ),
+              Container(
+                width: 300,
+                height: 30,
                 color: Colors.cyan,
                 child: TextButton(
                     onPressed: () {
@@ -135,6 +155,10 @@ class EPAStandards extends StatelessWidget {
                     },
                     child: Text("Manganese", style: textstyle1,)),
               ),
+              Container(
+                width: 300,
+                height: 30,
+                ),
               Container(
                 width: 300,
                 height: 30,
@@ -157,6 +181,10 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
+                ),
+              Container(
+                width: 300,
+                height: 30,
                 color: Colors.cyan,
                 child: TextButton(
                     onPressed: () {
@@ -173,6 +201,10 @@ class EPAStandards extends StatelessWidget {
                     },
                     child: Text("Free Chlorine", style: textstyle1,)),
               ),
+              Container(
+                width: 300,
+                height: 30,
+                ),
               Container(
                 width: 300,
                 height: 30,
@@ -195,6 +227,10 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
+                ),
+              Container(
+                width: 300,
+                height: 30,
                 color: Colors.cyan,
                 child: TextButton(
                     onPressed: () {
@@ -211,6 +247,10 @@ class EPAStandards extends StatelessWidget {
                     },
                     child: Text("Nitrite", style: textstyle1,)),
               ),
+              Container(
+                width: 300,
+                height: 30,
+                ),
               Container(
                 width: 300,
                 height: 30,
@@ -233,6 +273,10 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
+                ),
+              Container(
+                width: 300,
+                height: 30,
                 color: Colors.cyan,
                 child: TextButton(
                     onPressed: () {
@@ -249,6 +293,10 @@ class EPAStandards extends StatelessWidget {
                     },
                     child: Text("Zinc", style: textstyle1,)),
               ),
+              Container(
+                width: 300,
+                height: 30,
+                ),
               Container(
                 width: 300,
                 height: 30,
@@ -271,6 +319,10 @@ class EPAStandards extends StatelessWidget {
               Container(
                 width: 300,
                 height: 30,
+                ),
+              Container(
+                width: 300,
+                height: 30,
                 color: Colors.cyan,
                 child: TextButton(
                     onPressed: () {
@@ -287,6 +339,10 @@ class EPAStandards extends StatelessWidget {
                     },
                     child: Text("Sodium Chloride", style: textstyle1,)),
               ),
+              Container(
+                width: 300,
+                height: 30,
+                ),
               Container(
                 width: 300,
                 height: 30,
