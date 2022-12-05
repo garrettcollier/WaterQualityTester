@@ -15,7 +15,19 @@ class ResultsPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Results'),
       ),
-      body: RGB(image: image),
+      body: GridView.count(
+  crossAxisCount: 4,
+  // Generate 100 widgets that display their index in the List.
+  children: List.generate(100, (index) {
+    return Center(
+      child: Text(
+        'Item $index',
+        style: Theme.of(context).textTheme.headline5,),
+   // RGB(image: image),
     );
+  }),
+),
+    );
+    
   }
 }
