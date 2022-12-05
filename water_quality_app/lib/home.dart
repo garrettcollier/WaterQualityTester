@@ -34,7 +34,7 @@ class _NavigateState extends State<Navigate> {
   // options for page widgets
   static final List<Widget> _widgetOptions = <Widget>[
     CameraInstructionPage(),
-    const EPAStandards(),
+    EPAStandards(),
     InstructionPage(),
     MapPage(fromNavHome: true) //,
     //ResultsPage(image: File('/Users/alexandriacade/WaterQualityTester/water_quality_app/assets/Varify Color Samples/Copper_Colors/Copper_0.1.jpg'))

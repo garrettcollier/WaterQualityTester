@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class EPAStandards extends StatelessWidget {
-  const EPAStandards({super.key});
+  EPAStandards({super.key});
 
   final standard = "";
-  final TextStyle textstyle2 = const TextStyle(fontSize: 15, fontStyle: FontStyle.italic);
+  final Text textstyle2 = Text(style: GoogleFonts.lato(
+    textStyle: Theme.of(context).textTheme.headline4,
+    fontSize: 48,
+    fontWeight: FontWeight.w700,
+    fontStyle: FontStyle.italic,
+  ),
+),
 
   @override
   Widget build(BuildContext context) {
