@@ -34,7 +34,7 @@ class EPAStandards extends StatelessWidget {
                           );
                         });
                   },
-                  child: const Text("pH")),
+                  child: Text("pH", style: textstyle1,)),
               TextButton(
                   onPressed: () {
                     showDialog(
@@ -48,7 +48,7 @@ class EPAStandards extends StatelessWidget {
                           );
                         });
                   },
-                  child: const Text("Hydrogen Sulfide")),
+                  child: Text("Hydrogen Sulfide", style: textstyle1,)),
               TextButton(
                   onPressed: () {
                     showDialog(
@@ -62,7 +62,7 @@ class EPAStandards extends StatelessWidget {
                           );
                         });
                   },
-                  child: const Text("Iron")),
+                  child: Text("Iron", style: textstyle1,)),
               TextButton(
                   onPressed: () {
                     showDialog(
@@ -76,7 +76,7 @@ class EPAStandards extends StatelessWidget {
                           );
                         });
                   },
-                  child: const Text("Copper")),
+                  child: Text("Copper", style: textstyle1,)),
               TextButton(
                   onPressed: () {
                     showDialog(
@@ -90,7 +90,7 @@ class EPAStandards extends StatelessWidget {
                           );
                         });
                   },
-                  child: const Text("Lead")),
+                  child: Text("Lead", style: textstyle1,)),
               TextButton(
                   onPressed: () {
                     showDialog(
@@ -104,7 +104,7 @@ class EPAStandards extends StatelessWidget {
                           );
                         });
                   },
-                  child: const Text("Manganese")),
+                  child: Text("Manganese", style: textstyle1,)),
               TextButton(
                   onPressed: () {
                     showDialog(
@@ -118,7 +118,7 @@ class EPAStandards extends StatelessWidget {
                           );
                         });
                   },
-                  child: const Text("Total Chlorine")),
+                  child: Text("Total Chlorine", style: textstyle1,)),
               TextButton(
                   onPressed: () {
                     showDialog(
@@ -132,7 +132,7 @@ class EPAStandards extends StatelessWidget {
                           );
                         });
                   },
-                  child: const Text("Free Chlorine")),
+                  child: Text("Free Chlorine", style: textstyle1,)),
               TextButton(
                   onPressed: () {
                     showDialog(
@@ -146,7 +146,7 @@ class EPAStandards extends StatelessWidget {
                           );
                         });
                   },
-                  child: const Text("Nitrate")),
+                  child: Text("Nitrate", style: textstyle1,)),
               TextButton(
                   onPressed: () {
                     showDialog(
@@ -160,7 +160,7 @@ class EPAStandards extends StatelessWidget {
                           );
                         });
                   },
-                  child: const Text("Nitrite")),
+                  child: Text("Nitrite", style: textstyle1,)),
               TextButton(
                   onPressed: () {
                     showDialog(
@@ -174,7 +174,7 @@ class EPAStandards extends StatelessWidget {
                           );
                         });
                   },
-                  child: const Text("Sulfate")),
+                  child: Text("Sulfate", style: textstyle1,)),
               TextButton(
                   onPressed: () {
                     showDialog(
@@ -188,7 +188,7 @@ class EPAStandards extends StatelessWidget {
                           );
                         });
                   },
-                  child: const Text("Zinc")),
+                  child: Text("Zinc", style: textstyle1,)),
               TextButton(
                   onPressed: () {
                     showDialog(
@@ -202,7 +202,7 @@ class EPAStandards extends StatelessWidget {
                           );
                         });
                   },
-                  child: const Text("Flouride")),
+                  child: Text("Flouride", style: textstyle1,)),
               TextButton(
                   onPressed: () {
                     showDialog(
@@ -216,7 +216,7 @@ class EPAStandards extends StatelessWidget {
                           );
                         });
                   },
-                  child: const Text("Sodium Chloride")),
+                  child: Text("Sodium Chloride", style: textstyle1,)),
               TextButton(
                   onPressed: () {
                     showDialog(
@@ -230,7 +230,7 @@ class EPAStandards extends StatelessWidget {
                           );
                         });
                   },
-                  child: const Text("Total Alkalinity")),
+                  child: Text("Total Alkalinity", style: textstyle1,)),
             ],
           ),
         ),
