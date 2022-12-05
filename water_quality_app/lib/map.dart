@@ -1,11 +1,21 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 
-// packages for map and geolocation
+// package for map
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:geocoding/geocoding.dart';
+
+// List of Markers Added on Google Map
+Set<Marker> markerList = {
+  const Marker(
+      markerId: MarkerId('1'),
+      position: LatLng(34.42796133580664, -92.285749655962),
+      infoWindow: InfoWindow(
+          title: 'Location 1', snippet: 'Information on water here')),
+  const Marker(
+      markerId: MarkerId('2'),
+      position: LatLng(34.42796133580664, -92.885749655962),
+      infoWindow: InfoWindow(
+          title: 'Location 2', snippet: 'Information on water here')),
+};
 
 class MapPage extends StatefulWidget {
   MapPage({super.key, required this.fromNavHome});
@@ -20,20 +30,6 @@ class MapPage extends StatefulWidget {
 
 class _MapPageState extends State<MapPage> {
   late GoogleMapController mapController;
-
-  // List of Markers Added on Google Map
-  final Set<Marker> _markerList = {
-    const Marker(
-        markerId: MarkerId('1'),
-        position: LatLng(34.42796133580664, -92.285749655962),
-        infoWindow: InfoWindow(
-            title: 'Location 1', snippet: 'Information on water here')),
-    const Marker(
-        markerId: MarkerId('2'),
-        position: LatLng(34.42796133580664, -92.885749655962),
-        infoWindow: InfoWindow(
-            title: 'Location 2', snippet: 'Information on water here')),
-  };
 
   // Little Rock, AR - longitude and latitude - starting location
   final LatLng _center = const LatLng(34.74410314194924, -92.2840319378177);
@@ -52,7 +48,7 @@ class _MapPageState extends State<MapPage> {
           target: _center,
           zoom: 10.0,
         ),
-        markers: _markerList,
+        markers: markerList,
         myLocationEnabled: true,
         compassEnabled: true,
       ),

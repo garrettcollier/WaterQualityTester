@@ -89,7 +89,7 @@ class _CameraPageState extends State<CameraPage> {
             child: Opacity(
               opacity: 0.3,
               // overlay border image
-              child: Image.asset('assets/camera/cameraborder.jpg'),
+              child: Image.asset('assets/camera/two_vert_lines.png'),
             ),
           ),
         ],

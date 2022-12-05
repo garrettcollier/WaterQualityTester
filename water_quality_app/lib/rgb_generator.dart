@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image/image.dart' as image_library;
 
@@ -42,12 +44,65 @@ int getLighestColorIndex(List<Color> colors) {
   return 0;
 }
 
+// get image bytes and extract average color
+Future<Color> extractAverageSampleColor(File image) async {
+  var imageSampleBytes = await image.readAsBytes();
+  var sampleColors = await compute(extractPixelsColors, imageSampleBytes);
+  return getAverageColor(sampleColors);
+}
+
+// compare two colors and give a percentage of match
+double compareColors(Color c1, Color c2) {
+  // get RBG abs value differences
+  int diffRed = (c1.red - c2.red).abs();
+  int diffGreen = (c1.green - c2.green).abs();
+  int diffBlue = (c1.blue - c2.blue).abs();
+
+  // divide by total saturation
+  double pctDiffRed = diffRed / 255;
+  double pctDiffGreen = diffGreen / 255;
+  double pctDiffBlue = diffBlue / 255;
+
+  // find average color difference
+  return (pctDiffRed + pctDiffGreen + pctDiffBlue) / 3 * 100;
+}
+
+// compare image file colors in assets to the test color from camera
+Future<Color?> compareTestToSample(Directory dir, Color testColor) async {
+  // list of percentage and color difference values
+  Map<double, Color> colorDiffs = {};
+
+  // get files from directory
+  int numFiles = await dir.list().length;
+  List files = dir.list() as List;
+
+  // if directory exists
+  if (await dir.exists()) {
+    for (int i = 0; i < numFiles; i++) {
+      // define color file and average color
+      File colorFile = File('${files[i]}');
+      Color averageColorFromFile =
+          extractAverageSampleColor(colorFile) as Color;
+
+      // compare file color with given image color
+      double diff = compareColors(averageColorFromFile, testColor);
+      colorDiffs[diff] = averageColorFromFile;
+    }
+  }
+  // get the keys and sort
+  List<double> colorDiffKeyDoubles = colorDiffs.keys as List<double>;
+  colorDiffKeyDoubles.sort();
+
+  // return largest percentage color using largest key
+  return colorDiffs[colorDiffKeyDoubles.last];
+}
+
 // pick single column from Color list
 List<Color> getSingleColumnFromListIndex(List<Color> colors, int index) {
   // new return list
   List<Color> newList = [];
   // get every nth element in the list (represents the column)
-  for (int i = index; i < colors.length; i += index) {
+  for (int i = index; i < colors.length; i += index + 1) {
     newList.add(colors[i]);
     print(colors[i]);
   }
@@ -94,7 +149,6 @@ List<Color> generatePalette(Map<String, dynamic> params) {
   return palette;
 }
 
-// Show Dr. Ferrer
 // get all the colors from the pixels of the image
 List<Color> extractPixelsColors(Uint8List? bytes) {
   // list of colors and pixels
@@ -122,7 +176,3 @@ List<Color> extractPixelsColors(Uint8List? bytes) {
   // return all the colors from image
   return colors;
 }
-
-//square am i on
-//row in square
-// column in square
