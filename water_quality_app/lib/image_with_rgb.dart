@@ -72,27 +72,42 @@ class _RGBState extends State<RGB> {
               height: 20,
             ),
 
-            // // display image
-            // Align(
-            //   alignment: Alignment.center,
-            //   child: SizedBox(
-            //     height: (MediaQuery.of(context).size.height),
-            //     width: MediaQuery.of(context).size.width / 2,
-            //     child: imageBytes != null && imageBytes!.isNotEmpty
-            //         ? Image.memory(
-            //             imageBytes!,
-            //             fit: BoxFit.fill,
-            //           )
-            //         : const Center(child: CircularProgressIndicator()),
-            //   ),
-            // ),
-            // const SizedBox(
-            //   height: 10,
-            // ),
-
-            // get image color pixels and just the lightest color column
-            _getColorGrid(true),
+            // get color grid and lightest color column
             _getColorGrid(false),
+
+            // reverse order - white part of strip is at the top
+            // 16. total alkalinity
+            // compareTestToSample(dir, testColor)
+            // 15. sodium chloride
+            // compareTestToSample(dir, testColor)
+            // 14. fluoride
+            // compareTestToSample(dir, testColor)
+            // 13. zinc
+            // compareTestToSample(dir, testColor)
+            // 12. sulfate
+            // compareTestToSample(dir, testColor)
+            // 11. nitrite
+            // compareTestToSample(dir, testColor)
+            // 10. nitrate
+            // compareTestToSample(dir, testColor)
+            // 9. free chlorine
+            // compareTestToSample(dir, testColor)
+            // 8. total chlorine
+            // compareTestToSample(dir, testColor)
+            // 7. manganese
+            // compareTestToSample(dir, testColor)
+            // 6. lead
+            // compareTestToSample(dir, testColor)
+            // 5. copper
+            // compareTestToSample(dir, testColor)
+            // 4. iron
+            // compareTestToSample(dir, testColor)
+            // 3. hydrogen sulfide
+            // compareTestToSample(dir, testColor)
+            // 2. hardness
+            // compareTestToSample(dir, testColor)
+            // 1. pH
+            // compareTestToSample(dir, testColor)
 
             // buttons for adding your location to
             // the map and returning to home page
