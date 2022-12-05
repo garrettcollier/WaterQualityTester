@@ -7,6 +7,7 @@ class EPAStandards extends StatelessWidget {
   final standard = "";
   final TextStyle textstyle1 = GoogleFonts.oswald(
     fontSize: 15,
+    fontWeight: FontWeight.bold,
     textStyle: TextStyle(color: Colors.black, letterSpacing: .5),
   );
   final TextStyle textstyle2 = GoogleFonts.lato(
