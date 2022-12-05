@@ -27,7 +27,7 @@ class EPAStandards extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text("pH"),
+                            title: Text("pH", style: textstyle1),
                             content: Text(
                                 "EPA Standard Recommended Limit: 6.5 - 8.5. \nLow pH causes bitter metalic taste. \nHigh pH causes slippery feel.",
                                 style: textstyle2 ),
@@ -41,7 +41,7 @@ class EPAStandards extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text("Hydrogen Sulfide"),
+                            title: Text("Hydrogen Sulfide", style: textstyle1),
                             content: Text(
                                 "EPA Standard Recommended Limit: 0 mg/L. \nCauses rotten egg odor and foul taste",
                                 style: textstyle2),
@@ -55,7 +55,7 @@ class EPAStandards extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text("Iron"),
+                            title: Text("Iron", style: textstyle1,),
                             content: Text(
                                 "EPA Standard Recommended Limit: 0.3 mg/L \nCauses rusty color and staining, metallic taste",
                                 style: textstyle2),
@@ -69,7 +69,7 @@ class EPAStandards extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text("Copper"),
+                            title: Text("Copper", style: textstyle1,),
                             content: Text(
                                 "EPA Standard Recommended Limit: 1.3 mg/L. \nCauses liver and kidney damage",
                                 style: textstyle2),
@@ -83,7 +83,7 @@ class EPAStandards extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text("Lead"),
+                            title: Text("Lead", style: textstyle1,),
                             content: Text(
                                 "EPA Standard Recommended Limit: 0.015 mg/L. \nCauses deficit in learning ability for children, kidney problems, and high blood pressure in adults.",
                                 style: textstyle2,),
@@ -97,7 +97,7 @@ class EPAStandards extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text("Manganese"),
+                            title: Text("Manganese", style: textstyle1,),
                             content: Text(
                                 "EPA Standard Recommended Limit: 0.05 mg/L. \nCauses black/brown color, bitter metallic taste",
                                 style: textstyle2, ),
@@ -111,7 +111,7 @@ class EPAStandards extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text("Total Chlorine"),
+                            title: Text("Total Chlorine", style: textstyle1,),
                             content: Text(
                                 "EPA Standard Recommended Limit: 4 mg/L. \nCauses skin irritation and stomach discomfort",
                                 style: textstyle2, ),
@@ -125,7 +125,7 @@ class EPAStandards extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text("Free Chlorine"),
+                            title: Text("Free Chlorine", style: textstyle1,),
                             content: Text(
                                 "EPA Standard Recommended Limit: . \nCauses ",
                                 style: textstyle2),
@@ -139,7 +139,7 @@ class EPAStandards extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text("Nitrate"),
+                            title: Text("Nitrate", style: textstyle1,),
                             content: Text(
                                 "EPA Standard Recommended Limit: 10 mg/L. \nCauses Blue Baby syndrome in infants under 6 months, shortness of breath, nausea, and dizziness",
                                 style: textstyle2),
@@ -153,7 +153,7 @@ class EPAStandards extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text("Nitrite"),
+                            title: Text("Nitrite", style: textstyle1,),
                             content: Text(
                                 "EPA Standard Recommended Limit: 1 mg/L. \nCauses Blue Baby Syndrome in infants under 6 months, shortness of breath, nausea, and dizziness",
                                 style: textstyle2),
@@ -167,7 +167,7 @@ class EPAStandards extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text("Sulfate"),
+                            title: Text("Sulfate", style: textstyle1,),
                             content: Text(
                                 "EPA Standard Recommended Limit: 250 mg/L. \nCauses salty taste",
                                 style: textstyle2),
@@ -181,7 +181,7 @@ class EPAStandards extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text("Zinc"),
+                            title: Text("Zinc", style: textstyle1,),
                             content: Text(
                                 "EPA Standard Recommended Limit: 5 mg/L. \nCauses metallic taste",
                                 style: textstyle2),
@@ -195,7 +195,7 @@ class EPAStandards extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text("Flouride"),
+                            title: Text("Flouride", style: textstyle1,),
                             content: Text(
                                 "EPA Standard Recommended Limit: 4 mg/L. \nCauses bone disease and mottied teeth",
                                 style: textstyle2),
@@ -209,7 +209,7 @@ class EPAStandards extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text("Sodium Chloride"),
+                            title: Text("Sodium Chloride", style: textstyle1,),
                             content: Text(
                                 "EPA Standard Recommended Limit: 250 mg/L. \nCauses bloating, swollen hands and feet",
                                 style: textstyle2),
@@ -223,7 +223,7 @@ class EPAStandards extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text("Total Alkalinity"),
+                            title: Text("Total Alkalinity", style: textstyle1,),
                             content: Text(
                                 "EPA Standard Recommended Limit: 75-150 mg/L. \nLow alkalinity associated with acidic pH and corrosion",
                                 style: textstyle2),
