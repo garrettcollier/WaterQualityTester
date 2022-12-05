@@ -23,11 +23,11 @@ class EPAStandards extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: 300,
-                height: 30,
+                height: 20,
                 ),
               Container(
                 width: 300,
-                height: 20,
+                height: 30,
                 decoration: BoxDecoration(
                     color: Colors.cyan,
                     borderRadius: BorderRadius.circular(20),),
@@ -398,7 +398,7 @@ class EPAStandards extends StatelessWidget {
               ),
               Container(
                 width: 300,
-                height: 30,),
+                height: 20,),
             ],
           ),
         ),
