@@ -11,14 +11,12 @@ List<CameraDescription> cameras = [];
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  await FirebaseAuth.instance.signInAnonymously();
-  //final db = FirebaseFirestore.instance; //in firebase.dart file
-  //firebase.startInitializeDatabase();
   try {
     cameras = await availableCameras();
     final userCredential = await FirebaseAuth.instance.signInAnonymously();
     print("Signed in with temp account");
     print(userCredential.user!.uid); //user id for anonymous account
+    firebase.userID = userCredential.user!.uid; //save the user's uid for use in the database
   } on CameraException catch (e) {
     print('Error in fetching the cameras: $e');
   } on FirebaseAuthException catch (e) {

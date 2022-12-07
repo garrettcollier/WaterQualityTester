@@ -1,37 +1,35 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:camera/camera.dart';
-import 'package:water_quality_app/begin.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 
 //initialize an instance of cloud firestore
-final db = FirebaseFirestore.instance;
+final db = FirebaseFirestore.instance; //instance of the database
+String userID = "";
 
 //init database collections
 final pHCollection = db.collection('pH');
-final ZincCollection = FirebaseFirestore.instance.collection('Zinc');
-final TotalChlorineCollection =
-    FirebaseFirestore.instance.collection('TotalChlorine');
-final TotalAlkalineCollection =
-    FirebaseFirestore.instance.collection('TotalAlkaline');
-final SulfateCollection = FirebaseFirestore.instance.collection('Sulfate');
-final SodiumChlorideCollection =
-    FirebaseFirestore.instance.collection('SodiumChloride');
-final NitriteCollection = FirebaseFirestore.instance.collection('Nitrite');
-final NitrateCollection = FirebaseFirestore.instance.collection('Nitrate');
-final ManganeseCollection = FirebaseFirestore.instance.collection('Manganese');
-final LeadCollection = FirebaseFirestore.instance.collection('Lead');
-final HydrogenSulfideCollection =
-    FirebaseFirestore.instance.collection('HydrogenSulfide');
-final FreeChlorineCollection =
-    FirebaseFirestore.instance.collection('FreeChlorine');
-final FlourideCollection = FirebaseFirestore.instance.collection('Flouride');
-final CopperCollection = FirebaseFirestore.instance.collection('Copper');
+final zincCollection = db.collection('Zinc');
+final totalChlorineCollection = db.collection('TotalChlorine');
+final totalAlkalineCollection = db.collection('TotalAlkaline');
+final sulfateCollection = db.collection('Sulfate');
+final sodiumChlorideCollection = db.collection('SodiumChloride');
+final nitriteCollection = db.collection('Nitrite');
+final nitrateCollection = db.collection('Nitrate');
+final manganeseCollection = db.collection('Manganese');
+final leadCollection = db.collection('Lead');
+final hydrogenSulfideCollection = db.collection('HydrogenSulfide');
+final freeChlorineCollection = db.collection('FreeChlorine');
+final flourideCollection = db.collection('Flouride');
+final copperCollection = db.collection('Copper');
 
-class Firestore { //a class for firestore functions 
-  static Future addMeasurement(String collection, Map<String, int> data) async {
-    await FirebaseFirestore.instance.collection(collection).add(data);
-  } //need to add uid as field, adds a document to collection
+class Firestore {
+  //a class for firestore functions
+
+  // addMeasurement takes in the collection (name in Firestore) and the measurement
+  // for the standard. Creates a new document adds fields with the userID, measurement, 
+  //and timestamp
+  static Future addMeasurement(String collection, int data) async {
+    await db.collection(collection).add(
+        {"userID": userID, 
+        "measurement": data, 
+        "timestamp": DateTime.now()});
+  }
 }
