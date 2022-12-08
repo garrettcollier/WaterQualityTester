@@ -18,25 +18,22 @@ class ResultsPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Results'),
       ),
-      body: GridView.count(
-  crossAxisCount: 4,
-  children: List.generate(64, (index) {
-    return Center(
-      child: 
-          Column(
-            children: [Text(
-              namesList[index],
-              style: Theme.of(context).textTheme.headline5,),
-              Text(
-                colorList[index].toString(),
-                style: Theme.of(context).textTheme.headline5,
-              )
-            ],
-          ),
-    );
-  }),
-),
-    );
+      body: 
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+           Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                
+              ],
+          )
+        ]
+      )
+      
+
+      );
+    
     
   }
 }
