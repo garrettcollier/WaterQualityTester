@@ -145,28 +145,28 @@ class ResultsPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index += 13]
+                namesList[index += 3]
                 ),
               Icon( Icons.square, 
-                color: colorList[index += 13],)
+                color: colorList[index += 3],)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index += 14]
+                namesList[index += 0]
                 ),
               Icon( Icons.square, 
-                color: colorList[index += 14],)
+                color: colorList[index += 0],)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index += 15]
+                namesList[index += 0]
                 ),
                 Icon( Icons.square, 
-                color: colorList[index += 15],)
+                color: colorList[index += 0],)
                 ],),
       ]
       )
