@@ -30,144 +30,144 @@ class ResultsPage extends StatelessWidget {
               Text(
                 namesList[index]
                 ),
-        //      Text(
-        //        colorList[index].toString()
-        //        )],),
+              Icon( Icons.square, 
+                color: colorList[index],)
+                ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 1]
                 ),
-         //     Text(
-         //       colorList[index += 1].toString()
-         //       )],),
+              Icon( Icons.square, 
+                color: colorList[index += 1],)
+                ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 2]
                 ),
-         //     Text(
-         //       colorList[index += 2].toString()
-         //       )],),
+              Icon( Icons.square, 
+                color: colorList[index += 2],)
+                ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 3]
                 ),
-         //     Text(
-         //       colorList[index += 3].toString()
-         //       )],),
+              Icon( Icons.square, 
+                color: colorList[index += 3],)
+                ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 4]
                 ),
-         //     Text(
-         //       colorList[index += 4].toString()
-         //       )],),
+              Icon( Icons.square, 
+                color: colorList[index += 4],)
+                ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 5]
                 ),
-       //       Text(
-        //        colorList[index += 5].toString()
-         //       )],),
+              Icon( Icons.square, 
+                color: colorList[index += 5],)
+                ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 6]
                 ),
-         //     Text(
-          //      colorList[index += 6].toString()
-          //      )],),
+              Icon( Icons.square, 
+                color: colorList[index += 6],)
+                ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 7]
                 ),
-         //     Text(
-         //       colorList[index += 7].toString()
-         //       )],),
+              Icon( Icons.square, 
+                color: colorList[index += 7],)
+                ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 8]
                 ),
-         //     Text(
-         //       colorList[index += 8].toString()
-         //       )],),
+              Icon( Icons.square, 
+                color: colorList[index += 8],)
+                ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 9]
                 ),
-         //     Text(
-         //       colorList[index += 9].toString()
-         //       )],),
+              Icon( Icons.square, 
+                color: colorList[index += 9],)
+                ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 10]
                 ),
-         //     Text(
-         //       colorList[index += 10].toString()
-         //       )],),
+              Icon( Icons.square, 
+                color: colorList[index += 10],)
+                ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 11]
                 ),
-        //      Text(
-        //        colorList[index += 11].toString()
-        //        )],),
+              Icon( Icons.square, 
+                color: colorList[index += 11],)
+                ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 12]
                 ),
-       //      Text(
-         //       colorList[index += 12].toString()
-         //       )],),
+              Icon( Icons.square, 
+                color: colorList[index += 12],)
+                ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 13]
                 ),
-       //       Text(
-       //         colorList[index += 13].toString()
-        //        )],),
+              Icon( Icons.square, 
+                color: colorList[index += 13],)
+                ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index ]
+                namesList[index += 14]
                 ),
-       //       Text(
-       //         colorList[index ].toString()
-        //        )],),
+              Icon( Icons.square, 
+                color: colorList[index += 14],)
+                ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index += 1]
+                namesList[index += 15]
                 ),
-           //   Text(
-           //     colorList[index += 1].toString()
-           //     )],),
+                Icon( Icons.square, 
+                color: colorList[index += 15],)
+                ],),
       ]
       )
       
