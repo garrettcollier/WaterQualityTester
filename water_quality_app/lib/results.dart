@@ -7,6 +7,8 @@ import 'package:water_quality_app/firebase.dart' as firebase;
 class ResultsPage extends StatelessWidget {
   final File image;
   List<String> namesList = ["Total Alkalinity", "Sodium Chloride", "Fluoride", "Zinc", "Sulfate", "Nitrite", "Nitrate", "Mercury", "Total Chlorine", "Manganese", "Lead", "Copper", "Iron", "Hydrogen Sulfide", "Hardness", "pH"]; 
+  //RGB(image: image),
+  List<Color> colorList = [Colors.red, Colors.green, Colors.blue, Colors.black];
 
   ResultsPage({super.key, required this.image});
 
@@ -20,10 +22,17 @@ class ResultsPage extends StatelessWidget {
   crossAxisCount: 4,
   children: List.generate(64, (index) {
     return Center(
-      child: Text(
-        'Item $index',
-        style: Theme.of(context).textTheme.headline5,),
-   // RGB(image: image),
+      child: 
+          Column(
+            children: [Text(
+              namesList[index],
+              style: Theme.of(context).textTheme.headline5,),
+              Text(
+                colorList[index].toString(),
+                style: Theme.of(context).textTheme.headline5,
+              )
+            ],
+          ),
     );
   }),
 ),
