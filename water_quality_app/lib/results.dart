@@ -18,7 +18,6 @@ class ResultsPage extends StatelessWidget {
       ),
       body: GridView.count(
   crossAxisCount: 4,
-  // Generate 100 widgets that display their index in the List.
   children: List.generate(64, (index) {
     return Center(
       child: Text(
