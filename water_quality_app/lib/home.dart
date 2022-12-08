@@ -36,8 +36,8 @@ class _NavigateState extends State<Navigate> {
     CameraInstructionPage(),
     EPAStandards(),
     InstructionPage(),
-    MapPage(fromNavHome: true) //,
-    //ResultsPage(image: File('/Users/alexandriacade/WaterQualityTester/water_quality_app/assets/Varify Color Samples/Copper_Colors/Copper_0.1.jpg'))
+    MapPage(fromNavHome: true), //,
+    ResultsPage(image: File('/Users/alexandriacade/WaterQualityTester/water_quality_app/assets/Varify Color Samples/Copper_Colors/Copper_0.1.jpg'))
     //Results page file input needs adjustment
   ];
 
