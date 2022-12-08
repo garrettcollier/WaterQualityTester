@@ -154,10 +154,10 @@ class ResultsPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index += 14]
+                namesList[index ]
                 ),
               Text(
-                colorList[index += 14].toString()
+                colorList[index ].toString()
                 )],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
