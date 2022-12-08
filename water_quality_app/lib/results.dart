@@ -30,144 +30,144 @@ class ResultsPage extends StatelessWidget {
               Text(
                 namesList[index]
                 ),
-              Text(
-                colorList[index].toString()
-                )],),
+        //      Text(
+        //        colorList[index].toString()
+        //        )],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 1]
                 ),
-              Text(
-                colorList[index += 1].toString()
-                )],),
+         //     Text(
+         //       colorList[index += 1].toString()
+         //       )],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 2]
                 ),
-              Text(
-                colorList[index += 2].toString()
-                )],),
+         //     Text(
+         //       colorList[index += 2].toString()
+         //       )],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 3]
                 ),
-              Text(
-                colorList[index += 3].toString()
-                )],),
+         //     Text(
+         //       colorList[index += 3].toString()
+         //       )],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 4]
                 ),
-              Text(
-                colorList[index += 4].toString()
-                )],),
+         //     Text(
+         //       colorList[index += 4].toString()
+         //       )],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 5]
                 ),
-              Text(
-                colorList[index += 5].toString()
-                )],),
+       //       Text(
+        //        colorList[index += 5].toString()
+         //       )],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 6]
                 ),
-              Text(
-                colorList[index += 6].toString()
-                )],),
+         //     Text(
+          //      colorList[index += 6].toString()
+          //      )],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 7]
                 ),
-              Text(
-                colorList[index += 7].toString()
-                )],),
+         //     Text(
+         //       colorList[index += 7].toString()
+         //       )],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 8]
                 ),
-              Text(
-                colorList[index += 8].toString()
-                )],),
+         //     Text(
+         //       colorList[index += 8].toString()
+         //       )],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 9]
                 ),
-              Text(
-                colorList[index += 9].toString()
-                )],),
+         //     Text(
+         //       colorList[index += 9].toString()
+         //       )],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 10]
                 ),
-              Text(
-                colorList[index += 10].toString()
-                )],),
+         //     Text(
+         //       colorList[index += 10].toString()
+         //       )],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 11]
                 ),
-              Text(
-                colorList[index += 11].toString()
-                )],),
+        //      Text(
+        //        colorList[index += 11].toString()
+        //        )],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 12]
                 ),
-              Text(
-                colorList[index += 12].toString()
-                )],),
+       //      Text(
+         //       colorList[index += 12].toString()
+         //       )],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 13]
                 ),
-              Text(
-                colorList[index += 13].toString()
-                )],),
+       //       Text(
+       //         colorList[index += 13].toString()
+        //        )],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index ]
                 ),
-              Text(
-                colorList[index ].toString()
-                )],),
+       //       Text(
+       //         colorList[index ].toString()
+        //        )],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 namesList[index += 1]
                 ),
-              Text(
-                colorList[index += 1].toString()
-                )],),
+           //   Text(
+           //     colorList[index += 1].toString()
+           //     )],),
       ]
       )
       
