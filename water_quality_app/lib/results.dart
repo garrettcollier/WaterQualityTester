@@ -36,6 +36,8 @@ class ResultsPage extends StatelessWidget {
               Text(
                 valueList[0].toString()
               ),  
+              Icon( Icons.flag,
+                )
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
