@@ -28,9 +28,14 @@ class ResultsPage extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                namesList[0]
-                ),
+              Container(
+                width: 75,
+                height: 30,
+                color: Colors.cyan,
+                child: Text(
+                  namesList[0]
+                  ),
+              ),
               Icon( Icons.square, 
                 color: colorList[0],),
               Text(
