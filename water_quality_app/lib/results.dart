@@ -28,145 +28,145 @@ class ResultsPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index]
+                namesList[0]
                 ),
               Icon( Icons.square, 
-                color: colorList[index],)
+                color: colorList[0],)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index ]
+                namesList[1]
                 ),
               Icon( Icons.square, 
-                color: colorList[index ],)
+                color: colorList[1],)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index ]
+                namesList[2]
                 ),
               Icon( Icons.square, 
-                color: colorList[index ],)
+                color: colorList[2],)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index ]
+                namesList[3]
                 ),
               Icon( Icons.square, 
-                color: colorList[index ],)
+                color: colorList[3],)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index ]
+                namesList[4]
                 ),
               Icon( Icons.square, 
-                color: colorList[index ],)
+                color: colorList[4],)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index ]
+                namesList[5]
                 ),
               Icon( Icons.square, 
-                color: colorList[index ],)
+                color: colorList[5],)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index ]
+                namesList[6]
                 ),
               Icon( Icons.square, 
-                color: colorList[index ],)
+                color: colorList[6],)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index ]
+                namesList[7]
                 ),
               Icon( Icons.square, 
-                color: colorList[index ],)
+                color: colorList[7],)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index ]
+                namesList[8]
                 ),
               Icon( Icons.square, 
-                color: colorList[index ],)
+                color: colorList[8],)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index ]
+                namesList[9]
                 ),
               Icon( Icons.square, 
-                color: colorList[index ],)
+                color: colorList[9],)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index ]
+                namesList[10]
                 ),
               Icon( Icons.square, 
-                color: colorList[index ],)
+                color: colorList[10],)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index ]
+                namesList[11]
                 ),
               Icon( Icons.square, 
-                color: colorList[index ],)
+                color: colorList[11],)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index ]
+                namesList[12]
                 ),
               Icon( Icons.square, 
-                color: colorList[index ],)
+                color: colorList[12],)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index ]
+                namesList[13]
                 ),
               Icon( Icons.square, 
-                color: colorList[index ],)
+                color: colorList[13],)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index ]
+                namesList[14]
                 ),
               Icon( Icons.square, 
-                color: colorList[index ],)
+                color: colorList[14],)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                namesList[index ]
+                namesList[15]
                 ),
                 Icon( Icons.square, 
-                color: colorList[index ],)
+                color: colorList[15],)
                 ],),
       ]
       )

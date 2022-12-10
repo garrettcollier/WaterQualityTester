@@ -18,7 +18,7 @@ Future<void> main() async {
     cameras = await availableCameras();
     final userCredential = await FirebaseAuth.instance.signInAnonymously();
     print("Signed in with temp account");
-    print(userCredential.user!.uid); //user id for anonymous account
+    print(userCredential.user!.uid); //user id for anonymous account[]
   } on CameraException catch (e) {
     print('Error in fetching the cameras: $e');
   } on FirebaseAuthException catch (e) {
