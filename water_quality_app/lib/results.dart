@@ -9,6 +9,7 @@ class ResultsPage extends StatelessWidget {
   List<String> namesList = ["Total Alkalinity", "Sodium Chloride", "Fluoride", "Zinc", "Sulfate", "Nitrite", "Nitrate", "Mercury", "Total Chlorine", "Manganese", "Lead", "Copper", "Iron", "Hydrogen Sulfide", "Hardness", "pH"]; 
   //RGB(image: image),
   List<Color> colorList = [Colors.red, Colors.green, Colors.blue, Colors.black, Colors.red, Colors.red, Colors.red, Colors.red, Colors.red, Colors.red, Colors.red, Colors.red, Colors.red, Colors.red, Colors.red, Colors.red];
+  List<double> valueList = [1.2, 2.2, 2.3, 1.2, 1.1, 3.5, 3.3, 4.5, 6.5, 7.0, 1.2, 3.1, 3.4, 1.1, 2.8, 9.0];
 
   int index = 0;
 
@@ -33,6 +34,9 @@ class ResultsPage extends StatelessWidget {
               Icon( Icons.square, 
                 color: colorList[0],)
                 ],),
+              Text(
+                valueList[0].toString()
+              ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
