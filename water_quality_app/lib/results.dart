@@ -37,7 +37,7 @@ class ResultsPage extends StatelessWidget {
                 valueList[0].toString()
               ),  
               Icon( Icons.flag,
-                )
+                color: Colors.red)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -49,7 +49,9 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[1],),
               Text(
                 valueList[1].toString()
-              ),  
+              ),
+              Icon( Icons.flag,
+                color: Colors.red)  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -61,7 +63,9 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[2],),
               Text(
                 valueList[2].toString()
-              ),  
+              ),
+              Icon( Icons.flag,
+                color: Colors.red)  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -73,7 +77,9 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[3],),
               Text(
                 valueList[3].toString()
-              ),  
+              ),
+              Icon( Icons.flag,
+                color: Colors.red)  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -85,7 +91,9 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[4],),
               Text(
                 valueList[4].toString()
-              ),  
+              ),
+              Icon( Icons.flag,
+                color: Colors.red)  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -97,7 +105,9 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[5],),
               Text(
                 valueList[5].toString()
-              ),  
+              ),
+              Icon( Icons.flag,
+                color: Colors.red)  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -109,7 +119,9 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[6],),
               Text(
                 valueList[6].toString()
-              ),  
+              ),
+              Icon( Icons.flag,
+                color: Colors.red)  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -121,7 +133,9 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[7],),
               Text(
                 valueList[7].toString()
-              ),  
+              ), 
+              Icon( Icons.flag,
+                color: Colors.red) 
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -133,7 +147,9 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[8],),
               Text(
                 valueList[8].toString()
-              ),  
+              ),
+              Icon( Icons.flag,
+                color: Colors.red)  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -145,7 +161,9 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[9],),
               Text(
                 valueList[9].toString()
-              ),  
+              ),
+              Icon( Icons.flag,
+                color: Colors.red)  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -157,7 +175,9 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[10],),
               Text(
                 valueList[10].toString()
-              ),  
+              ),
+              Icon( Icons.flag,
+                color: Colors.red)  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -169,7 +189,9 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[11],),
               Text(
                 valueList[11].toString()
-              ),  
+              ),
+              Icon( Icons.flag,
+                color: Colors.red)  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -181,7 +203,9 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[12],),
               Text(
                 valueList[12].toString()
-              ),  
+              ),
+              Icon( Icons.flag,
+                color: Colors.red)  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -193,7 +217,9 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[13],),
               Text(
                 valueList[13].toString()
-              ),  
+              ),
+              Icon( Icons.flag,
+                color: Colors.red)  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -205,7 +231,9 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[14],),
               Text(
                 valueList[14].toString()
-              ),  
+              ),
+              Icon( Icons.flag,
+                color: Colors.red)
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -217,7 +245,9 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[15],),
               Text(
                 valueList[15].toString()
-              ),  
+              ),
+              Icon( Icons.flag,
+                color: Colors.red)  
                 ],),
       ]
       )
