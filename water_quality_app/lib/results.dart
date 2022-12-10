@@ -32,11 +32,11 @@ class ResultsPage extends StatelessWidget {
                 namesList[0]
                 ),
               Icon( Icons.square, 
-                color: colorList[0],)
-                ],),
+                color: colorList[0],),
               Text(
                 valueList[0].toString()
-              ),
+              ),  
+                ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -44,7 +44,10 @@ class ResultsPage extends StatelessWidget {
                 namesList[1]
                 ),
               Icon( Icons.square, 
-                color: colorList[1],)
+                color: colorList[1],),
+              Text(
+                valueList[1].toString()
+              ),  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -53,7 +56,10 @@ class ResultsPage extends StatelessWidget {
                 namesList[2]
                 ),
               Icon( Icons.square, 
-                color: colorList[2],)
+                color: colorList[2],),
+              Text(
+                valueList[2].toString()
+              ),  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -62,7 +68,10 @@ class ResultsPage extends StatelessWidget {
                 namesList[3]
                 ),
               Icon( Icons.square, 
-                color: colorList[3],)
+                color: colorList[3],),
+              Text(
+                valueList[3].toString()
+              ),  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -71,7 +80,10 @@ class ResultsPage extends StatelessWidget {
                 namesList[4]
                 ),
               Icon( Icons.square, 
-                color: colorList[4],)
+                color: colorList[4],),
+              Text(
+                valueList[4].toString()
+              ),  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -80,7 +92,10 @@ class ResultsPage extends StatelessWidget {
                 namesList[5]
                 ),
               Icon( Icons.square, 
-                color: colorList[5],)
+                color: colorList[5],),
+              Text(
+                valueList[5].toString()
+              ),  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -89,7 +104,10 @@ class ResultsPage extends StatelessWidget {
                 namesList[6]
                 ),
               Icon( Icons.square, 
-                color: colorList[6],)
+                color: colorList[6],),
+              Text(
+                valueList[6].toString()
+              ),  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -98,7 +116,10 @@ class ResultsPage extends StatelessWidget {
                 namesList[7]
                 ),
               Icon( Icons.square, 
-                color: colorList[7],)
+                color: colorList[7],),
+              Text(
+                valueList[7].toString()
+              ),  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -107,7 +128,10 @@ class ResultsPage extends StatelessWidget {
                 namesList[8]
                 ),
               Icon( Icons.square, 
-                color: colorList[8],)
+                color: colorList[8],),
+              Text(
+                valueList[8].toString()
+              ),  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -116,7 +140,10 @@ class ResultsPage extends StatelessWidget {
                 namesList[9]
                 ),
               Icon( Icons.square, 
-                color: colorList[9],)
+                color: colorList[9],),
+              Text(
+                valueList[9].toString()
+              ),  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -125,7 +152,10 @@ class ResultsPage extends StatelessWidget {
                 namesList[10]
                 ),
               Icon( Icons.square, 
-                color: colorList[10],)
+                color: colorList[10],),
+              Text(
+                valueList[10].toString()
+              ),  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -134,7 +164,10 @@ class ResultsPage extends StatelessWidget {
                 namesList[11]
                 ),
               Icon( Icons.square, 
-                color: colorList[11],)
+                color: colorList[11],),
+              Text(
+                valueList[11].toString()
+              ),  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -143,7 +176,10 @@ class ResultsPage extends StatelessWidget {
                 namesList[12]
                 ),
               Icon( Icons.square, 
-                color: colorList[12],)
+                color: colorList[12],),
+              Text(
+                valueList[12].toString()
+              ),  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -152,7 +188,10 @@ class ResultsPage extends StatelessWidget {
                 namesList[13]
                 ),
               Icon( Icons.square, 
-                color: colorList[13],)
+                color: colorList[13],),
+              Text(
+                valueList[13].toString()
+              ),  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -161,7 +200,10 @@ class ResultsPage extends StatelessWidget {
                 namesList[14]
                 ),
               Icon( Icons.square, 
-                color: colorList[14],)
+                color: colorList[14],),
+              Text(
+                valueList[14].toString()
+              ),  
                 ],),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -170,7 +212,10 @@ class ResultsPage extends StatelessWidget {
                 namesList[15]
                 ),
                 Icon( Icons.square, 
-                color: colorList[15],)
+                color: colorList[15],),
+              Text(
+                valueList[15].toString()
+              ),  
                 ],),
       ]
       )
