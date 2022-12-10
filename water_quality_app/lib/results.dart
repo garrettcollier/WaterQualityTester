@@ -16,7 +16,7 @@ class ResultsPage extends StatelessWidget {
   ResultsPage({super.key, required this.image});
 
   Widget filler = Container(
-      width: 50,
+      width: 30,
       height: 30);
 
   @override
@@ -37,15 +37,19 @@ class ResultsPage extends StatelessWidget {
                 width: 135,
                 height: 30,
                 color: Colors.cyan,
+                alignment: Alignment.center,
                 child: Text(
                   namesList[0]
                   ),
               ),
+              filler,
               Icon( Icons.square, 
                 color: colorList[0],),
+              filler,
               Text(
                 valueList[0].toString()
-              ),  
+              ), 
+              filler, 
               Icon( Icons.flag,
                 color: Colors.red)
                 ],),
