@@ -15,6 +15,10 @@ class ResultsPage extends StatelessWidget {
 
   ResultsPage({super.key, required this.image});
 
+  Widget filler = Container(
+      width: 50,
+      height: 30);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,8 +32,9 @@ class ResultsPage extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              filler,
               Container(
-                width: 75,
+                width: 135,
                 height: 30,
                 color: Colors.cyan,
                 child: Text(
