@@ -6,9 +6,6 @@ import 'package:flutter/services.dart';
 
 import 'package:water_quality_app/rgb_generator.dart';
 
-// geolocation to get current location
-import 'package:geolocator/geolocator.dart';
-
 // RGB class storing all RGB information from image file
 class RGB extends StatefulWidget {
   final File image;
