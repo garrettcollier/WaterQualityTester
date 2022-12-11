@@ -50,7 +50,7 @@ class ResultsPage extends StatelessWidget {
     Colors.red
   ];
   List<double> valueList = [
-    1.2,
+    3.0,
     2.2,
     2.3,
     1.2,
@@ -68,12 +68,15 @@ class ResultsPage extends StatelessWidget {
     9.0
   ];
 
-  flagCheck() {
-    if (5.0 >= valueList[0]) {
-      if(valueList[0] >= 1.0) {
-      return Colors.green;}
-    } else {
+  flagCheck(double upperbound, double lowerbound) {
+    if (upperbound <= valueList[0]) {
       return Colors.red;
+    }
+    if(valueList[0] <= lowerbound) {
+      return Colors.red;
+      } 
+    else {
+      return Colors.green;
     }
   }
 
@@ -129,7 +132,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[0].toString(), style: textstyle2,),
               
-              Icon(Icons.flag, color: flagCheck())
+              Icon(Icons.flag, color: flagCheck(5.0, 1.0))
             ],
           ),
           columnFiller,
