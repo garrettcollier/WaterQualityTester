@@ -434,53 +434,55 @@ class ResultsPage extends StatelessWidget {
             ],
           ),
           columnFiller,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(
-                style: styleButton,
-                child: const Text("Plot your Location"),
-                onPressed: () async {
-                  getUserCurrentLocation().then(
-                    (value) async {
-                      print("${value.latitude} ${value.longitude}");
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  style: styleButton,
+                  child: const Text("Plot your Location"),
+                  onPressed: () async {
+                    getUserCurrentLocation().then(
+                      (value) async {
+                        print("${value.latitude} ${value.longitude}");
 
-                      // marker added for current users location
-                      // MARKER LIST CURRENTLY RESETS WHEN APP IS CLOSED
-                      markerList.add(
-                        Marker(
-                          markerId:
-                              MarkerId((markerList.length + 1).toString()),
-                          position: LatLng(value.latitude, value.longitude),
-                          infoWindow: const InfoWindow(
-                            title: 'My Current Location',
+                        // marker added for current users location
+                        // MARKER LIST CURRENTLY RESETS WHEN APP IS CLOSED
+                        markerList.add(
+                          Marker(
+                            markerId:
+                                MarkerId((markerList.length + 1).toString()),
+                            position: LatLng(value.latitude, value.longitude),
+                            infoWindow: const InfoWindow(
+                              title: 'My Current Location',
+                            ),
                           ),
-                        ),
-                      );
-                    },
-                  );
-                  // go to home page after plot
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Home(),
-                    ),
-                  );
-                },
-              ),
-              ElevatedButton(
-                style: styleButton,
-                child: const Text("Return to Home Page"),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Front(),
-                    ),
-                  );
-                },
-              ),
-            ],
+                        );
+                      },
+                    );
+                    // go to home page after plot
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Home(),
+                      ),
+                    );
+                  },
+                ),
+                ElevatedButton(
+                  style: styleButton,
+                  child: const Text("Return to Home Page"),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Front(),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ],
       ),
