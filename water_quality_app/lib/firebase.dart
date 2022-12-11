@@ -22,14 +22,19 @@ final copperCollection = db.collection('Copper');
 
 class Firestore {
   //a class for firestore functions
-
+  String docRefLoc = "";
   // addMeasurement takes in the collection (name in Firestore) and the measurement
-  // for the standard. Creates a new document adds fields with the userID, measurement, 
+  // for the standard. Creates a new document adds fields with the userID, measurement,
   //and timestamp
-  static Future addMeasurement(String collection, int data) async {
-    await db.collection(collection).add(
-        {"userID": userID, 
-        "measurement": data, 
-        "timestamp": DateTime.now()});
+  Future addMeasurement(String collection, int data) async {
+    final docRef =
+        db.collection(collection).doc(); //create the doc with auto-generated ID
+    docRef.set(
+        {"userID": userID, "measurement": data, "timestamp": DateTime.now()});
+    //set the data in the doc using docRef.
+    print(docRef.id);
+    // docRefLoc = docRef.id;
   }
+
+  static Future addLocation(String collection) async {}
 }

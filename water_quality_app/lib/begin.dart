@@ -64,7 +64,9 @@ class _FrontState extends State<Front> {
               ),
             ),
             TextButton( //Button to test adding to a collection.
-              onPressed: (){firebase.Firestore.addMeasurement("pH", 8);}, 
+              onPressed: (){
+                final firebase.Firestore _firestore = firebase.Firestore();
+                _firestore.addMeasurement("pH", 8);}, 
               child: Text("Test Firebase Button"))
           ],
         ),
