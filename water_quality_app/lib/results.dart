@@ -6,6 +6,7 @@ import 'package:water_quality_app/begin.dart';
 import 'package:water_quality_app/home.dart';
 import 'package:water_quality_app/map.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:water_quality_app/firebase.dart' as firebase;
 
@@ -69,11 +70,13 @@ class ResultsPage extends StatelessWidget {
 
   ResultsPage({super.key, required this.image});
 
-  Widget rowFiller = Container(width: 48, height: 25);
+  final TextStyle textstyle2 = GoogleFonts.lato(
+    fontSize: 12,
+    textStyle: TextStyle(color: Colors.black, letterSpacing: .5));
 
   Widget columnFiller = Container(
     width: 50,
-    height: 25,
+    height: 5,
   );
 
   // style the elevated buttons
@@ -144,6 +147,7 @@ class ResultsPage extends StatelessWidget {
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -167,6 +171,7 @@ class ResultsPage extends StatelessWidget {
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -190,6 +195,7 @@ class ResultsPage extends StatelessWidget {
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -213,6 +219,7 @@ class ResultsPage extends StatelessWidget {
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -236,6 +243,7 @@ class ResultsPage extends StatelessWidget {
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -259,6 +267,7 @@ class ResultsPage extends StatelessWidget {
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -282,6 +291,7 @@ class ResultsPage extends StatelessWidget {
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -305,6 +315,7 @@ class ResultsPage extends StatelessWidget {
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -328,6 +339,7 @@ class ResultsPage extends StatelessWidget {
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -351,6 +363,7 @@ class ResultsPage extends StatelessWidget {
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -374,6 +387,7 @@ class ResultsPage extends StatelessWidget {
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -397,6 +411,7 @@ class ResultsPage extends StatelessWidget {
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -420,6 +435,7 @@ class ResultsPage extends StatelessWidget {
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -443,6 +459,7 @@ class ResultsPage extends StatelessWidget {
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -469,50 +486,63 @@ class ResultsPage extends StatelessWidget {
           columnFiller,
           Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
-                  style: styleButton,
-                  child: const Text("Plot your Location"),
-                  onPressed: () async {
-                    getUserCurrentLocation().then(
-                      (value) async {
-                        print("${value.latitude} ${value.longitude}");
+                Container(
+                  width: 300,
+                  height: 25,
+                  decoration: BoxDecoration(
+                  color: Colors.teal,
+                  borderRadius: BorderRadius.circular(20),),
+                  child: TextButton(
+                    child: Text("Plot your Location", style: textstyle2,),
+                    onPressed: () async {
+                      getUserCurrentLocation().then(
+                        (value) async {
+                          print("${value.latitude} ${value.longitude}");
 
-                        // marker added for current users location
-                        // MARKER LIST CURRENTLY RESETS WHEN APP IS CLOSED
-                        markerList.add(
-                          Marker(
-                            markerId:
-                                MarkerId((markerList.length + 1).toString()),
-                            position: LatLng(value.latitude, value.longitude),
-                            infoWindow: const InfoWindow(
-                              title: 'My Current Location',
+                          // marker added for current users location
+                          // MARKER LIST CURRENTLY RESETS WHEN APP IS CLOSED
+                          markerList.add(
+                            Marker(
+                              markerId:
+                                  MarkerId((markerList.length + 1).toString()),
+                              position: LatLng(value.latitude, value.longitude),
+                              infoWindow: const InfoWindow(
+                                title: 'My Current Location',
+                              ),
                             ),
-                          ),
-                        );
-                      },
-                    );
-                    // go to home page after plot
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Home(),
-                      ),
-                    );
-                  },
+                          );
+                        },
+                      );
+                      // go to home page after plot
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Home(),
+                        ),
+                      );
+                    },
+                  ),
                 ),
-                ElevatedButton(
-                  style: styleButton,
-                  child: const Text("Return to Home Page"),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Front(),
-                      ),
-                    );
-                  },
+                columnFiller,
+                Container(
+                  width: 300,
+                  height: 25,
+                  decoration: BoxDecoration(
+                  color: Colors.teal,
+                  borderRadius: BorderRadius.circular(20),),
+                  child: TextButton(
+                    child: Text("Return to Home Page", style: textstyle2,),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Front(),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ],
             ),
