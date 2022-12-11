@@ -70,7 +70,7 @@ class ResultsPage extends StatelessWidget {
 
   ResultsPage({super.key, required this.image});
 
-  final TextStyle textstyle2 = GoogleFonts.lato(
+  final TextStyle textstyle2 = GoogleFonts.oswald(
     fontSize: 12,
     textStyle: TextStyle(color: Colors.black, letterSpacing: .5));
 
@@ -110,7 +110,7 @@ class ResultsPage extends StatelessWidget {
                   color: Colors.cyan,
                   borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[0]),
+                child: Text(namesList[0], style: textstyle2,),
               ),
               
               Icon(
@@ -118,7 +118,7 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[0],
               ),
               
-              Text(valueList[0].toString()),
+              Text(valueList[0].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
@@ -134,7 +134,7 @@ class ResultsPage extends StatelessWidget {
                   color: Colors.cyan,
                   borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[1]),
+                child: Text(namesList[1],style: textstyle2,),
               ),
               
               Icon(
@@ -142,7 +142,7 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[1],
               ),
               
-              Text(valueList[1].toString()),
+              Text(valueList[1].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
@@ -158,7 +158,7 @@ class ResultsPage extends StatelessWidget {
                   color: Colors.cyan,
                   borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[2]),
+                child: Text(namesList[2], style: textstyle2,),
               ),
               
               Icon(
@@ -166,7 +166,7 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[2],
               ),
               
-              Text(valueList[2].toString()),
+              Text(valueList[2].toString(),style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
@@ -182,7 +182,7 @@ class ResultsPage extends StatelessWidget {
                   color: Colors.cyan,
                   borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[3]),
+                child: Text(namesList[3],style: textstyle2,),
               ),
               
               Icon(
@@ -190,7 +190,7 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[3],
               ),
               
-              Text(valueList[3].toString()),
+              Text(valueList[3].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
@@ -206,7 +206,7 @@ class ResultsPage extends StatelessWidget {
                   color: Colors.cyan,
                   borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[4]),
+                child: Text(namesList[4], style: textstyle2,),
               ),
               
               Icon(
@@ -214,7 +214,7 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[4],
               ),
               
-              Text(valueList[4].toString()),
+              Text(valueList[4].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
@@ -230,7 +230,7 @@ class ResultsPage extends StatelessWidget {
                   color: Colors.cyan,
                   borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[5]),
+                child: Text(namesList[5], style: textstyle2,),
               ),
               
               Icon(
@@ -238,7 +238,7 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[5],
               ),
               
-              Text(valueList[5].toString()),
+              Text(valueList[5].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
@@ -254,7 +254,7 @@ class ResultsPage extends StatelessWidget {
                   color: Colors.cyan,
                   borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[6]),
+                child: Text(namesList[6], style: textstyle2,),
               ),
               
               Icon(
@@ -262,7 +262,7 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[6],
               ),
               
-              Text(valueList[6].toString()),
+              Text(valueList[6].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
@@ -278,7 +278,7 @@ class ResultsPage extends StatelessWidget {
                   color: Colors.cyan,
                   borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[7]),
+                child: Text(namesList[7], style: textstyle2,),
               ),
               
               Icon(
@@ -286,7 +286,7 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[7],
               ),
               
-              Text(valueList[7].toString()),
+              Text(valueList[7].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
@@ -302,7 +302,7 @@ class ResultsPage extends StatelessWidget {
                   color: Colors.cyan,
                   borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[8]),
+                child: Text(namesList[8], style: textstyle2,),
               ),
               
               Icon(
@@ -310,7 +310,7 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[8],
               ),
               
-              Text(valueList[8].toString()),
+              Text(valueList[8].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
@@ -326,7 +326,7 @@ class ResultsPage extends StatelessWidget {
                   color: Colors.cyan,
                   borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[9]),
+                child: Text(namesList[9], style: textstyle2,),
               ),
               
               Icon(
@@ -334,7 +334,7 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[9],
               ),
               
-              Text(valueList[9].toString()),
+              Text(valueList[9].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
@@ -350,7 +350,7 @@ class ResultsPage extends StatelessWidget {
                   color: Colors.cyan,
                   borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[10]),
+                child: Text(namesList[10], style: textstyle2,),
               ),
               
               Icon(
@@ -358,7 +358,7 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[10],
               ),
               
-              Text(valueList[10].toString()),
+              Text(valueList[10].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
@@ -374,7 +374,7 @@ class ResultsPage extends StatelessWidget {
                   color: Colors.cyan,
                   borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[11]),
+                child: Text(namesList[11], style: textstyle2,),
               ),
               
               Icon(
@@ -382,7 +382,7 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[11],
               ),
               
-              Text(valueList[11].toString()),
+              Text(valueList[11].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
@@ -398,7 +398,7 @@ class ResultsPage extends StatelessWidget {
                   color: Colors.cyan,
                   borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[12]),
+                child: Text(namesList[12], style: textstyle2,),
               ),
               
               Icon(
@@ -406,7 +406,7 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[12],
               ),
               
-              Text(valueList[12].toString()),
+              Text(valueList[12].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
@@ -422,7 +422,7 @@ class ResultsPage extends StatelessWidget {
                   color: Colors.cyan,
                   borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[13]),
+                child: Text(namesList[13], style: textstyle2,),
               ),
               
               Icon(
@@ -430,7 +430,7 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[13],
               ),
               
-              Text(valueList[13].toString()),
+              Text(valueList[13].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
@@ -446,7 +446,7 @@ class ResultsPage extends StatelessWidget {
                   color: Colors.cyan,
                   borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[14]),
+                child: Text(namesList[14], style: textstyle2,),
               ),
               
               Icon(
@@ -454,7 +454,7 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[14],
               ),
               
-              Text(valueList[14].toString()),
+              Text(valueList[14].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
@@ -470,7 +470,7 @@ class ResultsPage extends StatelessWidget {
                   color: Colors.cyan,
                   borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[15]),
+                child: Text(namesList[15], style: textstyle2,),
               ),
               
               Icon(
@@ -478,7 +478,7 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[15],
               ),
               
-              Text(valueList[15].toString()),
+              Text(valueList[15].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red),
             ],
