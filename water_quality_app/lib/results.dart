@@ -130,7 +130,16 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[0],
               ),
               
-              Text(valueList[0].toString(), style: textstyle2,),
+              Container(
+                width: 60,
+                height: 20,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
+                alignment: Alignment.center,
+                child: 
+                Text(valueList[0].toString(), style: textstyle2,
+                )),
               
               Icon(Icons.flag, color: flagCheck(180, 40, 0))
             ],
