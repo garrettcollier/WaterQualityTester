@@ -109,6 +109,11 @@ class ResultsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Results',
+        style: GoogleFonts.oswald(
+          fontSize: 25,
+          textStyle: TextStyle(color: Colors.black, letterSpacing: .5),),),), 
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

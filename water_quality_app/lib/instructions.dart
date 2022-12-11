@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water_quality_app/select_tester_type.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class InstructionPage extends StatelessWidget {
   InstructionPage({super.key});
@@ -10,7 +11,11 @@ class InstructionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // to scroll through page
+      appBar: AppBar(
+        title: Text('Instructions',
+        style: GoogleFonts.oswald(
+          fontSize: 25,
+          textStyle: TextStyle(color: Colors.black, letterSpacing: .5),),),),// to scroll through page
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[

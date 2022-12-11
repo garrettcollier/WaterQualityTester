@@ -51,9 +51,6 @@ class _NavigateState extends State<Navigate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Water Quality Tester'),
-      ),
       body: Center(
         // display widget from _widgetoptions list
         child: _widgetOptions.elementAt(_selectedIndex),
