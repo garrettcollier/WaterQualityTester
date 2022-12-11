@@ -107,14 +107,14 @@ class ResultsPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(namesList[0]),
               ),
-              rowFiller,
+              
               Icon(
                 Icons.square,
                 color: colorList[0],
               ),
-              rowFiller,
+              
               Text(valueList[0].toString()),
-              rowFiller,
+              
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
@@ -128,14 +128,14 @@ class ResultsPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(namesList[1]),
               ),
-              rowFiller,
+              
               Icon(
                 Icons.square,
                 color: colorList[1],
               ),
-              rowFiller,
+              
               Text(valueList[1].toString()),
-              rowFiller,
+              
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
@@ -149,14 +149,14 @@ class ResultsPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(namesList[2]),
               ),
-              rowFiller,
+              
               Icon(
                 Icons.square,
                 color: colorList[2],
               ),
-              rowFiller,
+              
               Text(valueList[2].toString()),
-              rowFiller,
+              
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
@@ -170,14 +170,14 @@ class ResultsPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(namesList[3]),
               ),
-              rowFiller,
+              
               Icon(
                 Icons.square,
                 color: colorList[3],
               ),
-              rowFiller,
+              
               Text(valueList[3].toString()),
-              rowFiller,
+              
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
@@ -191,14 +191,14 @@ class ResultsPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(namesList[4]),
               ),
-              rowFiller,
+              
               Icon(
                 Icons.square,
                 color: colorList[4],
               ),
-              rowFiller,
+              
               Text(valueList[4].toString()),
-              rowFiller,
+              
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
@@ -212,14 +212,14 @@ class ResultsPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(namesList[5]),
               ),
-              rowFiller,
+              
               Icon(
                 Icons.square,
                 color: colorList[5],
               ),
-              rowFiller,
+              
               Text(valueList[5].toString()),
-              rowFiller,
+              
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
@@ -233,14 +233,14 @@ class ResultsPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(namesList[6]),
               ),
-              rowFiller,
+              
               Icon(
                 Icons.square,
                 color: colorList[6],
               ),
-              rowFiller,
+              
               Text(valueList[6].toString()),
-              rowFiller,
+              
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
@@ -254,14 +254,14 @@ class ResultsPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(namesList[7]),
               ),
-              rowFiller,
+              
               Icon(
                 Icons.square,
                 color: colorList[7],
               ),
-              rowFiller,
+              
               Text(valueList[7].toString()),
-              rowFiller,
+              
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
@@ -275,14 +275,14 @@ class ResultsPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(namesList[8]),
               ),
-              rowFiller,
+              
               Icon(
                 Icons.square,
                 color: colorList[8],
               ),
-              rowFiller,
+              
               Text(valueList[8].toString()),
-              rowFiller,
+              
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
@@ -296,14 +296,14 @@ class ResultsPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(namesList[9]),
               ),
-              rowFiller,
+              
               Icon(
                 Icons.square,
                 color: colorList[9],
               ),
-              rowFiller,
+              
               Text(valueList[9].toString()),
-              rowFiller,
+              
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
@@ -317,14 +317,14 @@ class ResultsPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(namesList[10]),
               ),
-              rowFiller,
+              
               Icon(
                 Icons.square,
                 color: colorList[10],
               ),
-              rowFiller,
+              
               Text(valueList[10].toString()),
-              rowFiller,
+              
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
@@ -338,14 +338,14 @@ class ResultsPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(namesList[11]),
               ),
-              rowFiller,
+              
               Icon(
                 Icons.square,
                 color: colorList[11],
               ),
-              rowFiller,
+              
               Text(valueList[11].toString()),
-              rowFiller,
+              
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
@@ -359,14 +359,14 @@ class ResultsPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(namesList[12]),
               ),
-              rowFiller,
+              
               Icon(
                 Icons.square,
                 color: colorList[12],
               ),
-              rowFiller,
+              
               Text(valueList[12].toString()),
-              rowFiller,
+              
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
@@ -380,14 +380,14 @@ class ResultsPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(namesList[13]),
               ),
-              rowFiller,
+              
               Icon(
                 Icons.square,
                 color: colorList[13],
               ),
-              rowFiller,
+              
               Text(valueList[13].toString()),
-              rowFiller,
+              
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
@@ -401,14 +401,14 @@ class ResultsPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(namesList[14]),
               ),
-              rowFiller,
+              
               Icon(
                 Icons.square,
                 color: colorList[14],
               ),
-              rowFiller,
+              
               Text(valueList[14].toString()),
-              rowFiller,
+              
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
@@ -422,14 +422,14 @@ class ResultsPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(namesList[15]),
               ),
-              rowFiller,
+              
               Icon(
                 Icons.square,
                 color: colorList[15],
               ),
-              rowFiller,
+              
               Text(valueList[15].toString()),
-              rowFiller,
+              
               const Icon(Icons.flag, color: Colors.red),
             ],
           ),
