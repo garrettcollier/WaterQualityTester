@@ -6,6 +6,7 @@ import 'package:water_quality_app/begin.dart';
 import 'package:water_quality_app/home.dart';
 import 'package:water_quality_app/map.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:water_quality_app/firebase.dart' as firebase;
 
@@ -69,11 +70,13 @@ class ResultsPage extends StatelessWidget {
 
   ResultsPage({super.key, required this.image});
 
-  Widget rowFiller = Container(width: 48, height: 25);
+  final TextStyle textstyle2 = GoogleFonts.oswald(
+    fontSize: 12,
+    textStyle: TextStyle(color: Colors.black, letterSpacing: .5));
 
   Widget columnFiller = Container(
     width: 50,
-    height: 50,
+    height: 5,
   );
 
   // style the elevated buttons
@@ -103,9 +106,11 @@ class ResultsPage extends StatelessWidget {
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[0]),
+                child: Text(namesList[0], style: textstyle2,),
               ),
               
               Icon(
@@ -113,20 +118,23 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[0],
               ),
               
-              Text(valueList[0].toString()),
+              Text(valueList[0].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[1]),
+                child: Text(namesList[1],style: textstyle2,),
               ),
               
               Icon(
@@ -134,20 +142,23 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[1],
               ),
               
-              Text(valueList[1].toString()),
+              Text(valueList[1].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[2]),
+                child: Text(namesList[2], style: textstyle2,),
               ),
               
               Icon(
@@ -155,20 +166,23 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[2],
               ),
               
-              Text(valueList[2].toString()),
+              Text(valueList[2].toString(),style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[3]),
+                child: Text(namesList[3],style: textstyle2,),
               ),
               
               Icon(
@@ -176,20 +190,23 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[3],
               ),
               
-              Text(valueList[3].toString()),
+              Text(valueList[3].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[4]),
+                child: Text(namesList[4], style: textstyle2,),
               ),
               
               Icon(
@@ -197,20 +214,23 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[4],
               ),
               
-              Text(valueList[4].toString()),
+              Text(valueList[4].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[5]),
+                child: Text(namesList[5], style: textstyle2,),
               ),
               
               Icon(
@@ -218,20 +238,23 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[5],
               ),
               
-              Text(valueList[5].toString()),
+              Text(valueList[5].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[6]),
+                child: Text(namesList[6], style: textstyle2,),
               ),
               
               Icon(
@@ -239,20 +262,23 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[6],
               ),
               
-              Text(valueList[6].toString()),
+              Text(valueList[6].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[7]),
+                child: Text(namesList[7], style: textstyle2,),
               ),
               
               Icon(
@@ -260,20 +286,23 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[7],
               ),
               
-              Text(valueList[7].toString()),
+              Text(valueList[7].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[8]),
+                child: Text(namesList[8], style: textstyle2,),
               ),
               
               Icon(
@@ -281,20 +310,23 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[8],
               ),
               
-              Text(valueList[8].toString()),
+              Text(valueList[8].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[9]),
+                child: Text(namesList[9], style: textstyle2,),
               ),
               
               Icon(
@@ -302,20 +334,23 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[9],
               ),
               
-              Text(valueList[9].toString()),
+              Text(valueList[9].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[10]),
+                child: Text(namesList[10], style: textstyle2,),
               ),
               
               Icon(
@@ -323,20 +358,23 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[10],
               ),
               
-              Text(valueList[10].toString()),
+              Text(valueList[10].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[11]),
+                child: Text(namesList[11], style: textstyle2,),
               ),
               
               Icon(
@@ -344,20 +382,23 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[11],
               ),
               
-              Text(valueList[11].toString()),
+              Text(valueList[11].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[12]),
+                child: Text(namesList[12], style: textstyle2,),
               ),
               
               Icon(
@@ -365,20 +406,23 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[12],
               ),
               
-              Text(valueList[12].toString()),
+              Text(valueList[12].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[13]),
+                child: Text(namesList[13], style: textstyle2,),
               ),
               
               Icon(
@@ -386,20 +430,23 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[13],
               ),
               
-              Text(valueList[13].toString()),
+              Text(valueList[13].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[14]),
+                child: Text(namesList[14], style: textstyle2,),
               ),
               
               Icon(
@@ -407,20 +454,23 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[14],
               ),
               
-              Text(valueList[14].toString()),
+              Text(valueList[14].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
-                child: Text(namesList[15]),
+                child: Text(namesList[15], style: textstyle2,),
               ),
               
               Icon(
@@ -428,7 +478,7 @@ class ResultsPage extends StatelessWidget {
                 color: colorList[15],
               ),
               
-              Text(valueList[15].toString()),
+              Text(valueList[15].toString(), style: textstyle2,),
               
               const Icon(Icons.flag, color: Colors.red),
             ],
@@ -436,50 +486,63 @@ class ResultsPage extends StatelessWidget {
           columnFiller,
           Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
-                  style: styleButton,
-                  child: const Text("Plot your Location"),
-                  onPressed: () async {
-                    getUserCurrentLocation().then(
-                      (value) async {
-                        print("${value.latitude} ${value.longitude}");
+                Container(
+                  width: 300,
+                  height: 25,
+                  decoration: BoxDecoration(
+                  color: Colors.teal,
+                  borderRadius: BorderRadius.circular(20),),
+                  child: TextButton(
+                    child: Text("Plot your Location", style: textstyle2,),
+                    onPressed: () async {
+                      getUserCurrentLocation().then(
+                        (value) async {
+                          print("${value.latitude} ${value.longitude}");
 
-                        // marker added for current users location
-                        // MARKER LIST CURRENTLY RESETS WHEN APP IS CLOSED
-                        markerList.add(
-                          Marker(
-                            markerId:
-                                MarkerId((markerList.length + 1).toString()),
-                            position: LatLng(value.latitude, value.longitude),
-                            infoWindow: const InfoWindow(
-                              title: 'My Current Location',
+                          // marker added for current users location
+                          // MARKER LIST CURRENTLY RESETS WHEN APP IS CLOSED
+                          markerList.add(
+                            Marker(
+                              markerId:
+                                  MarkerId((markerList.length + 1).toString()),
+                              position: LatLng(value.latitude, value.longitude),
+                              infoWindow: const InfoWindow(
+                                title: 'My Current Location',
+                              ),
                             ),
-                          ),
-                        );
-                      },
-                    );
-                    // go to home page after plot
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Home(),
-                      ),
-                    );
-                  },
+                          );
+                        },
+                      );
+                      // go to home page after plot
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Home(),
+                        ),
+                      );
+                    },
+                  ),
                 ),
-                ElevatedButton(
-                  style: styleButton,
-                  child: const Text("Return to Home Page"),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Front(),
-                      ),
-                    );
-                  },
+                columnFiller,
+                Container(
+                  width: 300,
+                  height: 25,
+                  decoration: BoxDecoration(
+                  color: Colors.teal,
+                  borderRadius: BorderRadius.circular(20),),
+                  child: TextButton(
+                    child: Text("Return to Home Page", style: textstyle2,),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Front(),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ],
             ),
