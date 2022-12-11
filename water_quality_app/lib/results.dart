@@ -11,20 +11,19 @@ class ResultsPage extends StatelessWidget {
   List<Color> colorList = [Colors.red, Colors.green, Colors.blue, Colors.black, Colors.red, Colors.red, Colors.red, Colors.red, Colors.red, Colors.red, Colors.red, Colors.red, Colors.red, Colors.red, Colors.red, Colors.red];
   List<double> valueList = [1.2, 2.2, 2.3, 1.2, 1.1, 3.5, 3.3, 4.5, 6.5, 7.0, 1.2, 3.1, 3.4, 1.1, 2.8, 9.0];
 
-  int index = 0;
-
   ResultsPage({super.key, required this.image});
 
-  Widget filler = Container(
+  Widget rowFiller = Container(
       width: 48,
       height: 30);
+
+  Widget columnFiller = Container(
+      width: 100,
+      height: 25,);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Results'),
-      ),
       body: 
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -32,7 +31,7 @@ class ResultsPage extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              filler,
+              rowFiller,
               Container(
                 width: 190,
                 height: 30,
@@ -42,17 +41,18 @@ class ResultsPage extends StatelessWidget {
                   namesList[0]
                   ),
               ),
-              filler,
+              rowFiller,
               Icon( Icons.square, 
                 color: colorList[0],),
-              filler,
+              rowFiller,
               Text(
                 valueList[0].toString()
               ), 
-              filler, 
+              rowFiller, 
               Icon( Icons.flag,
                 color: Colors.red)
                 ],),
+          columnFiller,
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
