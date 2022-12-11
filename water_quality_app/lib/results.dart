@@ -69,8 +69,11 @@ class ResultsPage extends StatelessWidget {
   ];
 
   flagCheck() {
-    if (5.0 <= valueList[0]) 
+    if (5.0 >= valueList[0]) {
       return Colors.green;
+    } else {
+      return Colors.red;
+    }
   }
 
   ResultsPage({super.key, required this.image});
