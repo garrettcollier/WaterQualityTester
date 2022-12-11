@@ -50,14 +50,14 @@ class ResultsPage extends StatelessWidget {
     Colors.red
   ];
   List<double> valueList = [
-    3.0,
-    2.2,
-    2.3,
-    1.2,
-    1.1,
-    3.5,
-    3.3,
-    4.5,
+    80,
+    100,
+    3,
+    10,
+    200,
+    1,
+    25,
+    .001,
     6.5,
     7.0,
     1.2,
@@ -68,12 +68,12 @@ class ResultsPage extends StatelessWidget {
     9.0
   ];
 
-  flagCheck(double upperbound, double lowerbound) {
-    if (upperbound <= valueList[0]) {
-      return Colors.red;
+  flagCheck(double upperbound, double lowerbound, int index) {
+    if (upperbound < valueList[index]) {
+      return Color.fromARGB(255, 248, 18, 2);
     }
-    if(valueList[0] <= lowerbound) {
-      return Colors.red;
+    if(valueList[index] < lowerbound) {
+      return Color.fromARGB(255, 162, 30, 20);
       } 
     else {
       return Colors.green;
@@ -132,7 +132,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[0].toString(), style: textstyle2,),
               
-              Icon(Icons.flag, color: flagCheck(5.0, 1.0))
+              Icon(Icons.flag, color: flagCheck(180, 40, 0))
             ],
           ),
           columnFiller,
@@ -156,7 +156,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[1].toString(), style: textstyle2,),
               
-              const Icon(Icons.flag, color: Colors.red)
+              Icon(Icons.flag, color: flagCheck(250, 0, 1))
             ],
           ),
           columnFiller,
@@ -180,7 +180,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[2].toString(),style: textstyle2,),
               
-              const Icon(Icons.flag, color: Colors.red)
+              Icon(Icons.flag, color: flagCheck(4.0, 0, 2))
             ],
           ),
           columnFiller,
@@ -204,7 +204,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[3].toString(), style: textstyle2,),
               
-              const Icon(Icons.flag, color: Colors.red)
+              Icon(Icons.flag, color: flagCheck(5, 0, 3))
             ],
           ),
           columnFiller,
@@ -228,7 +228,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[4].toString(), style: textstyle2,),
               
-              const Icon(Icons.flag, color: Colors.red)
+              Icon(Icons.flag, color: flagCheck(200, 0, 4))
             ],
           ),
           columnFiller,
@@ -252,7 +252,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[5].toString(), style: textstyle2,),
               
-              const Icon(Icons.flag, color: Colors.red)
+              Icon(Icons.flag, color: flagCheck(1, 0, 5))
             ],
           ),
           columnFiller,
@@ -276,7 +276,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[6].toString(), style: textstyle2,),
               
-              const Icon(Icons.flag, color: Colors.red)
+              Icon(Icons.flag, color: flagCheck(10, 0, 6))
             ],
           ),
           columnFiller,
@@ -300,7 +300,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[7].toString(), style: textstyle2,),
               
-              const Icon(Icons.flag, color: Colors.red)
+              Icon(Icons.flag, color: flagCheck(.002, 0, 7))
             ],
           ),
           columnFiller,
@@ -324,7 +324,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[8].toString(), style: textstyle2,),
               
-              const Icon(Icons.flag, color: Colors.red)
+              Icon(Icons.flag, color: flagCheck(3, 0, 8))
             ],
           ),
           columnFiller,
@@ -348,7 +348,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[9].toString(), style: textstyle2,),
               
-              const Icon(Icons.flag, color: Colors.red)
+              Icon(Icons.flag, color: flagCheck(0.1, 0, 9))
             ],
           ),
           columnFiller,
@@ -372,7 +372,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[10].toString(), style: textstyle2,),
               
-              const Icon(Icons.flag, color: Colors.red)
+              Icon(Icons.flag, color: flagCheck(15, 0, 10))
             ],
           ),
           columnFiller,
@@ -396,7 +396,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[11].toString(), style: textstyle2,),
               
-              const Icon(Icons.flag, color: Colors.red)
+              Icon(Icons.flag, color: flagCheck(1, 0, 11))
             ],
           ),
           columnFiller,
@@ -420,7 +420,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[12].toString(), style: textstyle2,),
               
-              const Icon(Icons.flag, color: Colors.red)
+              Icon(Icons.flag, color: flagCheck(0.3, 0, 12))
             ],
           ),
           columnFiller,
@@ -444,7 +444,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[13].toString(), style: textstyle2,),
               
-              const Icon(Icons.flag, color: Colors.red)
+              Icon(Icons.flag, color: flagCheck(0, 0, 13))
             ],
           ),
           columnFiller,
@@ -468,7 +468,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[14].toString(), style: textstyle2,),
               
-              const Icon(Icons.flag, color: Colors.red)
+              Icon(Icons.flag, color: flagCheck(100, 10, 14))
             ],
           ),
           columnFiller,
@@ -492,7 +492,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[15].toString(), style: textstyle2,),
               
-              const Icon(Icons.flag, color: Colors.red),
+              Icon(Icons.flag, color: flagCheck(8.5, 6.5, 15)),
             ],
           ),
           columnFiller,
