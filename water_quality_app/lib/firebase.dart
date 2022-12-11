@@ -32,9 +32,13 @@ class Firestore {
     docRef.set(
         {"userID": userID, "measurement": data, "timestamp": DateTime.now()});
     //set the data in the doc using docRef.
-    print(docRef.id);
-    // docRefLoc = docRef.id;
+    docRefLoc = docRef.id;
   }
 
-  static Future addLocation(String collection) async {}
+  Future addLocation(String collection) async {
+    db
+        .collection(collection)
+        .doc("suUvkRi64eGj9Qz1s3Rd")
+        .set({"location": "here"}, SetOptions(merge: true));
+  }
 }

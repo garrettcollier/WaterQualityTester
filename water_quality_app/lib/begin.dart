@@ -67,7 +67,11 @@ class _FrontState extends State<Front> {
               onPressed: (){
                 final firebase.Firestore _firestore = firebase.Firestore();
                 _firestore.addMeasurement("pH", 8);}, 
-              child: Text("Test Firebase Button"))
+              child: Text("Test Firebase Button")),
+              TextButton(onPressed: (){
+                final firebase.Firestore _firestore = firebase.Firestore();
+                _firestore.addLocation("pH");
+              }, child: Text("Test Add Location"))
           ],
         ),
       ),
