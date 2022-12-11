@@ -4,10 +4,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:water_quality_app/begin.dart';
-import 'package:water_quality_app/home.dart';
-import 'package:water_quality_app/map.dart';
 import 'package:water_quality_app/rgb_generator.dart';
 
 // geolocation to get current location
@@ -40,25 +36,10 @@ class _RGBState extends State<RGB> {
   // image bytes
   Uint8List? imageBytes;
 
-  // style the elevated buttons
-  final ButtonStyle styleButton = ElevatedButton.styleFrom(
-      textStyle: const TextStyle(fontSize: 20), backgroundColor: Colors.teal);
-
   @override
   void initState() {
     super.initState();
     extractColors();
-  }
-
-  // created method for getting user current location
-  Future<Position> getUserCurrentLocation() async {
-    await Geolocator.requestPermission()
-        .then((value) {})
-        .onError((error, stackTrace) async {
-      await Geolocator.requestPermission();
-      print("ERROR $error");
-    });
-    return await Geolocator.getCurrentPosition();
   }
 
   @override
@@ -111,53 +92,6 @@ class _RGBState extends State<RGB> {
 
             // buttons for adding your location to
             // the map and returning to home page
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  style: styleButton,
-                  child: const Text("Plot your Location"),
-                  onPressed: () async {
-                    getUserCurrentLocation().then(
-                      (value) async {
-                        print("${value.latitude} ${value.longitude}");
-
-                        // marker added for current users location
-                        // MARKER LIST CURRENTLY RESETS WHEN APP IS CLOSED
-                        markerList.add(
-                          Marker(
-                            markerId:
-                                MarkerId((markerList.length + 1).toString()),
-                            position: LatLng(value.latitude, value.longitude),
-                            infoWindow: const InfoWindow(
-                              title: 'My Current Location',
-                            ),
-                          ),
-                        );
-                      },
-                    );
-                    // go to home page after plot
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Home(),
-                      ),
-                    );
-                  },
-                ),
-                ElevatedButton(
-                    style: styleButton,
-                    child: const Text("Return to Home Page"),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Front(),
-                        ),
-                      );
-                    }),
-              ],
-            ),
           ],
         ),
       ),
