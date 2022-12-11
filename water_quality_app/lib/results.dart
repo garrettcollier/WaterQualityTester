@@ -19,7 +19,7 @@ class ResultsPage extends StatelessWidget {
 
   Widget columnFiller = Container(
       width: 100,
-      height: 10,);
+      height: 8,);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class ResultsPage extends StatelessWidget {
               rowFiller,
               Container(
                 width: 190,
-                height: 30,
+                height: 25,
                 color: Colors.cyan,
                 alignment: Alignment.center,
                 child: Text(
@@ -67,6 +67,7 @@ class ResultsPage extends StatelessWidget {
               Icon( Icons.flag,
                 color: Colors.red)  
                 ],),
+          columnFiller,
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -81,6 +82,7 @@ class ResultsPage extends StatelessWidget {
               Icon( Icons.flag,
                 color: Colors.red)  
                 ],),
+          columnFiller,
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -95,6 +97,7 @@ class ResultsPage extends StatelessWidget {
               Icon( Icons.flag,
                 color: Colors.red)  
                 ],),
+          columnFiller,
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -109,6 +112,7 @@ class ResultsPage extends StatelessWidget {
               Icon( Icons.flag,
                 color: Colors.red)  
                 ],),
+          columnFiller,
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -123,6 +127,7 @@ class ResultsPage extends StatelessWidget {
               Icon( Icons.flag,
                 color: Colors.red)  
                 ],),
+          columnFiller,
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -137,6 +142,7 @@ class ResultsPage extends StatelessWidget {
               Icon( Icons.flag,
                 color: Colors.red)  
                 ],),
+          columnFiller,
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -151,6 +157,7 @@ class ResultsPage extends StatelessWidget {
               Icon( Icons.flag,
                 color: Colors.red) 
                 ],),
+          columnFiller,
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -165,6 +172,7 @@ class ResultsPage extends StatelessWidget {
               Icon( Icons.flag,
                 color: Colors.red)  
                 ],),
+          columnFiller,
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -179,6 +187,7 @@ class ResultsPage extends StatelessWidget {
               Icon( Icons.flag,
                 color: Colors.red)  
                 ],),
+          columnFiller,
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -193,6 +202,7 @@ class ResultsPage extends StatelessWidget {
               Icon( Icons.flag,
                 color: Colors.red)  
                 ],),
+          columnFiller,
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -207,6 +217,7 @@ class ResultsPage extends StatelessWidget {
               Icon( Icons.flag,
                 color: Colors.red)  
                 ],),
+          columnFiller,
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -221,6 +232,7 @@ class ResultsPage extends StatelessWidget {
               Icon( Icons.flag,
                 color: Colors.red)  
                 ],),
+          columnFiller,
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -235,6 +247,7 @@ class ResultsPage extends StatelessWidget {
               Icon( Icons.flag,
                 color: Colors.red)  
                 ],),
+          columnFiller,
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -249,6 +262,7 @@ class ResultsPage extends StatelessWidget {
               Icon( Icons.flag,
                 color: Colors.red)
                 ],),
+          columnFiller,
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
