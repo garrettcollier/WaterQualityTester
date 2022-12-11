@@ -490,7 +490,7 @@ class ResultsPage extends StatelessWidget {
               children: [
                 Container(
                   width: 300,
-                  height: 25,
+                  height: 40,
                   decoration: BoxDecoration(
                   color: Colors.teal,
                   borderRadius: BorderRadius.circular(20),),
@@ -528,7 +528,7 @@ class ResultsPage extends StatelessWidget {
                 columnFiller,
                 Container(
                   width: 300,
-                  height: 25,
+                  height: 40,
                   decoration: BoxDecoration(
                   color: Colors.teal,
                   borderRadius: BorderRadius.circular(20),),
