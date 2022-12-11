@@ -103,7 +103,9 @@ class ResultsPage extends StatelessWidget {
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
                 child: Text(namesList[0]),
               ),
