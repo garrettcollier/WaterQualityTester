@@ -71,7 +71,7 @@ class ResultsPage extends StatelessWidget {
   ResultsPage({super.key, required this.image});
 
   final TextStyle textstyle2 = GoogleFonts.oswald(
-    fontSize: 12,
+    fontSize: 15,
     textStyle: TextStyle(color: Colors.black, letterSpacing: .5));
 
   Widget columnFiller = Container(
