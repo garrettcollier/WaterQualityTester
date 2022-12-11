@@ -73,7 +73,7 @@ class ResultsPage extends StatelessWidget {
 
   Widget columnFiller = Container(
     width: 50,
-    height: 50,
+    height: 25,
   );
 
   // style the elevated buttons
@@ -120,6 +120,7 @@ class ResultsPage extends StatelessWidget {
               const Icon(Icons.flag, color: Colors.red)
             ],
           ),
+          columnFiller,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
