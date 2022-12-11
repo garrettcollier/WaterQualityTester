@@ -68,6 +68,11 @@ class ResultsPage extends StatelessWidget {
     9.0
   ];
 
+  flagCheck() {
+    if (5.0 <= valueList[0]) 
+      return Colors.green;
+  }
+
   ResultsPage({super.key, required this.image});
 
   final TextStyle textstyle2 = GoogleFonts.oswald(
@@ -120,7 +125,7 @@ class ResultsPage extends StatelessWidget {
               
               Text(valueList[0].toString(), style: textstyle2,),
               
-              const Icon(Icons.flag, color: Colors.red)
+              Icon(Icons.flag, color: flagCheck())
             ],
           ),
           columnFiller,
