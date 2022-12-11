@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 //initialize an instance of cloud firestore
 final db = FirebaseFirestore.instance; //instance of the database
 String userID = "";
+var docRefLoc = "";
 
 //init database collections
 final pHCollection = db.collection('pH');
@@ -22,7 +23,6 @@ final copperCollection = db.collection('Copper');
 
 class Firestore {
   //a class for firestore functions
-  String docRefLoc = "";
   // addMeasurement takes in the collection (name in Firestore) and the measurement
   // for the standard. Creates a new document adds fields with the userID, measurement,
   //and timestamp
@@ -32,13 +32,14 @@ class Firestore {
     docRef.set(
         {"userID": userID, "measurement": data, "timestamp": DateTime.now()});
     //set the data in the doc using docRef.
-    docRefLoc = docRef.id;
+    docRefLoc = docRef.id; //update the class variable docRefLoc to be the doc ID to access in location
+    print(docRefLoc);
   }
 
   Future addLocation(String collection) async {
     db
         .collection(collection)
-        .doc("suUvkRi64eGj9Qz1s3Rd")
+        .doc(docRefLoc)
         .set({"location": "here"}, SetOptions(merge: true));
   }
 }
