@@ -36,7 +36,9 @@ class _NavigateState extends State<Navigate> {
     CameraInstructionPage(),
     EPAStandards(),
     InstructionPage(),
-    MapPage(fromNavHome: true)
+    MapPage(fromNavHome: true), //,
+    ResultsPage(image: File('/Users/alexandriacade/WaterQualityTester/water_quality_app/assets/Varify Color Samples/Copper_Colors/Copper_0.1.jpg'))
+    //Results page file input needs adjustment
   ];
 
   // update the index selected
@@ -79,7 +81,7 @@ class _NavigateState extends State<Navigate> {
             icon: Icon(Icons.map),
             label: 'Map',
           ),
-          // for results pageBottomNavigationBarItem(icon: Icon(Icons.question_mark), label: 'Results')
+          BottomNavigationBarItem(icon: Icon(Icons.question_mark), label: 'Results')
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.cyan,
