@@ -70,7 +70,8 @@ class ResultsPage extends StatelessWidget {
 
   flagCheck() {
     if (5.0 >= valueList[0]) {
-      return Colors.green;
+      if(valueList[0] >= 1.0) {
+      return Colors.green;}
     } else {
       return Colors.red;
     }
