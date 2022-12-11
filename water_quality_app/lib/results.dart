@@ -19,7 +19,7 @@ class ResultsPage extends StatelessWidget {
 
   Widget columnFiller = Container(
       width: 100,
-      height: 25,);
+      height: 10,);
 
   @override
   Widget build(BuildContext context) {
