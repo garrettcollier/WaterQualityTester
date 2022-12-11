@@ -126,7 +126,9 @@ class ResultsPage extends StatelessWidget {
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
                 child: Text(namesList[1]),
               ),
@@ -147,7 +149,9 @@ class ResultsPage extends StatelessWidget {
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
                 child: Text(namesList[2]),
               ),
@@ -168,7 +172,9 @@ class ResultsPage extends StatelessWidget {
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
                 child: Text(namesList[3]),
               ),
@@ -189,7 +195,9 @@ class ResultsPage extends StatelessWidget {
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
                 child: Text(namesList[4]),
               ),
@@ -210,7 +218,9 @@ class ResultsPage extends StatelessWidget {
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
                 child: Text(namesList[5]),
               ),
@@ -231,7 +241,9 @@ class ResultsPage extends StatelessWidget {
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
                 child: Text(namesList[6]),
               ),
@@ -252,7 +264,9 @@ class ResultsPage extends StatelessWidget {
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
                 child: Text(namesList[7]),
               ),
@@ -273,7 +287,9 @@ class ResultsPage extends StatelessWidget {
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
                 child: Text(namesList[8]),
               ),
@@ -294,7 +310,9 @@ class ResultsPage extends StatelessWidget {
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
                 child: Text(namesList[9]),
               ),
@@ -315,7 +333,9 @@ class ResultsPage extends StatelessWidget {
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
                 child: Text(namesList[10]),
               ),
@@ -336,7 +356,9 @@ class ResultsPage extends StatelessWidget {
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
                 child: Text(namesList[11]),
               ),
@@ -357,7 +379,9 @@ class ResultsPage extends StatelessWidget {
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
                 child: Text(namesList[12]),
               ),
@@ -378,7 +402,9 @@ class ResultsPage extends StatelessWidget {
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
                 child: Text(namesList[13]),
               ),
@@ -399,7 +425,9 @@ class ResultsPage extends StatelessWidget {
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
                 child: Text(namesList[14]),
               ),
@@ -420,7 +448,9 @@ class ResultsPage extends StatelessWidget {
               Container(
                 width: 190,
                 height: 20,
-                color: Colors.cyan,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),),
                 alignment: Alignment.center,
                 child: Text(namesList[15]),
               ),
