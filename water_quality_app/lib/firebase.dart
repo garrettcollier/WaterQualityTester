@@ -5,6 +5,20 @@ import 'package:geolocator/geolocator.dart';
 final db = FirebaseFirestore.instance; //instance of the database
 String userID = "";
 var docRefLoc = "";
+var pHDoc = "";
+var zincDoc = "";
+var totChlDoc = "";
+var totAlkDoc = "";
+var sulfateDoc = "";
+var NaClDoc = "";
+var nitriteDoc = "";
+var nitrateDoc = "";
+var mangDoc = "";
+var leadDoc = "";
+var hydSulDoc = "";
+var freeChlDoc = "";
+var flouDoc = "";
+var copperDoc = "";
 
 //init database collections
 final pHCollection = db.collection('pH');
@@ -33,19 +47,62 @@ class Firestore {
     docRef.set(
         {"userID": userID, "measurement": data, "timestamp": DateTime.now()});
     //set the data in the doc using docRef.
-    docRefLoc = docRef
-        .id; //update the class variable docRefLoc to be the doc ID to access in location
+    //update the class variables for the document id in each collection
+    if (collection == "ph") {
+      pHDoc = docRef.id;
+    }
+    if (collection == "Zinc") {
+      zincDoc = docRef.id;
+    }
+    if (collection == "TotalChlorine") {
+      totChlDoc = docRef.id;
+    }
+    if (collection == "TotalAlkaline") {
+      totAlkDoc = docRef.id;
+    }
+    if (collection == "Sulfate") {
+      sulfateDoc = docRef.id;
+    }
+    if (collection == "SodiumChloride") {
+      NaClDoc = docRef.id;
+    }
+    if (collection == "Nitrite") {
+      nitriteDoc = docRef.id;
+    }
+    if (collection == "Nitrate") {
+      nitrateDoc = docRef.id;
+    }
+    if (collection == "Manganese") {
+      mangDoc = docRef.id;
+    }
+    if (collection == "Lead") {
+      leadDoc = docRef.id;
+    }
+    if (collection == "HydrogenSulfide") {
+      hydSulDoc = docRef.id;
+    }
+    if (collection == "FreeChlorine") {
+      freeChlDoc = docRef.id;
+    }
+    if (collection == "Flouride") {
+      flouDoc = docRef.id;
+    }
+    if (collection == "Copper") {
+      copperDoc = docRef.id;
+    }
+
     print(docRefLoc);
   }
 
-  Future addLocation(String collection, GeoPoint location) async {
+  Future addLocation(String collection, GeoPoint location, String docRef) async {
     db
         .collection(collection)
-        .doc(docRefLoc)
+        .doc(docRef)
         .set({"location": location}, SetOptions(merge: true));
   }
 
-  Future addToCollections( //mass adds docs to collections with data
+  Future addToCollections(
+      //mass adds docs to collections with data
       int ph,
       int zinc,
       int totcl,
@@ -75,20 +132,19 @@ class Firestore {
     addMeasurement("Copper", copper);
   }
 
-  Future addLocationToCollections(
-      GeoPoint location) async {
-    addLocation("ph", location);
-    addLocation("Zinc", location);
-    addLocation("TotalChlorine", location);
-    addLocation("Sulfate", location);
-    addLocation("SociumChloride", location);
-    addLocation("Nitrite", location);
-    addLocation("Nitrate", location);
-    addLocation("Manganese", location);
-    addLocation("Lead", location);
-    addLocation("HydrogenSulfide", location);
-    addLocation("FreeChlorine", location);
-    addLocation("Flouride", location);
-    addLocation("Copper", location);
+  Future addLocationToCollections(GeoPoint location) async {
+    addLocation("ph", location, pHDoc);
+    addLocation("Zinc", location, zincDoc);
+    addLocation("TotalChlorine", location, totChlDoc);
+    addLocation("Sulfate", location, sulfateDoc);
+    addLocation("SociumChloride", location, NaClDoc);
+    addLocation("Nitrite", location, nitriteDoc);
+    addLocation("Nitrate", location, nitrateDoc);
+    addLocation("Manganese", location, mangDoc);
+    addLocation("Lead", location, leadDoc);
+    addLocation("HydrogenSulfide", location, hydSulDoc);
+    addLocation("FreeChlorine", location, freeChlDoc);
+    addLocation("Flouride", location, flouDoc);
+    addLocation("Copper", location, copperDoc);
   }
 }
