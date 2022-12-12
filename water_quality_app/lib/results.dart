@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:water_quality_app/begin.dart';
@@ -10,6 +11,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:water_quality_app/firebase.dart' as firebase;
 import 'package:water_quality_app/rgb_generator.dart';
+
+class Location {
+  //store the location outside of the page to access for firebase
+  var lat;
+  var long;
+}
 
 class ResultsPage extends StatelessWidget {
   final List<Color> testColors;
@@ -53,6 +60,9 @@ class ResultsPage extends StatelessWidget {
     9.0
   ];
 
+  final firebase.Firestore _firestore = firebase.Firestore();
+  final Location _location = Location();
+
   flagCheck(double upperbound, double lowerbound, int index) {
     if (upperbound < valueList[index]) {
       return const Color.fromARGB(255, 248, 18, 2);
@@ -87,6 +97,13 @@ class ResultsPage extends StatelessWidget {
       await Geolocator.requestPermission();
       print("ERROR $error");
     });
+    Geolocator.getCurrentPosition().then((value) {
+      _location.lat = value.latitude; //set the values for lat and long
+      _location.long = value.longitude;
+    });
+    //adds the location to files
+    _firestore
+        .addLocationToCollections(GeoPoint(_location.lat, _location.long));
     return await Geolocator.getCurrentPosition();
   }
 
