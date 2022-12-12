@@ -24,7 +24,7 @@ var copperDoc;
 final pHCollection = db.collection('pH');
 final zincCollection = db.collection('Zinc');
 final totalChlorineCollection = db.collection('TotalChlorine');
-final totalAlkalineCollection = db.collection('TotalAlkaline');
+final totalAlkalineCollection = db.collection('TotalAlkalinity');
 final sulfateCollection = db.collection('Sulfate');
 final sodiumChlorideCollection = db.collection('SodiumChloride');
 final nitriteCollection = db.collection('Nitrite');
@@ -57,7 +57,7 @@ class Firestore {
     if (collection == "TotalChlorine") {
       totChlDoc = docRef.id;
     }
-    if (collection == "TotalAlkaline") {
+    if (collection == "TotalAlkalinity") {
       totAlkDoc = docRef.id;
     }
     if (collection == "Sulfate") {
