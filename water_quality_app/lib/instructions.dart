@@ -32,6 +32,7 @@ class InstructionPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(20),
               child: ElevatedButton(
+                key: const Key('selectbutton'),
                 style: styleButton,
                 onPressed: () {
                   Navigator.push(

@@ -3,7 +3,7 @@ import 'package:water_quality_app/camera.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CameraInstructionPage extends StatelessWidget {
-  CameraInstructionPage({super.key});
+   CameraInstructionPage({super.key});
 
   // style elevated button
   final ButtonStyle styleButton = ElevatedButton.styleFrom(
@@ -72,6 +72,7 @@ class CameraInstructionPage extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           ElevatedButton(
+            key: const Key('cameraButton'),
             style: styleButton,
             onPressed: () {
               Navigator.push(
@@ -82,7 +83,7 @@ class CameraInstructionPage extends StatelessWidget {
               );
             },
             child: const Text("Open Camera",
-            style: TextStyle(fontSize: 15, fontStyle: FontStyle.italic)))
+            style: TextStyle(fontSize: 18, fontStyle: FontStyle.normal)))
         ],
       ),
     );
