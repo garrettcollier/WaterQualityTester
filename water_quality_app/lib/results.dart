@@ -144,14 +144,19 @@ class _ResultsPageState extends State<ResultsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Results',
-          style: GoogleFonts.oswald(
-            fontSize: 25,
-            textStyle: const TextStyle(color: Colors.black, letterSpacing: .5),
+          centerTitle: true,
+          backgroundColor: Colors.black,
+          title: RichText(
+            text: const TextSpan(children: [
+              TextSpan(
+                  text: "RESULTS",
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 49, 227, 209),
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold)),
+            ]),
           ),
         ),
-      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

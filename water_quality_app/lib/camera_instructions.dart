@@ -19,10 +19,19 @@ class CameraInstructionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Camera Instructions',
-        style: GoogleFonts.oswald(
-          fontSize: 25,
-          textStyle: TextStyle(color: Colors.black, letterSpacing: .5),),),),
+          centerTitle: true,
+          backgroundColor: Colors.black,
+          title: RichText(
+            text: const TextSpan(children: [
+              TextSpan(
+                  text: "CAMERA INSTRUCTIONS",
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 49, 227, 209),
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold)),
+            ]),
+          ),
+        ),
       // to scroll through page
       body: Column(
         children: <Widget>[

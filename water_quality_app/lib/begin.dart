@@ -28,8 +28,26 @@ class _FrontState extends State<Front> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Water Quality Tester"),
-      ),
+          centerTitle: true,
+          backgroundColor: Colors.black,
+          title: RichText(
+            text: const TextSpan(children: [
+              TextSpan(
+                  text: "WATER",
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 49, 227, 209),
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold)),
+              TextSpan(
+                  text: " QUALITY TESTER",
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 49, 227, 209),
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold)),
+            ]),
+          ),
+        ),
+      
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

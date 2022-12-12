@@ -4,6 +4,7 @@ import 'package:water_quality_app/camera_instructions.dart';
 import 'package:water_quality_app/epa_standards.dart';
 import 'package:water_quality_app/instructions.dart';
 import 'package:water_quality_app/map.dart';
+import 'package:water_quality_app/results.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -75,8 +76,8 @@ class _NavigateState extends State<Navigate> {
             icon: Icon(Icons.map),
             label: 'Map',
           ),
-          // BottomNavigationBarItem(
-          //     icon: Icon(Icons.question_mark), label: 'Results')
+           //BottomNavigationBarItem(
+               //icon: Icon(Icons.question_mark), label: 'Results')
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.cyan,
