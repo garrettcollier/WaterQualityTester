@@ -36,9 +36,9 @@ class _NavigateState extends State<Navigate> {
     CameraInstructionPage(),
     EPAStandards(),
     InstructionPage(),
-    MapPage(fromNavHome: true), //,
-    ResultsPage(image: File('/Users/alexandriacade/WaterQualityTester/water_quality_app/assets/Varify Color Samples/Copper_Colors/Copper_0.1.jpg'))
-    //Results page file input needs adjustment
+    MapPage(fromNavHome: true),
+    // ResultsPage(image: File('/Users/alexandriacade/WaterQualityTester/water_quality_app/assets/Varify Color Samples/Copper_Colors/Copper_0.1.jpg'))
+    // Results page file input needs adjustment
   ];
 
   // update the index selected
@@ -51,9 +51,6 @@ class _NavigateState extends State<Navigate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Water Quality Tester'),
-      ),
       body: Center(
         // display widget from _widgetoptions list
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -81,7 +78,8 @@ class _NavigateState extends State<Navigate> {
             icon: Icon(Icons.map),
             label: 'Map',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.question_mark), label: 'Results')
+          // BottomNavigationBarItem(
+          //     icon: Icon(Icons.question_mark), label: 'Results')
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.cyan,

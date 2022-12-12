@@ -18,6 +18,11 @@ class EPAStandards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('EPA Standards',
+        style: GoogleFonts.oswald(
+          fontSize: 25,
+          textStyle: TextStyle(color: Colors.black, letterSpacing: .5),),),),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
