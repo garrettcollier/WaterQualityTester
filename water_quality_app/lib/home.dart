@@ -14,13 +14,13 @@ class Home extends StatelessWidget {
     // home navigator for all pages
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.cyan),
-      home: Navigate(),
+      home: const Navigate(),
     );
   }
 }
 
 class Navigate extends StatefulWidget {
-  Navigate({super.key});
+  const Navigate({super.key});
 
   @override
   State<Navigate> createState() => _NavigateState();
@@ -58,22 +58,27 @@ class _NavigateState extends State<Navigate> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             // Camera Page
-            icon: Icon(Icons.camera),
+            icon: Icon(key:Key('iconcamera'),
+            Icons.camera
+            ),
             label: 'Camera',
           ),
           // EPA Standards Page
           BottomNavigationBarItem(
-            icon: Icon(Icons.water),
+            icon: Icon(key:Key('iconwater'),
+            Icons.water),
             label: 'EPA Standards',
           ),
           BottomNavigationBarItem(
             // Home Page
-            icon: Icon(Icons.integration_instructions),
+            icon: Icon(key:Key('iconinstructions'),
+            Icons.integration_instructions),
             label: 'Instructions',
           ),
           BottomNavigationBarItem(
             // Map Page
-            icon: Icon(Icons.map),
+            icon: Icon(key:Key('iconmap'),
+            Icons.map),
             label: 'Map',
           ),
            //BottomNavigationBarItem(
