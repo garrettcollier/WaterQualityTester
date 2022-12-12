@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:water_quality_app/begin.dart';
@@ -9,7 +10,8 @@ import 'package:flutter/material.dart';
 
 import 'package:water_quality_app/firebase.dart' as firebase;
 
-class Location { //store the location outside of the page to access for firebase
+class Location {
+  //store the location outside of the page to access for firebase
   var lat;
   var long;
 }
@@ -72,6 +74,9 @@ class ResultsPage extends StatelessWidget {
     9.0
   ];
 
+  final firebase.Firestore _firestore = firebase.Firestore();
+  final Location _location = Location();
+
   ResultsPage({super.key, required this.image});
 
   Widget rowFiller = Container(width: 48, height: 25);
@@ -93,11 +98,13 @@ class ResultsPage extends StatelessWidget {
       await Geolocator.requestPermission();
       print("ERROR $error");
     });
-    final Location _location = Location();
     Geolocator.getCurrentPosition().then((value) {
       _location.lat = value.latitude; //set the values for lat and long
       _location.long = value.longitude;
     });
+    //adds the location to files
+    _firestore
+        .addLocationToCollections(GeoPoint(_location.lat, _location.long));
     return await Geolocator.getCurrentPosition();
   }
 
@@ -454,7 +461,6 @@ class ResultsPage extends StatelessWidget {
                   getUserCurrentLocation().then(
                     (value) async {
                       print("${value.latitude} ${value.longitude}");
-
                       // marker added for current users location
                       // MARKER LIST CURRENTLY RESETS WHEN APP IS CLOSED
                       markerList.add(
