@@ -9,6 +9,11 @@ import 'package:flutter/material.dart';
 
 import 'package:water_quality_app/firebase.dart' as firebase;
 
+class Location { //store the location outside of the page to access for firebase
+  var lat;
+  var long;
+}
+
 class ResultsPage extends StatelessWidget {
   final File image;
   List<String> namesList = [
@@ -87,6 +92,11 @@ class ResultsPage extends StatelessWidget {
         .onError((error, stackTrace) async {
       await Geolocator.requestPermission();
       print("ERROR $error");
+    });
+    final Location _location = Location();
+    Geolocator.getCurrentPosition().then((value) {
+      _location.lat = value.latitude; //set the values for lat and long
+      _location.long = value.longitude;
     });
     return await Geolocator.getCurrentPosition();
   }

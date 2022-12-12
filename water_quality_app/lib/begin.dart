@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:water_quality_app/select_tester_type.dart';
 import 'package:water_quality_app/firebase.dart' as firebase;
+import 'package:water_quality_app/results.dart' as results;
 
 class FrontPage extends StatelessWidget {
   const FrontPage({super.key});
@@ -63,15 +65,20 @@ class _FrontState extends State<Front> {
                 style: const TextStyle(fontSize: 20),
               ),
             ),
-            TextButton( //Button to test adding to a collection.
-              onPressed: (){
-                final firebase.Firestore _firestore = firebase.Firestore();
-                _firestore.addMeasurement("pH", 8);}, 
-              child: Text("Test Firebase Button")),
-              TextButton(onPressed: (){
-                final firebase.Firestore _firestore = firebase.Firestore();
-                _firestore.addLocation("pH");
-              }, child: Text("Test Add Location"))
+            TextButton(
+                //Button to test adding to a collection.
+                onPressed: () {
+                  final firebase.Firestore _firestore = firebase.Firestore();
+                  _firestore.addMeasurement("pH", 8);
+                },
+                child: Text("Test Firebase Button")),
+            TextButton(
+                onPressed: () {
+                  final firebase.Firestore _firestore = firebase.Firestore();
+                  final results.Location _location = results.Location();
+                  _firestore.addLocation("pH", GeoPoint(9,3));
+                },
+                child: Text("Test Add Location"))
           ],
         ),
       ),

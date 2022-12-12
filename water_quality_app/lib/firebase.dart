@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:geolocator/geolocator.dart';
 
 //initialize an instance of cloud firestore
 final db = FirebaseFirestore.instance; //instance of the database
@@ -36,10 +37,10 @@ class Firestore {
     print(docRefLoc);
   }
 
-  Future addLocation(String collection) async {
+  Future addLocation(String collection, GeoPoint location) async {
     db
         .collection(collection)
         .doc(docRefLoc)
-        .set({"location": "here"}, SetOptions(merge: true));
+        .set({"location": location}, SetOptions(merge: true));
   }
 }
