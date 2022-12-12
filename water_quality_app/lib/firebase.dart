@@ -33,7 +33,8 @@ class Firestore {
     docRef.set(
         {"userID": userID, "measurement": data, "timestamp": DateTime.now()});
     //set the data in the doc using docRef.
-    docRefLoc = docRef.id; //update the class variable docRefLoc to be the doc ID to access in location
+    docRefLoc = docRef
+        .id; //update the class variable docRefLoc to be the doc ID to access in location
     print(docRefLoc);
   }
 
@@ -42,5 +43,52 @@ class Firestore {
         .collection(collection)
         .doc(docRefLoc)
         .set({"location": location}, SetOptions(merge: true));
+  }
+
+  Future addToCollections( //mass adds docs to collections with data
+      int ph,
+      int zinc,
+      int totcl,
+      int totalk,
+      int sulfate,
+      int NaCl,
+      int nitrite,
+      int nitrate,
+      int manganese,
+      int lead,
+      int hydrogensul,
+      int freechl,
+      int flouride,
+      int copper) async {
+    addMeasurement("ph", ph);
+    addMeasurement("Zinc", zinc);
+    addMeasurement("TotalChlorine", totcl);
+    addMeasurement("Sulfate", sulfate);
+    addMeasurement("SociumChloride", NaCl);
+    addMeasurement("Nitrite", nitrite);
+    addMeasurement("Nitrate", nitrate);
+    addMeasurement("Manganese", manganese);
+    addMeasurement("Lead", lead);
+    addMeasurement("HydrogenSulfide", hydrogensul);
+    addMeasurement("FreeChlorine", freechl);
+    addMeasurement("Flouride", flouride);
+    addMeasurement("Copper", copper);
+  }
+
+  Future addLocationToCollections(
+      GeoPoint location) async {
+    addLocation("ph", location);
+    addLocation("Zinc", location);
+    addLocation("TotalChlorine", location);
+    addLocation("Sulfate", location);
+    addLocation("SociumChloride", location);
+    addLocation("Nitrite", location);
+    addLocation("Nitrate", location);
+    addLocation("Manganese", location);
+    addLocation("Lead", location);
+    addLocation("HydrogenSulfide", location);
+    addLocation("FreeChlorine", location);
+    addLocation("Flouride", location);
+    addLocation("Copper", location);
   }
 }
