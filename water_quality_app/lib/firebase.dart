@@ -41,7 +41,7 @@ class Firestore {
   // addMeasurement takes in the collection (name in Firestore) and the measurement
   // for the standard. Creates a new document adds fields with the userID, measurement,
   //and timestamp
-  Future addMeasurement(String collection, int data) async {
+  Future addMeasurement(String collection, double data) async {
     final docRef =
         db.collection(collection).doc(); //create the doc with auto-generated ID
     docRef.set(
@@ -101,20 +101,20 @@ class Firestore {
 
   Future addToCollections(
       //mass adds docs to collections with data
-      int ph,
-      int zinc,
-      int totcl,
-      int totalk,
-      int sulfate,
-      int NaCl,
-      int nitrite,
-      int nitrate,
-      int manganese,
-      int lead,
-      int hydrogensul,
-      int freechl,
-      int flouride,
-      int copper) async {
+      double ph,
+      double zinc,
+      double totcl,
+      double totalk,
+      double sulfate,
+      double NaCl,
+      double nitrite,
+      double nitrate,
+      double manganese,
+      double lead,
+      double hydrogensul,
+      double freechl,
+      double flouride,
+      double copper) async {
     addMeasurement("pH", ph);
     addMeasurement("Zinc", zinc);
     addMeasurement("TotalChlorine", totcl);

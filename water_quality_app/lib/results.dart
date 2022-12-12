@@ -704,11 +704,44 @@ class ResultsPage extends StatelessWidget {
           ),
           columnFiller,
           Center(
-            // buttons for adding your location to
-            // the map and returning to home page
+            // buttons for adding data to database,
+            // adding your location to the map,
+            // and returning to home page
             child: Column(
               //  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+                Container(
+                  width: 300,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: Colors.teal,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: TextButton(
+                    child: Text(
+                      "Add to Database",
+                      style: textstyle2,
+                    ),
+                    onPressed: () {
+                      _firestore.addToCollections(
+                          valueList[0],
+                          valueList[1],
+                          valueList[2],
+                          valueList[3],
+                          valueList[4],
+                          valueList[5],
+                          valueList[6],
+                          valueList[7],
+                          valueList[8],
+                          valueList[9],
+                          valueList[10],
+                          valueList[11],
+                          valueList[12],
+                          valueList[13]);
+                    },
+                  ),
+                ),
+                columnFiller,
                 Container(
                   width: 300,
                   height: 40,
