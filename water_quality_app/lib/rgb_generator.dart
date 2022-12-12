@@ -71,6 +71,11 @@ Future<String?> compareTestToSampleToGetValue(
     String assetColorsFilePath, Color testColor) async {
   // map of percentage color difference and color value for flag checks
   Map<double, String> colorDiffs = {};
+// compare image file colors in assets directory to the test color from camera
+Future<String?> compareTestToSampleToGetValue(
+    String assetColorsFilePath, Color testColor) async {
+  // map of percentage color difference and color value for flag checks
+  Map<double, String> colorDiffs = {};
 
   // get files from directory
   bool directoryExists = await Directory(assetColorsFilePath).exists();
@@ -95,7 +100,7 @@ Future<String?> compareTestToSampleToGetValue(
   List<double> colorDiffKeyDoubles = colorDiffs.keys as List<double>;
   colorDiffKeyDoubles.sort();
 
-  // return largest percentage color file name
+  // return largest percentage match color file name
   return colorDiffs[colorDiffKeyDoubles.last];
 }
 
