@@ -53,17 +53,10 @@ class _RGBImageCheckPageState extends State<RGBImageCheckPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(
-              height: 20,
-            ),
-
-            // get color grid
-            _getColorGrid(),
-
             // See results from image
             ElevatedButton(
               style: styleButton,
-              child: const Text("See your results"),
+              child: const Text("View Results"),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -73,6 +66,12 @@ class _RGBImageCheckPageState extends State<RGBImageCheckPage> {
                 );
               },
             ),
+            const SizedBox(
+              height: 20,
+            ),
+
+            // get color grid
+            _getColorGrid(),
           ],
         ),
       ),
@@ -149,69 +148,3 @@ class _RGBImageCheckPageState extends State<RGBImageCheckPage> {
     );
   }
 }
-
-// GIVES GRIDS FOR ALL PIXELS IN IMAGE (SORTED)
-// SEEMS UNNEEDED BUT LEAVING HERE JUST IN CASE
-//         const SizedBox(width: 10),
-//         Expanded(
-//           flex: 1,
-//           child: sortedColors.isEmpty
-//               ? Container(
-//                   alignment: Alignment.center,
-//                   height: 200,
-//                   child: const CircularProgressIndicator(),
-//                 )
-//               : Column(
-//                   children: [
-//                     Text(
-//                       'Sorted Pixels',
-//                       style: TextStyle(
-//                           color:
-//                               palette.isEmpty ? Colors.black : palette.first),
-//                     ),
-//                     const SizedBox(height: 10),
-//                     GridView.builder(
-//                         shrinkWrap: true,
-//                         gridDelegate:
-//                             SliverGridDelegateWithFixedCrossAxisCount(
-//                                 crossAxisCount: noOfPixelsPerAxis),
-//                         itemCount: sortedColors.length,
-//                         itemBuilder: (BuildContext ctx, index) {
-//                           return Container(
-//                             alignment: Alignment.center,
-//                             child: Container(
-//                               color: sortedColors[index],
-//                             ),
-//                           );
-//                         }),
-//                   ],
-//                 ),
-//         )
-//       ],
-//     ),
-//   );
-// }
-
-// GETS PALETTE OF COLORS FROM IMAGE
-// widget to get the palette
-// Widget _getPalette() {
-//   return SizedBox(
-//     height: 50,
-//     child: palette.isEmpty
-//         ? Container(
-//             alignment: Alignment.center,
-//             height: 100,
-//             child: const CircularProgressIndicator(),
-//           )
-//         : ListView.builder(
-//             shrinkWrap: true,
-//             scrollDirection: Axis.horizontal,
-//             itemCount: palette.length,
-//             itemBuilder: (BuildContext context, int index) => Container(
-//               color: palette[index],
-//               height: 50,
-//               width: 50,
-//             ),
-//           ),
-//   );
-// }

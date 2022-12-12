@@ -66,7 +66,7 @@ double compareColors(Color c1, Color c2) {
   return (pctDiffRed + pctDiffGreen + pctDiffBlue) / 3 * 100;
 }
 
-// compare image file colors in assets to the test color from camera
+// compare image file colors in assets directory to the test color from camera
 Future<String?> compareTestToSampleToGetValue(
     String assetColorsFilePath, Color testColor) async {
   // map of percentage color difference and color value for flag checks
@@ -95,7 +95,7 @@ Future<String?> compareTestToSampleToGetValue(
   List<double> colorDiffKeyDoubles = colorDiffs.keys as List<double>;
   colorDiffKeyDoubles.sort();
 
-  // return largest percentage color file name
+  // return largest percentage match color file name
   return colorDiffs[colorDiffKeyDoubles.last];
 }
 
