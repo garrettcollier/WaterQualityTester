@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -10,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:water_quality_app/firebase.dart' as firebase;
-import 'package:water_quality_app/rgb_generator.dart';
 
 class Location {
   //store the location outside of the page to access for firebase
@@ -18,8 +15,43 @@ class Location {
   var long;
 }
 
-class ResultsPage extends StatelessWidget {
+class ResultsPage extends StatefulWidget {
   final List<Color> testColors;
+
+  const ResultsPage({super.key, required this.testColors});
+
+  @override
+  _ResultsPageState createState() => _ResultsPageState();
+}
+
+class _ResultsPageState extends State<ResultsPage> {
+  // initial values for minerals
+  String _totalAlkValue = "";
+  String _sodiumChlorideValue = "";
+  String _flourideValue = "";
+  String _zincValue = "";
+  String _sulfateValue = "";
+  String _nitriteValue = "";
+  String _nitrateValue = "";
+  String _mercuryValue = "";
+  String _totalChlorineValue = "";
+  String _manganeseValue = "";
+  String _leadValue = "";
+  String _copperValue = "";
+  String _ironValue = "";
+  String _hydrogenSulfideValue = "";
+  String _hardnessValue = "";
+  String _pHValue = "";
+
+  // THIS DOES NOT RECOGNIZE THE DIRECTORY FOR SOME REASON
+  // declare all values using rgb generator functions for each of the minerals tested
+  // _ResultsPageState() {
+  //   compareTestToSampleToGetValue(
+  //           'assets/Varify Color Samples/TotalAlk_Colors', widget.testColors[0])
+  //       .then((val) => setState(() {
+  //             _totalAlkValue = val!;
+  //           }));
+  // }
 
   // current names for each mineral
   List<String> namesList = [
@@ -41,6 +73,7 @@ class ResultsPage extends StatelessWidget {
     "pH"
   ];
 
+  // default values for minerals until values tested can be displayed
   List<double> valueList = [
     80,
     100,
@@ -63,6 +96,8 @@ class ResultsPage extends StatelessWidget {
   final firebase.Firestore _firestore = firebase.Firestore();
   final Location _location = Location();
 
+  // displays a different color flag based on if
+  // the mineral is reaching dangerous levels
   flagCheck(double upperbound, double lowerbound, int index) {
     if (upperbound < valueList[index]) {
       return const Color.fromARGB(255, 248, 18, 2);
@@ -74,13 +109,13 @@ class ResultsPage extends StatelessWidget {
     }
   }
 
-  ResultsPage({super.key, required this.testColors});
-
+  // text style
   final TextStyle textstyle2 = GoogleFonts.oswald(
       fontSize: 14,
       textStyle: const TextStyle(color: Colors.black, letterSpacing: .5));
 
-  Widget columnFiller = Container(
+  // column filler widget
+  Widget columnFiller = const SizedBox(
     width: 50,
     height: 5,
   );
@@ -101,9 +136,6 @@ class ResultsPage extends StatelessWidget {
       _location.lat = value.latitude; //set the values for lat and long
       _location.long = value.longitude;
     });
-    //adds the location to files
-    _firestore
-        .addLocationToCollections(GeoPoint(_location.lat, _location.long));
     return await Geolocator.getCurrentPosition();
   }
 
@@ -140,7 +172,7 @@ class ResultsPage extends StatelessWidget {
               ),
               Icon(
                 Icons.square,
-                color: testColors[0],
+                color: widget.testColors[0],
               ),
               Container(
                 width: 60,
@@ -152,10 +184,6 @@ class ResultsPage extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(
                   valueList[0].toString(),
-                  // THIS DOES NOT RECOGNIZE THE DIRECTORY FOR SOME REASON
-                  // compareTestToSampleToGetValue(
-                  //     "assets/Varify Color Samples/TotalAlk_Colors",
-                  //     testColors[0]) as String,
                   style: textstyle2,
                 ),
               ),
@@ -181,7 +209,7 @@ class ResultsPage extends StatelessWidget {
               ),
               Icon(
                 Icons.square,
-                color: testColors[1],
+                color: widget.testColors[1],
               ),
               Container(
                   width: 60,
@@ -217,7 +245,7 @@ class ResultsPage extends StatelessWidget {
               ),
               Icon(
                 Icons.square,
-                color: testColors[2],
+                color: widget.testColors[2],
               ),
               Container(
                   width: 60,
@@ -253,7 +281,7 @@ class ResultsPage extends StatelessWidget {
               ),
               Icon(
                 Icons.square,
-                color: testColors[3],
+                color: widget.testColors[3],
               ),
               Container(
                   width: 60,
@@ -289,7 +317,7 @@ class ResultsPage extends StatelessWidget {
               ),
               Icon(
                 Icons.square,
-                color: testColors[4],
+                color: widget.testColors[4],
               ),
               Container(
                   width: 60,
@@ -325,7 +353,7 @@ class ResultsPage extends StatelessWidget {
               ),
               Icon(
                 Icons.square,
-                color: testColors[5],
+                color: widget.testColors[5],
               ),
               Container(
                   width: 60,
@@ -361,7 +389,7 @@ class ResultsPage extends StatelessWidget {
               ),
               Icon(
                 Icons.square,
-                color: testColors[6],
+                color: widget.testColors[6],
               ),
               Container(
                   width: 60,
@@ -397,7 +425,7 @@ class ResultsPage extends StatelessWidget {
               ),
               Icon(
                 Icons.square,
-                color: testColors[7],
+                color: widget.testColors[7],
               ),
               Container(
                   width: 60,
@@ -433,7 +461,7 @@ class ResultsPage extends StatelessWidget {
               ),
               Icon(
                 Icons.square,
-                color: testColors[8],
+                color: widget.testColors[8],
               ),
               Container(
                   width: 60,
@@ -469,7 +497,7 @@ class ResultsPage extends StatelessWidget {
               ),
               Icon(
                 Icons.square,
-                color: testColors[9],
+                color: widget.testColors[9],
               ),
               Container(
                   width: 60,
@@ -505,7 +533,7 @@ class ResultsPage extends StatelessWidget {
               ),
               Icon(
                 Icons.square,
-                color: testColors[10],
+                color: widget.testColors[10],
               ),
               Container(
                   width: 60,
@@ -541,7 +569,7 @@ class ResultsPage extends StatelessWidget {
               ),
               Icon(
                 Icons.square,
-                color: testColors[11],
+                color: widget.testColors[11],
               ),
               Container(
                   width: 60,
@@ -577,7 +605,7 @@ class ResultsPage extends StatelessWidget {
               ),
               Icon(
                 Icons.square,
-                color: testColors[12],
+                color: widget.testColors[12],
               ),
               Container(
                   width: 60,
@@ -613,7 +641,7 @@ class ResultsPage extends StatelessWidget {
               ),
               Icon(
                 Icons.square,
-                color: testColors[13],
+                color: widget.testColors[13],
               ),
               Container(
                   width: 60,
@@ -649,7 +677,7 @@ class ResultsPage extends StatelessWidget {
               ),
               Icon(
                 Icons.square,
-                color: testColors[14],
+                color: widget.testColors[14],
               ),
               Container(
                   width: 60,
@@ -685,7 +713,7 @@ class ResultsPage extends StatelessWidget {
               ),
               Icon(
                 Icons.square,
-                color: testColors[15],
+                color: widget.testColors[15],
               ),
               Container(
                   width: 60,
@@ -702,7 +730,7 @@ class ResultsPage extends StatelessWidget {
               Icon(Icons.flag, color: flagCheck(8.5, 6.5, 15)),
             ],
           ),
-          columnFiller,
+          const SizedBox(height: 20),
           Center(
             // buttons for adding data to database,
             // adding your location to the map,
@@ -757,8 +785,6 @@ class ResultsPage extends StatelessWidget {
                     onPressed: () async {
                       getUserCurrentLocation().then(
                         (value) async {
-                          print("${value.latitude} ${value.longitude}");
-
                           // marker added for current users location
                           // MARKER LIST CURRENTLY RESETS WHEN APP IS CLOSED
                           markerList.add(
@@ -767,7 +793,7 @@ class ResultsPage extends StatelessWidget {
                                   MarkerId((markerList.length + 1).toString()),
                               position: LatLng(value.latitude, value.longitude),
                               infoWindow: const InfoWindow(
-                                title: 'My Current Location',
+                                title: 'Current Location',
                               ),
                             ),
                           );
@@ -775,11 +801,13 @@ class ResultsPage extends StatelessWidget {
                       );
                       // go to home page after plot
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Home(),
-                        ),
-                      );
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Home(),
+                          )).then((value) => setState(() {}));
+                      //adds the location to files in database
+                      _firestore.addLocationToCollections(
+                          GeoPoint(_location.lat, _location.long));
                     },
                   ),
                 ),
