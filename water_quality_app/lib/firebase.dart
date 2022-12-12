@@ -5,20 +5,20 @@ import 'package:geolocator/geolocator.dart';
 final db = FirebaseFirestore.instance; //instance of the database
 String userID = "";
 var docRefLoc = "";
-var pHDoc = "";
-var zincDoc = "";
-var totChlDoc = "";
-var totAlkDoc = "";
-var sulfateDoc = "";
-var NaClDoc = "";
-var nitriteDoc = "";
-var nitrateDoc = "";
-var mangDoc = "";
-var leadDoc = "";
-var hydSulDoc = "";
-var freeChlDoc = "";
-var flouDoc = "";
-var copperDoc = "";
+var pHDoc;
+var zincDoc;
+var totChlDoc;
+var totAlkDoc;
+var sulfateDoc;
+var NaClDoc;
+var nitriteDoc;
+var nitrateDoc;
+var mangDoc;
+var leadDoc;
+var hydSulDoc;
+var freeChlDoc;
+var flouDoc;
+var copperDoc;
 
 //init database collections
 final pHCollection = db.collection('pH');
@@ -48,7 +48,7 @@ class Firestore {
         {"userID": userID, "measurement": data, "timestamp": DateTime.now()});
     //set the data in the doc using docRef.
     //update the class variables for the document id in each collection
-    if (collection == "ph") {
+    if (collection == "pH") {
       pHDoc = docRef.id;
     }
     if (collection == "Zinc") {
@@ -90,8 +90,6 @@ class Firestore {
     if (collection == "Copper") {
       copperDoc = docRef.id;
     }
-
-    print(docRefLoc);
   }
 
   Future addLocation(String collection, GeoPoint location, String docRef) async {
@@ -117,7 +115,7 @@ class Firestore {
       int freechl,
       int flouride,
       int copper) async {
-    addMeasurement("ph", ph);
+    addMeasurement("pH", ph);
     addMeasurement("Zinc", zinc);
     addMeasurement("TotalChlorine", totcl);
     addMeasurement("Sulfate", sulfate);
@@ -133,7 +131,7 @@ class Firestore {
   }
 
   Future addLocationToCollections(GeoPoint location) async {
-    addLocation("ph", location, pHDoc);
+    addLocation("pH", location, pHDoc);
     addLocation("Zinc", location, zincDoc);
     addLocation("TotalChlorine", location, totChlDoc);
     addLocation("Sulfate", location, sulfateDoc);

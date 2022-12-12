@@ -69,14 +69,14 @@ class _FrontState extends State<Front> {
             //     //Button to test adding to a collection.
             //     onPressed: () {
             //       final firebase.Firestore _firestore = firebase.Firestore();
-            //       _firestore.addMeasurement("pH", 8);
+            //       _firestore.addToCollections(9, 8);
             //     },
             //     child: Text("Test Firebase Button")),
             // TextButton(
             //     onPressed: () {
             //       final firebase.Firestore _firestore = firebase.Firestore();
             //       final results.Location _location = results.Location();
-            //       _firestore.addLocation("pH", GeoPoint(9,3));
+            //       _firestore.addLocationToCollections(GeoPoint(9, 3));
             //     },
             //     child: Text("Test Add Location"))
           ],
