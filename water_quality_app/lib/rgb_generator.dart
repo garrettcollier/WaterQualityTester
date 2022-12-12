@@ -65,12 +65,6 @@ double compareColors(Color c1, Color c2) {
   // find average color difference
   return (pctDiffRed + pctDiffGreen + pctDiffBlue) / 3 * 100;
 }
-
-// compare image file colors in assets to the test color from camera
-Future<String?> compareTestToSampleToGetValue(
-    String assetColorsFilePath, Color testColor) async {
-  // map of percentage color difference and color value for flag checks
-  Map<double, String> colorDiffs = {};
 // compare image file colors in assets directory to the test color from camera
 Future<String?> compareTestToSampleToGetValue(
     String assetColorsFilePath, Color testColor) async {
