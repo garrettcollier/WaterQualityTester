@@ -4,7 +4,7 @@ import 'package:geolocator/geolocator.dart';
 //initialize an instance of cloud firestore
 final db = FirebaseFirestore.instance; //instance of the database
 String userID = "";
-var docRefLoc = "";
+//var docRefLoc = "";
 var pHDoc;
 var zincDoc;
 var totChlDoc;
@@ -92,7 +92,8 @@ class Firestore {
     }
   }
 
-  Future addLocation(String collection, GeoPoint location, String docRef) async {
+  Future addLocation(
+      String collection, GeoPoint location, String docRef) async {
     db
         .collection(collection)
         .doc(docRef)
@@ -118,8 +119,9 @@ class Firestore {
     addMeasurement("pH", ph);
     addMeasurement("Zinc", zinc);
     addMeasurement("TotalChlorine", totcl);
+    addMeasurement("TotalAlkalinity", totalk);
     addMeasurement("Sulfate", sulfate);
-    addMeasurement("SociumChloride", NaCl);
+    addMeasurement("SodiumChloride", NaCl);
     addMeasurement("Nitrite", nitrite);
     addMeasurement("Nitrate", nitrate);
     addMeasurement("Manganese", manganese);
@@ -134,8 +136,9 @@ class Firestore {
     addLocation("pH", location, pHDoc);
     addLocation("Zinc", location, zincDoc);
     addLocation("TotalChlorine", location, totChlDoc);
+    addLocation("TotalAlkalinity", location, totAlkDoc);
     addLocation("Sulfate", location, sulfateDoc);
-    addLocation("SociumChloride", location, NaClDoc);
+    addLocation("SodiumChloride", location, NaClDoc);
     addLocation("Nitrite", location, nitriteDoc);
     addLocation("Nitrate", location, nitrateDoc);
     addLocation("Manganese", location, mangDoc);

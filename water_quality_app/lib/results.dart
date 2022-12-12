@@ -10,12 +10,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:water_quality_app/firebase.dart' as firebase;
 import 'package:water_quality_app/rgb_generator.dart';
 
-class Location {
-  //store the location outside of the page to access for firebase
-  var lat;
-  var long;
-}
-
 class ResultsPage extends StatefulWidget {
   final List<Color> testColors;
 
@@ -95,7 +89,6 @@ class _ResultsPageState extends State<ResultsPage> {
   ];
 
   final firebase.Firestore _firestore = firebase.Firestore();
-  final Location _location = Location();
 
   // displays a different color flag based on if
   // the mineral is reaching dangerous levels
@@ -133,10 +126,6 @@ class _ResultsPageState extends State<ResultsPage> {
       await Geolocator.requestPermission();
       print("ERROR $error");
     });
-    Geolocator.getCurrentPosition().then((value) {
-      _location.lat = value.latitude; //set the values for lat and long
-      _location.long = value.longitude;
-    });
     return await Geolocator.getCurrentPosition();
   }
 
@@ -144,19 +133,19 @@ class _ResultsPageState extends State<ResultsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.black,
-          title: RichText(
-            text: const TextSpan(children: [
-              TextSpan(
-                  text: "RESULTS",
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 49, 227, 209),
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold)),
-            ]),
-          ),
+        centerTitle: true,
+        backgroundColor: Colors.black,
+        title: RichText(
+          text: const TextSpan(children: [
+            TextSpan(
+                text: "RESULTS",
+                style: TextStyle(
+                    color: Color.fromARGB(255, 49, 227, 209),
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold)),
+          ]),
         ),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -791,6 +780,10 @@ class _ResultsPageState extends State<ResultsPage> {
                     onPressed: () async {
                       getUserCurrentLocation().then(
                         (value) async {
+                          print("${value.latitude} ${value.longitude}");
+                          //add location to database
+                          _firestore.addLocationToCollections(
+                              GeoPoint(value.latitude, value.longitude));
                           // marker added for current users location
                           // MARKER LIST CURRENTLY RESETS WHEN APP IS CLOSED
                           markerList.add(
@@ -812,8 +805,6 @@ class _ResultsPageState extends State<ResultsPage> {
                             builder: (context) => const Home(),
                           )).then((value) => setState(() {}));
                       //adds the location to files in database
-                      _firestore.addLocationToCollections(
-                          GeoPoint(_location.lat, _location.long));
                     },
                   ),
                 ),
