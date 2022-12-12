@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water_quality_app/camera.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CameraInstructionPage extends StatelessWidget {
   CameraInstructionPage({super.key});
@@ -17,15 +18,15 @@ class CameraInstructionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Camera Instructions',
+        style: GoogleFonts.oswald(
+          fontSize: 25,
+          textStyle: TextStyle(color: Colors.black, letterSpacing: .5),),),),
       // to scroll through page
       body: Column(
         children: <Widget>[
           // instructions
-          const Text(
-            "Camera Instructions",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ),
           ListView(
             shrinkWrap: true,
             padding: const EdgeInsets.all(8),
