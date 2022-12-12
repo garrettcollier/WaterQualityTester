@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:water_quality_app/begin.dart';
@@ -9,9 +10,18 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:water_quality_app/firebase.dart' as firebase;
+import 'package:water_quality_app/rgb_generator.dart';
+
+class Location {
+  //store the location outside of the page to access for firebase
+  var lat;
+  var long;
+}
 
 class ResultsPage extends StatelessWidget {
-  final File image;
+  final List<Color> testColors;
+
+  // current names for each mineral
   List<String> namesList = [
     "Total Alkalinity",
     "Sodium Chloride",
@@ -30,25 +40,7 @@ class ResultsPage extends StatelessWidget {
     "Hardness",
     "pH"
   ];
-  //RGB(image: image),
-  List<Color> colorList = [
-    Colors.red,
-    Colors.green,
-    Colors.blue,
-    Colors.black,
-    Colors.red,
-    Colors.red,
-    Colors.red,
-    Colors.red,
-    Colors.red,
-    Colors.red,
-    Colors.red,
-    Colors.red,
-    Colors.red,
-    Colors.red,
-    Colors.red,
-    Colors.red
-  ];
+
   List<double> valueList = [
     80,
     100,
@@ -68,23 +60,25 @@ class ResultsPage extends StatelessWidget {
     9.0
   ];
 
+  final firebase.Firestore _firestore = firebase.Firestore();
+  final Location _location = Location();
+
   flagCheck(double upperbound, double lowerbound, int index) {
     if (upperbound < valueList[index]) {
-      return Color.fromARGB(255, 248, 18, 2);
+      return const Color.fromARGB(255, 248, 18, 2);
     }
-    if(valueList[index] < lowerbound) {
-      return Color.fromARGB(255, 162, 30, 20);
-      } 
-    else {
+    if (valueList[index] < lowerbound) {
+      return const Color.fromARGB(255, 162, 30, 20);
+    } else {
       return Colors.green;
     }
   }
 
-  ResultsPage({super.key, required this.image});
+  ResultsPage({super.key, required this.testColors});
 
   final TextStyle textstyle2 = GoogleFonts.oswald(
-    fontSize: 14,
-    textStyle: TextStyle(color: Colors.black, letterSpacing: .5));
+      fontSize: 14,
+      textStyle: const TextStyle(color: Colors.black, letterSpacing: .5));
 
   Widget columnFiller = Container(
     width: 50,
@@ -103,6 +97,13 @@ class ResultsPage extends StatelessWidget {
       await Geolocator.requestPermission();
       print("ERROR $error");
     });
+    Geolocator.getCurrentPosition().then((value) {
+      _location.lat = value.latitude; //set the values for lat and long
+      _location.long = value.longitude;
+    });
+    //adds the location to files
+    _firestore
+        .addLocationToCollections(GeoPoint(_location.lat, _location.long));
     return await Geolocator.getCurrentPosition();
   }
 
@@ -110,10 +111,14 @@ class ResultsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Results',
-        style: GoogleFonts.oswald(
-          fontSize: 25,
-          textStyle: TextStyle(color: Colors.black, letterSpacing: .5),),),), 
+        title: Text(
+          'Results',
+          style: GoogleFonts.oswald(
+            fontSize: 25,
+            textStyle: const TextStyle(color: Colors.black, letterSpacing: .5),
+          ),
+        ),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -125,27 +130,35 @@ class ResultsPage extends StatelessWidget {
                 height: 20,
                 decoration: BoxDecoration(
                   color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: Text(namesList[0], style: textstyle2,),
+                child: Text(
+                  namesList[0],
+                  style: textstyle2,
+                ),
               ),
-              
               Icon(
                 Icons.square,
-                color: colorList[0],
+                color: testColors[0],
               ),
-              
               Container(
                 width: 60,
                 height: 20,
                 decoration: BoxDecoration(
                   color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: 
-                Text(valueList[0].toString(), style: textstyle2,
-                )),
-              
+                child: Text(
+                  valueList[0].toString(),
+                  // THIS DOES NOT RECOGNIZE THE DIRECTORY FOR SOME REASON
+                  // compareTestToSampleToGetValue(
+                  //     "assets/Varify Color Samples/TotalAlk_Colors",
+                  //     testColors[0]) as String,
+                  style: textstyle2,
+                ),
+              ),
               Icon(Icons.flag, color: flagCheck(180, 40, 0))
             ],
           ),
@@ -158,25 +171,30 @@ class ResultsPage extends StatelessWidget {
                 height: 20,
                 decoration: BoxDecoration(
                   color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: Text(namesList[1],style: textstyle2,),
+                child: Text(
+                  namesList[1],
+                  style: textstyle2,
+                ),
               ),
-              
               Icon(
                 Icons.square,
-                color: colorList[1],
+                color: testColors[1],
               ),
-              
               Container(
-                width: 60,
-                height: 20,
-                decoration: BoxDecoration(
-                  color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
-                alignment: Alignment.center,
-                child: Text(valueList[1].toString(), style: textstyle2,)),
-              
+                  width: 60,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    valueList[1].toString(),
+                    style: textstyle2,
+                  )),
               Icon(Icons.flag, color: flagCheck(250, 0, 1))
             ],
           ),
@@ -189,25 +207,30 @@ class ResultsPage extends StatelessWidget {
                 height: 20,
                 decoration: BoxDecoration(
                   color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: Text(namesList[2], style: textstyle2,),
+                child: Text(
+                  namesList[2],
+                  style: textstyle2,
+                ),
               ),
-              
               Icon(
                 Icons.square,
-                color: colorList[2],
+                color: testColors[2],
               ),
-              
               Container(
-                width: 60,
-                height: 20,
-                decoration: BoxDecoration(
-                  color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
-                alignment: Alignment.center,
-                child: Text(valueList[2].toString(),style: textstyle2,)),
-              
+                  width: 60,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    valueList[2].toString(),
+                    style: textstyle2,
+                  )),
               Icon(Icons.flag, color: flagCheck(4.0, 0, 2))
             ],
           ),
@@ -220,25 +243,30 @@ class ResultsPage extends StatelessWidget {
                 height: 20,
                 decoration: BoxDecoration(
                   color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: Text(namesList[3],style: textstyle2,),
+                child: Text(
+                  namesList[3],
+                  style: textstyle2,
+                ),
               ),
-              
               Icon(
                 Icons.square,
-                color: colorList[3],
+                color: testColors[3],
               ),
-              
               Container(
-                width: 60,
-                height: 20,
-                decoration: BoxDecoration(
-                  color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
-                alignment: Alignment.center,
-                child: Text(valueList[3].toString(), style: textstyle2,)),
-              
+                  width: 60,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    valueList[3].toString(),
+                    style: textstyle2,
+                  )),
               Icon(Icons.flag, color: flagCheck(5, 0, 3))
             ],
           ),
@@ -251,25 +279,30 @@ class ResultsPage extends StatelessWidget {
                 height: 20,
                 decoration: BoxDecoration(
                   color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: Text(namesList[4], style: textstyle2,),
+                child: Text(
+                  namesList[4],
+                  style: textstyle2,
+                ),
               ),
-              
               Icon(
                 Icons.square,
-                color: colorList[4],
+                color: testColors[4],
               ),
-              
               Container(
-                width: 60,
-                height: 20,
-                decoration: BoxDecoration(
-                  color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
-                alignment: Alignment.center,
-                child: Text(valueList[4].toString(), style: textstyle2,)),
-              
+                  width: 60,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    valueList[4].toString(),
+                    style: textstyle2,
+                  )),
               Icon(Icons.flag, color: flagCheck(200, 0, 4))
             ],
           ),
@@ -282,25 +315,30 @@ class ResultsPage extends StatelessWidget {
                 height: 20,
                 decoration: BoxDecoration(
                   color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: Text(namesList[5], style: textstyle2,),
+                child: Text(
+                  namesList[5],
+                  style: textstyle2,
+                ),
               ),
-              
               Icon(
                 Icons.square,
-                color: colorList[5],
+                color: testColors[5],
               ),
-              
               Container(
-                width: 60,
-                height: 20,
-                decoration: BoxDecoration(
-                  color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
-                alignment: Alignment.center,
-                child: Text(valueList[5].toString(), style: textstyle2,)),
-              
+                  width: 60,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    valueList[5].toString(),
+                    style: textstyle2,
+                  )),
               Icon(Icons.flag, color: flagCheck(1, 0, 5))
             ],
           ),
@@ -313,25 +351,30 @@ class ResultsPage extends StatelessWidget {
                 height: 20,
                 decoration: BoxDecoration(
                   color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: Text(namesList[6], style: textstyle2,),
+                child: Text(
+                  namesList[6],
+                  style: textstyle2,
+                ),
               ),
-              
               Icon(
                 Icons.square,
-                color: colorList[6],
+                color: testColors[6],
               ),
-              
               Container(
-                width: 60,
-                height: 20,
-                decoration: BoxDecoration(
-                  color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
-                alignment: Alignment.center,
-                child: Text(valueList[6].toString(), style: textstyle2,)),
-              
+                  width: 60,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    valueList[6].toString(),
+                    style: textstyle2,
+                  )),
               Icon(Icons.flag, color: flagCheck(10, 0, 6))
             ],
           ),
@@ -344,25 +387,30 @@ class ResultsPage extends StatelessWidget {
                 height: 20,
                 decoration: BoxDecoration(
                   color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: Text(namesList[7], style: textstyle2,),
+                child: Text(
+                  namesList[7],
+                  style: textstyle2,
+                ),
               ),
-              
               Icon(
                 Icons.square,
-                color: colorList[7],
+                color: testColors[7],
               ),
-              
               Container(
-                width: 60,
-                height: 20,
-                decoration: BoxDecoration(
-                  color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
-                alignment: Alignment.center,
-                child: Text(valueList[7].toString(), style: textstyle2,)),
-              
+                  width: 60,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    valueList[7].toString(),
+                    style: textstyle2,
+                  )),
               Icon(Icons.flag, color: flagCheck(.002, 0, 7))
             ],
           ),
@@ -375,25 +423,30 @@ class ResultsPage extends StatelessWidget {
                 height: 20,
                 decoration: BoxDecoration(
                   color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: Text(namesList[8], style: textstyle2,),
+                child: Text(
+                  namesList[8],
+                  style: textstyle2,
+                ),
               ),
-              
               Icon(
                 Icons.square,
-                color: colorList[8],
+                color: testColors[8],
               ),
-              
               Container(
-                width: 60,
-                height: 20,
-                decoration: BoxDecoration(
-                  color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
-                alignment: Alignment.center,
-                child: Text(valueList[8].toString(), style: textstyle2,)),
-              
+                  width: 60,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    valueList[8].toString(),
+                    style: textstyle2,
+                  )),
               Icon(Icons.flag, color: flagCheck(3, 0, 8))
             ],
           ),
@@ -406,25 +459,30 @@ class ResultsPage extends StatelessWidget {
                 height: 20,
                 decoration: BoxDecoration(
                   color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: Text(namesList[9], style: textstyle2,),
+                child: Text(
+                  namesList[9],
+                  style: textstyle2,
+                ),
               ),
-              
               Icon(
                 Icons.square,
-                color: colorList[9],
+                color: testColors[9],
               ),
-              
               Container(
-                width: 60,
-                height: 20,
-                decoration: BoxDecoration(
-                  color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
-                alignment: Alignment.center,
-                child: Text(valueList[9].toString(), style: textstyle2,)),
-              
+                  width: 60,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    valueList[9].toString(),
+                    style: textstyle2,
+                  )),
               Icon(Icons.flag, color: flagCheck(0.1, 0, 9))
             ],
           ),
@@ -437,25 +495,30 @@ class ResultsPage extends StatelessWidget {
                 height: 20,
                 decoration: BoxDecoration(
                   color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: Text(namesList[10], style: textstyle2,),
+                child: Text(
+                  namesList[10],
+                  style: textstyle2,
+                ),
               ),
-              
               Icon(
                 Icons.square,
-                color: colorList[10],
+                color: testColors[10],
               ),
-              
               Container(
-                width: 60,
-                height: 20,
-                decoration: BoxDecoration(
-                  color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
-                alignment: Alignment.center,
-                child: Text(valueList[10].toString(), style: textstyle2,)),
-              
+                  width: 60,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    valueList[10].toString(),
+                    style: textstyle2,
+                  )),
               Icon(Icons.flag, color: flagCheck(15, 0, 10))
             ],
           ),
@@ -468,25 +531,30 @@ class ResultsPage extends StatelessWidget {
                 height: 20,
                 decoration: BoxDecoration(
                   color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: Text(namesList[11], style: textstyle2,),
+                child: Text(
+                  namesList[11],
+                  style: textstyle2,
+                ),
               ),
-              
               Icon(
                 Icons.square,
-                color: colorList[11],
+                color: testColors[11],
               ),
-              
               Container(
-                width: 60,
-                height: 20,
-                decoration: BoxDecoration(
-                  color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
-                alignment: Alignment.center,
-                child: Text(valueList[11].toString(), style: textstyle2,)),
-              
+                  width: 60,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    valueList[11].toString(),
+                    style: textstyle2,
+                  )),
               Icon(Icons.flag, color: flagCheck(1, 0, 11))
             ],
           ),
@@ -499,25 +567,30 @@ class ResultsPage extends StatelessWidget {
                 height: 20,
                 decoration: BoxDecoration(
                   color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: Text(namesList[12], style: textstyle2,),
+                child: Text(
+                  namesList[12],
+                  style: textstyle2,
+                ),
               ),
-              
               Icon(
                 Icons.square,
-                color: colorList[12],
+                color: testColors[12],
               ),
-              
               Container(
-                width: 60,
-                height: 20,
-                decoration: BoxDecoration(
-                  color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
-                alignment: Alignment.center,
-                child: Text(valueList[12].toString(), style: textstyle2,)),
-              
+                  width: 60,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    valueList[12].toString(),
+                    style: textstyle2,
+                  )),
               Icon(Icons.flag, color: flagCheck(0.3, 0, 12))
             ],
           ),
@@ -530,25 +603,30 @@ class ResultsPage extends StatelessWidget {
                 height: 20,
                 decoration: BoxDecoration(
                   color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: Text(namesList[13], style: textstyle2,),
+                child: Text(
+                  namesList[13],
+                  style: textstyle2,
+                ),
               ),
-              
               Icon(
                 Icons.square,
-                color: colorList[13],
+                color: testColors[13],
               ),
-              
               Container(
-                width: 60,
-                height: 20,
-                decoration: BoxDecoration(
-                  color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
-                alignment: Alignment.center,
-                child: Text(valueList[13].toString(), style: textstyle2,)),
-              
+                  width: 60,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    valueList[13].toString(),
+                    style: textstyle2,
+                  )),
               Icon(Icons.flag, color: flagCheck(0, 0, 13))
             ],
           ),
@@ -561,25 +639,30 @@ class ResultsPage extends StatelessWidget {
                 height: 20,
                 decoration: BoxDecoration(
                   color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: Text(namesList[14], style: textstyle2,),
+                child: Text(
+                  namesList[14],
+                  style: textstyle2,
+                ),
               ),
-              
               Icon(
                 Icons.square,
-                color: colorList[14],
+                color: testColors[14],
               ),
-              
               Container(
-                width: 60,
-                height: 20,
-                decoration: BoxDecoration(
-                  color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
-                alignment: Alignment.center,
-                child: Text(valueList[14].toString(), style: textstyle2,)),
-              
+                  width: 60,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    valueList[14].toString(),
+                    style: textstyle2,
+                  )),
               Icon(Icons.flag, color: flagCheck(100, 10, 14))
             ],
           ),
@@ -592,41 +675,85 @@ class ResultsPage extends StatelessWidget {
                 height: 20,
                 decoration: BoxDecoration(
                   color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: Text(namesList[15], style: textstyle2,),
+                child: Text(
+                  namesList[15],
+                  style: textstyle2,
+                ),
               ),
-              
               Icon(
                 Icons.square,
-                color: colorList[15],
+                color: testColors[15],
               ),
-              
               Container(
-                width: 60,
-                height: 20,
-                decoration: BoxDecoration(
-                  color: Colors.cyan,
-                  borderRadius: BorderRadius.circular(20),),
-                alignment: Alignment.center,
-                child: Text(valueList[15].toString(), style: textstyle2,)),
-              
+                  width: 60,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    valueList[15].toString(),
+                    style: textstyle2,
+                  )),
               Icon(Icons.flag, color: flagCheck(8.5, 6.5, 15)),
             ],
           ),
           columnFiller,
           Center(
+            // buttons for adding data to database,
+            // adding your location to the map,
+            // and returning to home page
             child: Column(
-            //  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
                   width: 300,
                   height: 40,
                   decoration: BoxDecoration(
-                  color: Colors.teal,
-                  borderRadius: BorderRadius.circular(20),),
+                    color: Colors.teal,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   child: TextButton(
-                    child: Text("Plot your Location", style: textstyle2,),
+                    child: Text(
+                      "Add to Database",
+                      style: textstyle2,
+                    ),
+                    onPressed: () {
+                      _firestore.addToCollections(
+                          valueList[0],
+                          valueList[1],
+                          valueList[2],
+                          valueList[3],
+                          valueList[4],
+                          valueList[5],
+                          valueList[6],
+                          valueList[7],
+                          valueList[8],
+                          valueList[9],
+                          valueList[10],
+                          valueList[11],
+                          valueList[12],
+                          valueList[13]);
+                    },
+                  ),
+                ),
+                columnFiller,
+                Container(
+                  width: 300,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: Colors.teal,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: TextButton(
+                    child: Text(
+                      "Plot your Location",
+                      style: textstyle2,
+                    ),
                     onPressed: () async {
                       getUserCurrentLocation().then(
                         (value) async {
@@ -661,10 +788,14 @@ class ResultsPage extends StatelessWidget {
                   width: 300,
                   height: 40,
                   decoration: BoxDecoration(
-                  color: Colors.teal,
-                  borderRadius: BorderRadius.circular(20),),
+                    color: Colors.teal,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   child: TextButton(
-                    child: Text("Return to Home Page", style: textstyle2,),
+                    child: Text(
+                      "Return to Home Page",
+                      style: textstyle2,
+                    ),
                     onPressed: () {
                       Navigator.push(
                         context,

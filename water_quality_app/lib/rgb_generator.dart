@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:typed_data';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +8,7 @@ import 'package:image/image.dart' as image_library;
 const String keyPalette = 'palette';
 const String keyNoOfItems = 'noIfItems';
 
-// number of pixels for grid row
+// number of pixels per grid row
 int noOfPixelsPerAxis = 16;
 
 // get the average color for Color list
@@ -31,8 +30,8 @@ Color getAverageColor(List<Color> colors) {
 
 // get lighest color index for Color list
 int getLighestColorIndex(List<Color> colors) {
-  // check the first 20 colors for the lightest color
-  for (int i = 0; i < 20; i++) {
+  // checks middle of screen colors for the lightest color
+  for (int i = 6; i < 9; i++) {
     if ((colors[i].red >= 150) ||
         (colors[i].green >= 150) ||
         (colors[i].blue >= 150)) {
@@ -68,16 +67,18 @@ double compareColors(Color c1, Color c2) {
 }
 
 // compare image file colors in assets to the test color from camera
-Future<Color?> compareTestToSample(Directory dir, Color testColor) async {
-  // list of percentage and color difference values
-  Map<double, Color> colorDiffs = {};
+Future<String?> compareTestToSampleToGetValue(
+    String assetColorsFilePath, Color testColor) async {
+  // map of percentage color difference and color value for flag checks
+  Map<double, String> colorDiffs = {};
 
   // get files from directory
-  int numFiles = await dir.list().length;
-  List files = dir.list() as List;
+  bool directoryExists = await Directory(assetColorsFilePath).exists();
 
-  // if directory exists
-  if (await dir.exists()) {
+  if (directoryExists) {
+    List files = Directory(assetColorsFilePath).listSync();
+    int numFiles = files.length;
+
     for (int i = 0; i < numFiles; i++) {
       // define color file and average color
       File colorFile = File('${files[i]}');
@@ -86,14 +87,15 @@ Future<Color?> compareTestToSample(Directory dir, Color testColor) async {
 
       // compare file color with given image color
       double diff = compareColors(averageColorFromFile, testColor);
-      colorDiffs[diff] = averageColorFromFile;
+      colorDiffs[diff] = '${files[i]}'; //.split('_')[1]
     }
   }
+
   // get the keys and sort
   List<double> colorDiffKeyDoubles = colorDiffs.keys as List<double>;
   colorDiffKeyDoubles.sort();
 
-  // return largest percentage color using largest key
+  // return largest percentage color file name
   return colorDiffs[colorDiffKeyDoubles.last];
 }
 
@@ -102,7 +104,7 @@ List<Color> getSingleColumnFromListIndex(List<Color> colors, int index) {
   // new return list
   List<Color> newList = [];
   // get every nth element in the list (represents the column)
-  for (int i = index; i < colors.length; i += index + 1) {
+  for (int i = index; i < colors.length; i += 16) {
     newList.add(colors[i]);
     print(colors[i]);
   }

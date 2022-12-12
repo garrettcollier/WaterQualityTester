@@ -69,6 +69,22 @@ flutter:
     - assets/
     - assets/camera/
     - assets/Varify Color Samples/
+    - assets/Varify Color Samples/Copper_Colors/
+    - assets/Varify Color Samples/Flouride_Colors/
+    - assets/Varify Color Samples/FreeChlorine_Colors/
+    - assets/Varify Color Samples/Hardness_Colors/
+    - assets/Varify Color Samples/HydroSulf_Colors/
+    - assets/Varify Color Samples/Iron_Colors/
+    - assets/Varify Color Samples/Lead_Colors/
+    - assets/Varify Color Samples/Manganese_Colors/
+    - assets/Varify Color Samples/Nitrate_Colors/
+    - assets/Varify Color Samples/Nitrite_Colors/
+    - assets/Varify Color Samples/PH_Colors/
+    - assets/Varify Color Samples/SodiumChloride_Colors/
+    - assets/Varify Color Samples/Sulfate_Colors/
+    - assets/Varify Color Samples/TotalAlk_Colors/
+    - assets/Varify Color Samples/TotChlorine_Colors/
+    - assets/Varify Color Samples/Zinc_Colors/
 
   fonts:
     - family: Klee One

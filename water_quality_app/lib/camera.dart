@@ -1,10 +1,9 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 
+import 'package:water_quality_app/image_color_grid.dart';
 import 'package:water_quality_app/main.dart';
-import 'package:water_quality_app/results.dart';
 
 class CameraPage extends StatefulWidget {
   const CameraPage({Key? key}) : super(key: key);
@@ -110,7 +109,7 @@ class _CameraPageState extends State<CameraPage> {
               // If the picture was taken, display with results
               await Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => ResultsPage(
+                  builder: (context) => RGBImageCheckPage(
                     image: imageFile,
                   ),
                 ),
